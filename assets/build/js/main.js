@@ -70,7 +70,7 @@ jQuery(document).ready(function ($) {
   $(".giftprocess #shipping_company_field, .giftprocess #shipping_address_2_field").remove();
 
   /**
-   * Gift as a Process Coupon
+   * Banner_Image as a Process Coupon
    * */
   var wc_checkout_coupons = {
     init: function () {
@@ -166,7 +166,7 @@ jQuery(document).ready(function ($) {
   wc_checkout_coupons.init();
 
   /**
-   * Gift as a Process Coupon
+   * Banner_Image as a Process Coupon
    * */
   // wc_checkout_params is required to continue, ensure the object exists
   if (typeof wc_checkout_params === 'undefined') {

@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'WCGT\\WC_Gift_Proceed\\' => array($baseDir . '/includes'),
+    'WCPB\\WC_Product_Banner\\' => array($baseDir . '/includes'),
 );

@@ -7,15 +7,15 @@ Tested up to: 6.1
 Requires PHP: 7.2
 Stable tag:  1.0.0
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: http://www.gnu.org/licenses/gpl-2.0.html 
 
 == Description ==
-Order Gift Proceed Checkout is easily manage gift order in woocommerce platform. In this plugin you can easily handle order as a gift.
+Order Product Banner Image is easily manage gift order in woocommerce platform. In this plugin you can easily handle order as a gift.
 
 = Shortcode List =
 To use these shortcodes, just place the required shortcode(s) on your desired location.
 
-  * Gift Proceed [gift_checkout_proceed]
+  * Banner_Image Proceed [product_banner_image]
 
 = Features =
 
@@ -35,18 +35,18 @@ Please let us know your feedback, if you think something can be more awesome in 
 
 The automatic installation is the easiest way to install any plugin in WordPress. You can perform an automatic installation of logging in to your WordPress dashboard, navigating to the “Plugins” menu and click on the "Add New" button.
 
-This will open up a page showing all the available plugins in WordPress. In the search field, type Order Gift Proceed Checkout. The search result will show you our Order Gift Proceed Checkout plugin, you can then see the detailed info by clicking on "More Details" and to install just click on the "Install Now" button.
+This will open up a page showing all the available plugins in WordPress. In the search field, type Order Product Banner Image. The search result will show you our Order Product Banner Image plugin, you can then see the detailed info by clicking on "More Details" and to install just click on the "Install Now" button.
 
 
 = Manual installation =
 
-Go to Dashboard > Plugins > Add New, then upload order-gift-proceed-checkout.zip file and click Install Now.
+Go to Dashboard > Plugins > Add New, then upload order-product-banner-image-checkout.zip file and click Install Now.
 
 
 == Screenshots ==
 
-1. Order Gift Proceed Checkout page
-2. Order Gift Proceed Checkout settings
+1. Order Product Banner Image page
+2. Order Product Banner Image settings
 3. Order as a gift Button
 
 == Frequently Asked Questions ==
@@ -55,7 +55,7 @@ Go to Dashboard > Plugins > Add New, then upload order-gift-proceed-checkout.zip
 A. You can get support by posting on the support section of this plugin on WordPress plugin directory, or on the support mail: rejuan.17bd@gmail.com
 
 = Q. Can I use my existing WordPress theme? =
-A. Sure, you can use your existing WordPress theme with event order-gift-proceed-checkout.
+A. Sure, you can use your existing WordPress theme with event order-product-banner-image-checkout.
 
 = Q. Where can I report a bug? =
 A. Found a bug? Please let us know by posting on the support section of this plugin on WordPress plugin directory or directly on our support mail: rejuan.17bd@gmail.com

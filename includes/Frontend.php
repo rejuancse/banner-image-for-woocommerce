@@ -1,6 +1,6 @@
 <?php
 
-namespace WCGT\WC_Gift_Proceed;
+namespace WCPB\WC_Product_Banner;
 
 /**
  * The Frontend class

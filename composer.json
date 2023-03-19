@@ -1,5 +1,5 @@
 {
-    "name": "order-gift-proceed-checkout",
+    "name": "order-product-banner-image-checkout",
     "type": "wordpress-plugin",
     "license": "GPLv2",
     "authors": [
@@ -12,7 +12,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "WCGT\\WC_Gift_Proceed\\": "includes/"
+            "WCPB\\WC_Product_Banner\\": "includes/"
         },
         "files": []
     }

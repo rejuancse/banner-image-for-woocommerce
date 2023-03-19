@@ -9,12 +9,12 @@ class ComposerStaticInitfb6a9dbf5fdcc8df34a9e0f10fbbc949
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
-            'WCGT\\WC_Gift_Proceed\\' => 15,
+            'WCPB\\WC_Product_Banner\\' => 15,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'WCGT\\WC_Gift_Proceed\\' => 
+        'WCPB\\WC_Product_Banner\\' => 
         array (
             0 => __DIR__ . '/../..' . '/includes',
         ),
