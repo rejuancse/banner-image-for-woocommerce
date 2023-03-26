@@ -61,16 +61,24 @@ add_action('woocommerce_before_single_product_summary', function() {
     defined( 'ABSPATH' ) || exit;
     
     global $post;
-    $campaign_rewards   = get_post_meta($post->ID, 'wpbi_reward', true);
-    $campaign_rewards_a = json_decode($campaign_rewards, true);
-    if (is_array($campaign_rewards_a)) {
-        if (count($campaign_rewards_a) > 0) {
-            foreach ($campaign_rewards_a as $key => $value) { ?>
-                <div class="wpneo-shadow wpneo-padding15 wpneo-clearfix" 
-                style="background-image: url(<?php echo !empty($value['wp_product_banner_image_image_field']) ? wp_get_attachment_url( $value["wp_product_banner_image_image_field"] ) : ''; ?>); background-repeat: no-repeat; background-size: cover;">
-                    <div><?php echo wpautop(wp_unslash($value['wp_product_banner_image_description'])); ?></div>
-                </div>
-            <?php
+    $wp_banner_image   = get_post_meta($post->ID, 'wp_product_banner_image', true);
+    $banner_info = json_decode($wp_banner_image, true);
+
+    if (is_array($banner_info)) {
+        if (count($banner_info) > 0) {
+            foreach ($banner_info as $value) { 
+                if( $value['enable_banner_image'] == 'yes' ) { ?>
+                    <div class="wpneo-shadow wpneo-padding15 wpneo-clearfix" 
+                    style="background-image: url(<?php echo !empty($value['wp_product_banner_image_image_field']) ? wp_get_attachment_url( $value["wp_product_banner_image_image_field"] ) : ''; ?>); background-repeat: no-repeat; background-size: cover;">
+                        <div><?php echo wpautop(wp_unslash($value['wp_product_banner_image_title'])); ?></div>
+                        <div><?php echo wpautop(wp_unslash($value['wp_product_banner_image_description'])); ?></div>
+
+                        <a href="<?php echo esc_url($value['wp_banner_button_url']); ?>">
+                            <?php echo $value['wp_banner_button_name']; ?>
+                        </a>
+                    </div>
+                <?php
+                }
             }
         }
     }

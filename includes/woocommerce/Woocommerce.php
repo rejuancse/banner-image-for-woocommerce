@@ -206,7 +206,7 @@ class Woocommerce {
 		$data             = array();
 
 		$enable_banner    = $_POST['enable_banner_image'];
-		$banner_title     = esc_html($_POST['wp_product_banner_image_title']);
+		$banner_title     = $_POST['wp_product_banner_image_title'];
 		$description      = $_POST['wp_product_banner_image_description'];
 		$image_field      = $_POST['wp_product_banner_image_image_field'];
 
