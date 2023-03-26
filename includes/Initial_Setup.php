@@ -43,7 +43,7 @@ if (! class_exists('Initial_Setup')) {
         }
 
         /**
-         * Deactivation Hook For Crowdfunding
+         * Deactivation Hook For Banner Image
          */
         public function initial_plugin_deactivation(){
 

@@ -209,7 +209,6 @@ class Woocommerce {
 		$banner_title     = $_POST['wp_product_banner_image_title'];
 		$description      = $_POST['wp_product_banner_image_description'];
 		$image_field      = $_POST['wp_product_banner_image_image_field'];
-
 		$button_name      = $_POST['wp_banner_button_name'];
 		$button_url       = $_POST['wp_banner_button_url'];
 		
@@ -218,7 +217,6 @@ class Woocommerce {
 			'wp_product_banner_image_title'     => $banner_title[0],
 			'wp_product_banner_image_description'     => $description[0],
 			'wp_product_banner_image_image_field'     => intval($image_field[0]),
-
 			'wp_banner_button_name'    => $button_name[0],
 			'wp_banner_button_url'     => $button_url[0],
 		);

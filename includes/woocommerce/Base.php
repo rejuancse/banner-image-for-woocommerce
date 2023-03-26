@@ -33,9 +33,8 @@ class Base {
     }
 
     public function admin_script(){
-        wp_enqueue_style( 'wp-color-picker' );
         wp_enqueue_style( 'wpbi-wpbi-css', WPBI_DIR_URL .'assets/css/wpbi.css', false, WPBI_VERSION );
-        wp_enqueue_script( 'wpbi-jquery-scripts', WPBI_DIR_URL .'assets/js/wpbi.min.js', array('jquery','wp-color-picker'), WPBI_VERSION, true );
+        wp_enqueue_script( 'wpbi-jquery-scripts', WPBI_DIR_URL .'assets/js/wpbi.js', array('jquery'), WPBI_VERSION, true );
     } 
 
     /**
@@ -43,13 +42,6 @@ class Base {
      * @frontend
      */
     public function frontend_script(){
-        wp_enqueue_style( 'wpbi-css-front', WPBI_DIR_URL .'assets/css/wpbi-front.css', false, WPBI_VERSION );
-        wp_enqueue_style( 'jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css' );
-        
         wp_enqueue_script( 'jquery' );
-        wp_enqueue_script( 'jquery-ui-datepicker', array( 'jquery' ) );
-        wp_enqueue_script( 'wpbi-jquery-scripts-front', WPBI_DIR_URL .'assets/js/wpbi-front.js', array('jquery'), WPBI_VERSION, true);
-        wp_localize_script( 'wpbi-jquery-scripts-front', 'wpbi_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
-        wp_enqueue_media();
     }
 }
