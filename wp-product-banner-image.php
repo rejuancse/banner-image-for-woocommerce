@@ -68,7 +68,6 @@ add_action('woocommerce_before_single_product_summary', function() {
             foreach ($campaign_rewards_a as $key => $value) { ?>
                 <div class="wpneo-shadow wpneo-padding15 wpneo-clearfix" 
                 style="background-image: url(<?php echo !empty($value['wp_product_banner_image_image_field']) ? wp_get_attachment_url( $value["wp_product_banner_image_image_field"] ) : ''; ?>); background-repeat: no-repeat; background-size: cover;">
-                    <h3><?php echo $value['wp_product_banner_image_pladge_amount']; ?></h3>
                     <div><?php echo wpautop(wp_unslash($value['wp_product_banner_image_description'])); ?></div>
                 </div>
             <?php

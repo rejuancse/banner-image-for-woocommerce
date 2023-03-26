@@ -36,61 +36,77 @@ class Woocommerce {
         global $post;
 
         $var = get_post_meta($post->ID, 'wp_product_banner_image', true);
-       // $var = stripslashes($var);
         $data_array = json_decode($var, true);
 
         $woocommerce_meta_field = array(
 
-            // Pledge Amount
+            // Enable Banner
             array(
-                'id'            => 'wp_product_banner_image_pladge_amount[]',
-                'label'         => __('Pledge Amount', 'wcpb'),
+                'id'            => 'enable_banner_image[]',
+                'label'         => __('Enable Banner Image', 'wcpb'),
                 'desc_tip'      => 'true',
-                'type'          => 'text',
-                'placeholder'   => __('Pledge Amount', 'wcpb'),
-                'value'         => '',
-                'class'         => 'wc_input_price',
-                'field_type'    => 'textfield'
+                'type'          => 'checkbox',
+                'placeholder'   => __('Enable Banner Image', 'wcpb'),
+                'field_type'    => 'checkboxfield'
             ),
             
             // Banner Title
             array(
                 'id'            => 'wp_product_banner_image_title[]',
-                'label'         => __('Title', 'wcpb'),
+                'label'         => __('Banner Title', 'wcpb'),
                 'desc_tip'      => 'true',
                 'type'          => 'text',
-                'placeholder'   => __('Banner Title Description', 'wcpb'),
+                'placeholder'   => __('Write Banner Title', 'wcpb'),
                 'value'         => '',
-                'field_type'    => 'textareafield',
+                'field_type'    => 'textfield',
             ),
 
+			// Short Description
             array(
                 'id'            => 'wp_product_banner_image_description[]',
                 'label'         => __('Banner Intro Text', 'wcpb'),
                 'desc_tip'      => 'true',
                 'type'          => 'text',
-                'placeholder'   => __('Write Description', 'wcpb'),
+                'placeholder'   => __('Write short description', 'wcpb'),
                 'value'         => '',
-                'field_type'    => 'textareafield',
+                'field_type'    => 'textfield',
             ),
 
-
-            // Reward Image
+            // Banner Image
             array(
                 'id'            => 'wp_product_banner_image_image_field[]',
-                'label'         => __('Image Field', 'wcpb'),
+                'label'         => __('Upload Banner Image', 'wcpb'),
                 'desc_tip'      => 'true',
                 'type'          => 'image',
-                'placeholder'   => __('Image Field', 'wcpb'),
                 'value'         => '',
-                'class'         => '',
                 'field_type'    => 'image'
             ),
 
+			// Button Name
+            array(
+                'id'            => 'wp_banner_button_name[]',
+                'label'         => __('Button Name', 'wcpb'),
+                'desc_tip'      => 'true',
+                'type'          => 'text',
+                'placeholder'   => __('Write Banner button Name', 'wcpb'),
+                'value'         => '',
+                'field_type'    => 'textfield',
+            ),
+
+			// Banner URL
+            array(
+                'id'            => 'wp_banner_button_url[]',
+                'label'         => __('Banner URL', 'wcpb'),
+                'desc_tip'      => 'true',
+                'type'          => 'text',
+                'placeholder'   => __('Add custom URL', 'wcpb'),
+                'value'         => '',
+                'field_type'    => 'textfield',
+            ),
         );
         ?>
 
-        <div id='banner_image_options' class='panel woocommerce_options_panel'>
+        <div id='banner_image_options' class='panel woocommerce_options_panel AA'>
             <?php
             $display = 'block';
             $meta_count = is_array($data_array) ? count($data_array) : 0;
@@ -100,39 +116,34 @@ class Woocommerce {
             /*
             * Print without value of Reward System for clone group
             */
-            echo "<div class='reward_group' style='display:" . $display . ";'>";
-            echo "<div class='banner_image_field_wrap'>";
+			if( $meta_count == '0' ) {
+				echo "<div class='banner_image_wrap'>";
+				echo "<div class='banner_image_field_wrap'>";
 
-            foreach ($woocommerce_meta_field as $value) {
-                switch ($value['field_type']) {
+				foreach ($woocommerce_meta_field as $value) {
+					switch ($value['field_type']) {
+						case 'checkboxfield':
+							woocommerce_wp_checkbox($value);
+							break;
 
-                    case 'textareafield':
-                        woocommerce_wp_textarea_input($value);
-                        break;
+						case 'image':
+							echo '<p class="form-field">';
+							echo '<label for="wp_product_banner_image_image_field">'.$value["label"].'</label>';
+							echo '<input type="hidden" class="wp_product_banner_image_image_field" name="'.$value["id"].'" value="" placeholder="'.$value["label"].'"/>';
+							echo '<span class="wpneo-image-container"></span>';
+							echo '<button class="wpneo-image-upload-btn shorter">'.__("Upload","wp-wpbi").'</button>';
+							echo '</p>';
+							break;
 
-                    case 'selectfield':
-                        woocommerce_wp_select($value);
-                        break;
+						default:
+							woocommerce_wp_text_input($value);
+							break;
+					}
+				}
 
-                    case 'image':
-                        echo '<p class="form-field">';
-                        echo '<label for="wp_product_banner_image_image_field">'.$value["label"].'</label>';
-                        echo '<input type="hidden" class="wp_product_banner_image_image_field" name="'.$value["id"].'" value="" placeholder="'.$value["label"].'"/>';
-                        echo '<span class="wpneo-image-container"></span>';
-                        echo '<button class="wpneo-image-upload-btn shorter">'.__("Upload","wp-wpbi").'</button>';
-                        echo '</p>';
-                        break;
-
-                    default:
-                        woocommerce_wp_text_input($value);
-                        break;
-                }
-            }
-
-            echo '<input name="remove_rewards" type="button" class="button tagadd removeCampaignRewards" value="' . __('- Remove', 'wcpb') . '" />';
-            echo "</div>";
-            echo "</div>";
-
+				echo "</div>";
+				echo "</div>";
+			}
 
             /*
             * Print with value of Reward System
@@ -140,7 +151,7 @@ class Woocommerce {
             if ($meta_count > 0) {
                 if (is_array($data_array) && !empty($data_array)) {
                     foreach ($data_array as $k => $v) {
-                        echo "<div class='reward_group'>";
+                        echo "<div class='banner_image_wrap Alex'>";
                         echo "<div class='banner_image_field_wrap'>";
                         foreach ($woocommerce_meta_field as $value) {
                             if(isset( $v[str_replace('[]', '', $value['id'])] )){
@@ -150,14 +161,9 @@ class Woocommerce {
                             }
                             switch ($value['field_type']) {
 
-                                case 'textareafield':
-                                    $value['value'] = wp_unslash($value['value']);
-                                    woocommerce_wp_textarea_input($value);
-                                    break;
-
-                                case 'selectfield':
-                                    woocommerce_wp_select($value);
-                                    break;
+								case 'checkboxfield':
+									woocommerce_wp_checkbox($value);
+									break;
 
                                 case 'image':
                                     $image_id = $value['value'];
@@ -181,13 +187,11 @@ class Woocommerce {
                                     break;
                             }
                         }
-                        echo '<input name="remove_rewards" type="button" class="button tagadd removeCampaignRewards" value="' . __('- Remove', 'wcpb') . '" />';
                         echo "</div>";
                         echo "</div>";
                     }
                 }
             }
-
             ?>
         </div>
 
@@ -198,29 +202,29 @@ class Woocommerce {
     * Save Reward tab Data(Woocommerce).
     * Update Post Meta for Reward Tab
     */
-    function reward_action($post_id){
-        if (!empty($_POST['wp_product_banner_image_pladge_amount'])) {
-            $data             = array();
+    function reward_action($post_id) {
+		$data             = array();
 
-            $pladge_amount    = $_POST['wp_product_banner_image_pladge_amount'];
-            $image_field      = $_POST['wp_product_banner_image_image_field'];
-            $banner_title     = $_POST['wp_product_banner_image_title'];
-            $description      = $_POST['wp_product_banner_image_description'];
+		$enable_banner    = $_POST['enable_banner_image'];
+		$banner_title     = esc_html($_POST['wp_product_banner_image_title']);
+		$description      = $_POST['wp_product_banner_image_description'];
+		$image_field      = $_POST['wp_product_banner_image_image_field'];
 
-            $field_count      = count($pladge_amount);
+		$button_name      = $_POST['wp_banner_button_name'];
+		$button_url       = $_POST['wp_banner_button_url'];
+		
+		$data[] = array (
+			'enable_banner_image'     => $enable_banner[0],
+			'wp_product_banner_image_title'     => $banner_title[0],
+			'wp_product_banner_image_description'     => $description[0],
+			'wp_product_banner_image_image_field'     => intval($image_field[0]),
 
-            for ($i = 0; $i < $field_count; $i++) {
-                if (!empty($pladge_amount[$i])) {
-                    $data[] = array(
-                        'wp_product_banner_image_pladge_amount'   => intval($pladge_amount[$i]),
-                        'wp_product_banner_image_image_field'     => intval($image_field[$i]),
-                        'wp_product_banner_image_title'     => $banner_title[$i],
-                        'wp_product_banner_image_description'     => $description[$i],
-                    );
-                }
-            }
-            $data_json = json_encode( $data, JSON_UNESCAPED_UNICODE );
-            wpbi_function()->update_meta($post_id, 'wp_product_banner_image', wp_slash($data_json));
-        }
+			'wp_banner_button_name'    => $button_name[0],
+			'wp_banner_button_url'     => $button_url[0],
+		);
+
+		$data_json = json_encode( $data, JSON_UNESCAPED_UNICODE );
+		wpbi_function()->update_meta($post_id, 'wp_product_banner_image', wp_slash($data_json));
     }
+
 } //End class bracket
