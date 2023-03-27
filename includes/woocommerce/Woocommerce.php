@@ -14,12 +14,12 @@ class Woocommerce {
     }
 
     public function __construct() {
-		add_filter( 'woocommerce_product_data_tabs', array($this, 'add_my_custom_product_data_tab') );
-        add_action( 'woocommerce_product_data_panels', array( $this, 'woocom_custom_product_data_fields' ) );
-        add_action( 'woocommerce_process_product_meta',  array($this, 'reward_action'));
+		add_filter( 'woocommerce_product_data_tabs', array($this, 'wp_banner_image_data_tab') );
+        add_action( 'woocommerce_product_data_panels', array( $this, 'wp_banner_image_data_fields' ) );
+        add_action( 'woocommerce_process_product_meta',  array($this, 'save_banner_info_action'));
     }
 
-    public function add_my_custom_product_data_tab( $product_data_tabs ) {
+    public function wp_banner_image_data_tab( $product_data_tabs ) {
 		$product_data_tabs['product-banner-image'] = array(
 			'label'     => __( 'Product Banner Image', 'wcpb' ),
 			'target'    => 'banner_image_options',
@@ -29,10 +29,10 @@ class Woocommerce {
 	}
 
     /*
-    * Add Reward tab Content(Woocommerce).
-    * Only show the fields under Reward Tab
+    * Add BannerImage tab Content(Woocommerce).
+    * Only show the fields under BannerImage Tab
     */
-    function woocom_custom_product_data_fields($post_id){
+    function wp_banner_image_data_fields($post_id){
         global $post;
 
         $var = get_post_meta($post->ID, 'wp_product_banner_image', true);
@@ -52,7 +52,7 @@ class Woocommerce {
             
             // Banner Title
             array(
-                'id'            => 'wp_product_banner_image_title[]',
+                'id'            => 'product_banner_title[]',
                 'label'         => __('Banner Title', 'wcpb'),
                 'desc_tip'      => 'true',
                 'type'          => 'text',
@@ -63,7 +63,7 @@ class Woocommerce {
 
 			// Short Description
             array(
-                'id'            => 'wp_product_banner_image_description[]',
+                'id'            => 'product_banner_description[]',
                 'label'         => __('Banner Intro Text', 'wcpb'),
                 'desc_tip'      => 'true',
                 'type'          => 'text',
@@ -74,7 +74,7 @@ class Woocommerce {
 
             // Banner Image
             array(
-                'id'            => 'wp_product_banner_image_image_field[]',
+                'id'            => 'product_banner_bg_image[]',
                 'label'         => __('Upload Banner Image', 'wcpb'),
                 'desc_tip'      => 'true',
                 'type'          => 'image',
@@ -114,7 +114,7 @@ class Woocommerce {
             if ( $meta_count > 0 ){ $display = 'none'; }
 
             /*
-            * Print without value of Reward System for clone group
+            * Print without value of BannerImage System for clone group
             */
 			if( $meta_count == '0' ) {
 				echo "<div class='banner_image_wrap'>";
@@ -128,10 +128,10 @@ class Woocommerce {
 
 						case 'image':
 							echo '<p class="form-field">';
-							echo '<label for="wp_product_banner_image_image_field">'.$value["label"].'</label>';
-							echo '<input type="hidden" class="wp_product_banner_image_image_field" name="'.$value["id"].'" value="" placeholder="'.$value["label"].'"/>';
-							echo '<span class="wpneo-image-container"></span>';
-							echo '<button class="wpneo-image-upload-btn shorter">'.__("Upload","wp-wpbi").'</button>';
+							echo '<label for="product_banner_bg_image">'.$value["label"].'</label>';
+							echo '<input type="hidden" class="product_banner_bg_image" name="'.$value["id"].'" value="" placeholder="'.$value["label"].'"/>';
+							echo '<span class="wpbi-image-container"></span>';
+							echo '<button class="wpbi-image-upload-btn shorter">'.__("Upload","wp-wpbi").'</button>';
 							echo '</p>';
 							break;
 
@@ -146,7 +146,7 @@ class Woocommerce {
 			}
 
             /*
-            * Print with value of Reward System
+            * Print with value of BannerImage System
             */
             if ($meta_count > 0) {
                 if (is_array($data_array) && !empty($data_array)) {
@@ -170,15 +170,15 @@ class Woocommerce {
                                     $raw_id = $image_id;
                                     if( $image_id!=0 && $image_id!='' ){
                                         $image_id = wp_get_attachment_url( $image_id );
-                                        $image_id = '<img width="100" src="'.$image_id.'"><span class="wpneo-image-remove">x</span>';
+                                        $image_id = '<img width="100" src="'.$image_id.'"><span class="wpbi-image-remove">x</span>';
                                     }else{
                                         $image_id = '';
                                     }
                                     echo '<p class="form-field">';
-                                    echo '<label for="wp_product_banner_image_image_field">'.$value["label"].'</label>';
-                                    echo '<input type="hidden" class="wp_product_banner_image_image_field" name="'.$value["id"].'" value="'.$raw_id.'" placeholder="'.$value["label"].'"/>';
-                                    echo '<span class="wpneo-image-container">'.$image_id.'</span>';
-                                    echo '<button class="wpneo-image-upload-btn shorter">'.__("Upload","wp-wpbi").'</button>';
+                                    echo '<label for="product_banner_bg_image">'.$value["label"].'</label>';
+                                    echo '<input type="hidden" class="product_banner_bg_image" name="'.$value["id"].'" value="'.$raw_id.'" placeholder="'.$value["label"].'"/>';
+                                    echo '<span class="wpbi-image-container">'.$image_id.'</span>';
+                                    echo '<button class="wpbi-image-upload-btn shorter">'.__("Upload","wp-wpbi").'</button>';
                                     echo '</p>';
                                     break;
 
@@ -199,26 +199,26 @@ class Woocommerce {
     }
 
     /*
-    * Save Reward tab Data(Woocommerce).
-    * Update Post Meta for Reward Tab
+    * Save BannerImage tab Data(Woocommerce).
+    * Update Post Meta for BannerImage Tab
     */
-    function reward_action($post_id) {
+    function save_banner_info_action($post_id) {
 		$data             = array();
 
 		$enable_banner    = $_POST['enable_banner_image'];
-		$banner_title     = $_POST['wp_product_banner_image_title'];
-		$description      = $_POST['wp_product_banner_image_description'];
-		$image_field      = $_POST['wp_product_banner_image_image_field'];
+		$banner_title     = $_POST['product_banner_title'];
+		$description      = $_POST['product_banner_description'];
+		$image_field      = $_POST['product_banner_bg_image'];
 		$button_name      = $_POST['wp_banner_button_name'];
 		$button_url       = $_POST['wp_banner_button_url'];
 		
 		$data[] = array (
-			'enable_banner_image'     => $enable_banner[0],
-			'wp_product_banner_image_title'     => $banner_title[0],
-			'wp_product_banner_image_description'     => $description[0],
-			'wp_product_banner_image_image_field'     => intval($image_field[0]),
-			'wp_banner_button_name'    => $button_name[0],
-			'wp_banner_button_url'     => $button_url[0],
+			'enable_banner_image'       => $enable_banner[0],
+			'product_banner_title'      => $banner_title[0],
+			'product_banner_description' => $description[0],
+			'product_banner_bg_image'   => intval($image_field[0]),
+			'wp_banner_button_name'     => $button_name[0],
+			'wp_banner_button_url'      => $button_url[0],
 		);
 
 		$data_json = json_encode( $data, JSON_UNESCAPED_UNICODE );
