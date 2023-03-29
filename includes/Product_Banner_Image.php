@@ -21,6 +21,8 @@ final class Product_Banner_Image {
 		do_action('wpbi_before_load');
 		$this->run();
 		do_action('wpbi_after_load');
+
+		add_action( 'plugins_loaded', [ $this, 'init_plugin' ] );
 	}
 
 	// Include Core
@@ -36,6 +38,7 @@ final class Product_Banner_Image {
 				if ( wpbi_function()->wc_version() ) {
 					require_once WPBI_DIR_PATH.'includes/woocommerce/Base.php';
 					require_once WPBI_DIR_PATH.'includes/woocommerce/Woocommerce.php';
+					require_once WPBI_DIR_PATH.'includes/woocommerce/CategoryBanner.php';
 
 					new \WPBI\woocommerce\Base();
 					new \WPBI\woocommerce\Woocommerce();
@@ -55,6 +58,16 @@ final class Product_Banner_Image {
 			// Local Code
 		}
 	}
+
+	/**
+     * Initialize the plugin Front View 
+     *
+     * @return void
+     */
+	public function init_plugin() {
+		require_once WPBI_DIR_PATH . 'includes/Frontend/productSinglePageBanner.php';
+		new \WPBI\Frontend\Product_Single_Page_Banner_Image();
+    }
 
 	// Include Addons directory
 	public function include_addons() {
