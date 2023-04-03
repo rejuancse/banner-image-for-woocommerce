@@ -65,11 +65,15 @@ final class Product_Banner_Image {
      * @return void
      */
 	public function init_plugin() {
-		require_once WPBI_DIR_PATH . 'includes/Frontend/Product_Single_Page_Banner_Image.php';
-		require_once WPBI_DIR_PATH . 'includes/Frontend/Product_Category_Banner_Image.php';
+		if ( is_admin() ) {
+            require_once WPBI_DIR_PATH.'includes/Admin.php';
+        } else {
+			require_once WPBI_DIR_PATH . 'includes/Frontend/Product_Single_Page_Banner_Image.php';
+			require_once WPBI_DIR_PATH . 'includes/Frontend/Product_Category_Banner_Image.php';
 
-		new \WPBI\Frontend\Product_Single_Page_Banner_Image();
-		new \WPBI\Frontend\Product_Category_Page_Banner_Image();
+			new \WPBI\Frontend\Product_Single_Page_Banner_Image();
+			new \WPBI\Frontend\Product_Category_Page_Banner_Image();
+		}
     }
 
 	// Include Addons directory

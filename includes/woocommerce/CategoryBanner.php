@@ -31,34 +31,50 @@ if ( ! class_exists( 'wpbi_product_category_image' ) ) {
         * @since 1.0.0
         */
         public function add_category_image ( $taxonomy ) { ?>
-
             <div class="form-field">
-                <h2>Category Banner BG Image</h2>
+                <h2><?php esc_html_e('Category Banner BG Image', 'wpbi'); ?></h2>
             </div>
             
+            <!-- Enable Banner Image -->
             <div class="form-field">
-                <label for="term_meta[banner_image_visiblity]">Enable Banner Image</label>
+                <label for="term_meta[banner_image_visiblity]"><?php esc_html_e('Enable Banner Image', 'wpbi'); ?></label>
                 <select id="term_meta[banner_image_visiblity]" name="term_meta[banner_image_visiblity]">
-                    <option value="no" selected>No</option>
-                    <option value="yes">Yes</option>
+                    <option value="no" selected><?php esc_html_e('No', 'wpbi'); ?></option>
+                    <option value="yes"><?php esc_html_e('Yes', 'wpbi'); ?></option>
                 </select>
             </div>
 
+            <!-- Banner Title -->
             <div class="form-field">
-                <label for="term_meta[category_banner_title]">Banner Title</label>
+                <label for="term_meta[category_banner_title]"><?php esc_html_e('Banner Title', 'wpbi'); ?></label>
                 <input type="text" name="term_meta[category_banner_title]" id="term_meta[category_banner_title]" value="" />
-                <p class="description">You can use rgb() or hexadecimal style.</p>
+                <p class="description"><?php esc_html_e('Write Banner Title', 'wpbi'); ?></p>
             </div>
 
+            <!-- Banner Short Text -->
             <div class="form-field">
-                <label for="term_meta[category_banner_short_desc]">Banner Intro Text</label>
+                <label for="term_meta[category_banner_short_desc]"><?php esc_html_e('Banner Short Text', 'wpbi'); ?></label>
                 <input type="text" name="term_meta[category_banner_short_desc]" id="term_meta[category_banner_short_desc]" value="" />
-                <p class="description">You can use rgb() or hexadecimal style.</p>
+                <p class="description"><?php esc_html_e('Write Banner Short Text', 'wpbi'); ?></p>
+            </div>
+
+            <!-- Banner Button Name -->
+            <div class="form-field">
+                <label for="term_meta[category_banner_Button_Name]"><?php esc_html_e('Banner Button Name', 'wpbi'); ?></label>
+                <input type="text" name="term_meta[category_banner_Button_Name]" id="term_meta[category_banner_Button_Name]" value="" />
+                <p class="description"><?php esc_html_e('Write Banner BTN Name', 'wpbi'); ?></p>
+            </div>
+
+            <!-- Banner Button URL -->
+            <div class="form-field">
+                <label for="term_meta[category_banner_Button_url]"><?php esc_html_e('Banner Button URL', 'wpbi'); ?></label>
+                <input type="text" name="term_meta[category_banner_Button_url]" id="term_meta[category_banner_Button_url]" value="" />
+                <p class="description"><?php esc_html_e('Write Banner BTN URL', 'wpbi'); ?></p>
             </div>
 
             <!-- Banner Image -->
             <div class="form-field term-group">
-                <label for="category-image-id"><?php _e('Image', 'wpbi'); ?></label>
+                <label for="category-image-id"><?php _e('Upload Banner Image', 'wpbi'); ?></label>
                 <input type="hidden" id="category-image-id" name="category-image-id" class="custom_media_url" value="">
                 <div id="category-image-wrapper"></div>
                 <p>
@@ -79,48 +95,85 @@ if ( ! class_exists( 'wpbi_product_category_image' ) ) {
 
             <tr class="form-field">
                 <th scope="row" valign="top">
-                    <h2>Category Banner BG Image</h2>
+                    <h2><?php esc_html_e('Category Banner BG Image', 'wpbi'); ?></h2>
                 </th>
             </tr>
 
+            <!-- Enable Banner Image -->
             <tr class="form-field">
                 <th scope="row" valign="top">
-                    <label for="term_meta[banner_image_visiblity]">Enable Banner Image</label>
+                    <label for="term_meta[banner_image_visiblity]"><?php esc_html_e('Enable Banner Image', 'wpbi'); ?></label>
                 </th>
                 <td>
                     <select name="term_meta[banner_image_visiblity]" id="term_meta[banner_image_visiblity]">
-                        <option value="no" <?php echo $term_meta['banner_image_visiblity'] == 'no' ? 'selected' : ''; ?>>No</option>
-                        <option value="yes" <?php echo $term_meta['banner_image_visiblity'] == 'yes' ? 'selected' : ''; ?>>Yes</option>
+                        <option value="no" <?php echo !empty($term_meta['banner_image_visiblity']) == 'no' ? 'selected' : ''; ?>><?php esc_html_e('No', 'wpbi'); ?></option>
+                        <option value="yes" <?php echo !empty($term_meta['banner_image_visiblity']) == 'yes' ? 'selected' : ''; ?>><?php esc_html_e('Yes', 'wpbi'); ?></option>
                     </select>
-                    <p class="description">Enable Banner Image for category Page</p>
+                    <p class="description"><?php esc_html_e('Enable Banner Image for category Page', 'wpbi'); ?></p>
                 </td>
             </tr>
 
+            <!-- Banner Title -->
             <tr class="form-field">
                 <th scope="row" valign="top">
-                    <label for="term_meta[category_banner_title]">Banner Title</label>
+                    <label for="term_meta[category_banner_title]"><?php esc_html_e('Banner Title', 'wpbi'); ?></label>
                 </th>
                 <td>
-                    <input type="text" name="term_meta[category_banner_title]" id="term_meta[category_banner_title]" value="<?php echo esc_attr( $term_meta['category_banner_title'] ) ? esc_attr( $term_meta['category_banner_title'] ) : ''; ?>" />
-                    <p class="description">Write Banner Title</p>
+                    <input type="text" 
+                    name="term_meta[category_banner_title]" 
+                    id="term_meta[category_banner_title]" 
+                    value="<?php echo !empty( $term_meta['category_banner_title'] ) ? esc_attr( $term_meta['category_banner_title'] ) : ''; ?>" />
+                    <p class="description"><?php esc_attr_e('Write Banner Title', 'wpbi'); ?></p>
                 </td>
             </tr>
 
+            <!-- Banner Short Text -->
             <tr class="form-field">
                 <th scope="row" valign="top">
-                    <label for="term_meta[category_banner_short_desc]">Banner Short Descriptions</label>
+                    <label for="term_meta[category_banner_short_desc]"><?php esc_html_e('Banner Short Descriptions', 'wpbi'); ?></label>
                 </th>
                 <td>
-                    <input type="text" name="term_meta[category_banner_short_desc]" id="term_meta[category_banner_short_desc]" value="<?php echo esc_attr( $term_meta['category_banner_short_desc'] ) ? esc_attr( $term_meta['category_banner_short_desc'] ) : ''; ?>" />
-                    <p class="description">Write Banner Short Descriptions</p>
+                    <input type="text" 
+                    name="term_meta[category_banner_short_desc]" 
+                    id="term_meta[category_banner_short_desc]" 
+                    value="<?php echo !empty( $term_meta['category_banner_short_desc'] ) ? esc_attr( $term_meta['category_banner_short_desc'] ) : ''; ?>" />
+                    <p class="description"><?php esc_html_e('Write Banner Short Descriptions', 'wpbi'); ?></p>
                 </td>
             </tr>
 
+            <!-- Banner Button Name -->
+            <tr class="form-field">
+                <th scope="row" valign="top">
+                    <label for="term_meta[category_banner_Button_Name]"><?php esc_html_e('Banner Button Name', 'wpbi'); ?></label>
+                </th>
+                <td>
+                    <input type="text" 
+                    name="term_meta[category_banner_Button_Name]" 
+                    id="term_meta[category_banner_Button_Name]" 
+                    value="<?php echo !empty( $term_meta['category_banner_Button_Name'] ) ? esc_attr( $term_meta['category_banner_Button_Name'] ) : ''; ?>" />
+                    <p class="description"><?php esc_attr_e('Write Banner Button Name', 'wpbi'); ?></p>
+                </td>
+            </tr>
+
+            <!-- Banner Button URL -->
+            <tr class="form-field">
+                <th scope="row" valign="top">
+                    <label for="term_meta[category_banner_Button_url]"><?php esc_html_e('Banner Button URL', 'wpbi'); ?></label>
+                </th>
+                <td>
+                    <input type="text" 
+                    name="term_meta[category_banner_Button_url]" 
+                    id="term_meta[category_banner_Button_url]" 
+                    value="<?php echo !empty( $term_meta['category_banner_Button_url'] ) ? esc_attr( $term_meta['category_banner_Button_url'] ) : ''; ?>" />
+                    <p class="description"><?php esc_attr_e('Write Banner Button URL', 'wpbi'); ?></p>
+                </td>
+            </tr>
+
+            <!-- Banner Image -->
             <tr class="form-field term-group-wrap">
                 <th scope="row">
                     <label for="category-image-id"><?php _e( 'Category Page Banner Image', 'wpbi' ); ?></label>
                 </th>
-
                 <td>
                     <?php $image_id = get_term_meta ( $term -> term_id, 'category-image-id', true ); ?>
                     <input type="hidden" id="category-image-id" name="category-image-id" value="<?php echo $image_id; ?>">
@@ -137,7 +190,6 @@ if ( ! class_exists( 'wpbi_product_category_image' ) ) {
             </tr>
         <?php
         }
-
 
         /*
         * Save the form field

@@ -8,8 +8,8 @@ if (! class_exists('Initial_Setup')) {
     class Initial_Setup {
 
         public function __construct() {
-            add_action('wp_ajax_install_woocommerce_plugin',        array($this, 'install_woocommerce_plugin'));
-            add_action('admin_action_activate_woocommerce_free',    array($this, 'activate_woocommerce_free'));
+            add_action('wp_ajax_install_woocommerce_plugin', array($this, 'install_woocommerce_plugin'));
+            add_action('admin_action_activate_woocommerce_free', array($this, 'activate_woocommerce_free'));
             add_filter( 'woocommerce_locate_template', array($this, 'wpbi_woocommerce_locate_template'), 10, 3 );
         }
 
@@ -145,8 +145,8 @@ if (! class_exists('Initial_Setup')) {
     
         public function free_plugin_not_installed(){
             include( ABSPATH . 'wp-admin/includes/plugin-install.php' );
-            $this->activation_css();
-            ?>
+            $this->activation_css(); ?>
+
             <div class="notice notice-error wpbi-install-notice">
                 <div class="wpbi-install-notice-inner">
                     <div class="wpbi-install-notice-icon">
@@ -176,7 +176,7 @@ if (! class_exists('Initial_Setup')) {
 
         public function activate_woocommerce_free() {
             activate_plugin('woocommerce/woocommerce.php' );
-            wp_redirect(admin_url('admin.php?page=wpbi-wpbi'));
+            wp_redirect(admin_url('admin.php?page=wc-settings&tab=wc-settings-banner-image'));
 		    exit();
         }
 
@@ -187,6 +187,7 @@ if (! class_exists('Initial_Setup')) {
             if ( ! class_exists('Plugin_Upgrader')){
                 include(ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php');
             }
+
             if ( ! class_exists('Plugin_Installer_Skin')) {
                 include( ABSPATH . 'wp-admin/includes/class-plugin-installer-skin.php' );
             }
@@ -223,17 +224,15 @@ if (! class_exists('Initial_Setup')) {
             $upgrader->install($api->download_link);
             die();
         }
-    
         
         public static function wc_low_version(){
             printf(
                 '<div class="notice notice-error is-dismissible"><p>%1$s <a target="_blank" href="%2$s">%3$s</a> %4$s</p></div>', 
-                __('Your','wcpb'), 
+                __('Your', 'wcpb'), 
                 'https://wordpress.org/plugins/woocommerce/', 
-                __('WooCommerce','wcpb'), 
+                __('WooCommerce', 'wcpb'), 
                 __('version is below then 3.0, please update.','wcpb') 
             );
         }
-
     }
 }

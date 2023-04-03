@@ -106,7 +106,7 @@ class Woocommerce {
         );
         ?>
 
-        <div id='banner_image_options' class='panel woocommerce_options_panel AA'>
+        <div id='banner_image_options' class='panel woocommerce_options_panel'>
             <?php
             $display = 'block';
             $meta_count = is_array($data_array) ? count($data_array) : 0;
