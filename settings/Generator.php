@@ -16,6 +16,30 @@ class Settings_Generator {
             if(isset( $value['type'] )){
                 switch ( $value['type'] ) {
 
+                    case 'image':
+                        $html .= '<tr>';
+                            $html .= '<th><label for="'.$value['id'].'">'.$value['label'].'</label></th>';
+
+                            $html .= '<td>';
+                                $image_id = get_option( $value['id'] );;
+                                $raw_id = $image_id;
+                                if( $image_id!=0 && $image_id!='' ){
+                                    $image_id = wp_get_attachment_url( $image_id );
+                                    $image_id = '<img width="400" src="'.$image_id.'"><span class="wpbi-image-remove">X</span>';
+                                }else {
+                                    $image_id = '';
+                                }
+
+                                $html .= '<p class="form-field">';
+                                $html .= '<input type="hidden" class="product_banner_bg_image" name="'.$value["id"].'" value="'.$raw_id.'" placeholder="'.$value["label"].'"/>';
+                                $html .= '<span class="wpbi-image-container">'.$image_id.'</span>';
+                                $html .= '<button class="wpbi-image-upload-btn shorter">'.__("Upload", "wp-wpbi").'</button>';
+                                $html .= '</p>';
+
+                            $html .= '</td>';
+                        $html .= '</tr>';
+                        break;
+
                     case 'dropdown':
                         $html .= '<tr>';
                         $html .= '<th><label for="'.$value['id'].'">'.$value["label"].'</label></th>';

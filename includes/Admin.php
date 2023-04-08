@@ -266,6 +266,7 @@ class WC_Settings_Banner_Image_Plugin extends WC_Settings_Banner_Image_Page {
         switch( $section ) {
 
             case 'section-0' :
+				
                 $settings = array (
 
                     'section_title' => array(
