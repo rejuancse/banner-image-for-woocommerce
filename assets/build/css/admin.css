@@ -1,0 +1,30 @@
+/*!********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/sass/admin.scss ***!
+  \********************************************************************************************************************************************************/
+.banner_image_wrap .wpbi-image-container {
+  position: relative;
+}
+.banner_image_wrap .wpbi-image-container .wpbi-image-remove {
+  position: absolute;
+  right: 5px;
+  background: #cf0000;
+  color: #fff;
+  font-weight: 700;
+  width: 23px;
+  height: 23px;
+  text-align: center;
+  margin-top: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.banner_image_wrap .wpbi-image-container .wpbi-image-remove:hover {
+  background: #000;
+  color: #fff;
+}
+.banner_image_wrap button.wpbi-image-upload-btn {
+  display: block;
+}
+
+/*# sourceMappingURL=admin.css.map*/

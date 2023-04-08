@@ -33,8 +33,8 @@ class Base {
     }
 
     public function admin_script(){
-        wp_enqueue_style( 'wpbi-wpbi-css', WPBI_DIR_URL .'assets/css/wpbi.css', false, WPBI_VERSION );
-        wp_enqueue_script( 'wpbi-jquery-scripts', WPBI_DIR_URL .'assets/js/wpbi.js', array('jquery'), WPBI_VERSION, true );
+        wp_enqueue_style( 'wpbi-wpbi-css', WPBI_DIR_URL .'assets/build/css/admin.css', false, WPBI_VERSION );
+        wp_enqueue_script( 'wpbi-jquery-scripts', WPBI_DIR_URL .'assets/build/js/admin.js', array('jquery'), WPBI_VERSION, true );
     } 
 
     /**

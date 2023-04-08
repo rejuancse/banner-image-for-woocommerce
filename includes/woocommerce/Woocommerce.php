@@ -49,6 +49,16 @@ class Woocommerce {
                 'placeholder'   => __('Enable Banner Image', 'wcpb'),
                 'field_type'    => 'checkboxfield'
             ),
+
+            // Banner Image
+            array(
+                'id'            => 'product_banner_bg_image[]',
+                'label'         => __('Upload Banner Image', 'wcpb'),
+                'desc_tip'      => 'true',
+                'type'          => 'image',
+                'value'         => '',
+                'field_type'    => 'image'
+            ),
             
             // Banner Title
             array(
@@ -70,16 +80,6 @@ class Woocommerce {
                 'placeholder'   => __('Write short description', 'wcpb'),
                 'value'         => '',
                 'field_type'    => 'textfield',
-            ),
-
-            // Banner Image
-            array(
-                'id'            => 'product_banner_bg_image[]',
-                'label'         => __('Upload Banner Image', 'wcpb'),
-                'desc_tip'      => 'true',
-                'type'          => 'image',
-                'value'         => '',
-                'field_type'    => 'image'
             ),
 
 			// Button Name
@@ -170,7 +170,7 @@ class Woocommerce {
                                     $raw_id = $image_id;
                                     if( $image_id!=0 && $image_id!='' ){
                                         $image_id = wp_get_attachment_url( $image_id );
-                                        $image_id = '<img width="100" src="'.$image_id.'"><span class="wpbi-image-remove">x</span>';
+                                        $image_id = '<img width="450" src="'.$image_id.'"><span class="wpbi-image-remove">x</span>';
                                     }else{
                                         $image_id = '';
                                     }
@@ -178,7 +178,7 @@ class Woocommerce {
                                     echo '<label for="product_banner_bg_image">'.$value["label"].'</label>';
                                     echo '<input type="hidden" class="product_banner_bg_image" name="'.$value["id"].'" value="'.$raw_id.'" placeholder="'.$value["label"].'"/>';
                                     echo '<span class="wpbi-image-container">'.$image_id.'</span>';
-                                    echo '<button class="wpbi-image-upload-btn shorter">'.__("Upload","wp-wpbi").'</button>';
+                                    echo '<button class="wpbi-image-upload-btn button">'.__("Add Image", "wp-wpbi").'</button>';
                                     echo '</p>';
                                     break;
 
