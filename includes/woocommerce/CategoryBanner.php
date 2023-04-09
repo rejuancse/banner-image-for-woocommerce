@@ -51,11 +51,11 @@ if ( ! class_exists( 'wpbi_product_category_image' ) ) {
                 <p class="description"><?php esc_html_e('Write Banner Title', 'wpbi'); ?></p>
             </div>
 
-            <!-- Banner Short Text -->
+            <!-- Banner Short Description -->
             <div class="form-field">
-                <label for="term_meta[category_banner_short_desc]"><?php esc_html_e('Banner Short Text', 'wpbi'); ?></label>
+                <label for="term_meta[category_banner_short_desc]"><?php esc_html_e('Banner Short Description', 'wpbi'); ?></label>
                 <input type="text" name="term_meta[category_banner_short_desc]" id="term_meta[category_banner_short_desc]" value="" />
-                <p class="description"><?php esc_html_e('Write Banner Short Text', 'wpbi'); ?></p>
+                <p class="description"><?php esc_html_e('Write Banner Short Description', 'wpbi'); ?></p>
             </div>
 
             <!-- Banner Button Name -->
@@ -127,7 +127,7 @@ if ( ! class_exists( 'wpbi_product_category_image' ) ) {
                 </td>
             </tr>
 
-            <!-- Banner Short Text -->
+            <!-- Banner Short Description -->
             <tr class="form-field">
                 <th scope="row" valign="top">
                     <label for="term_meta[category_banner_short_desc]"><?php esc_html_e('Banner Short Descriptions', 'wpbi'); ?></label>

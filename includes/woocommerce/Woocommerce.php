@@ -74,7 +74,7 @@ class Woocommerce {
 			// Short Description
             array(
                 'id'            => 'product_banner_description[]',
-                'label'         => __('Banner Intro Text', 'wcpb'),
+                'label'         => __('Banner Short Description', 'wcpb'),
                 'desc_tip'      => 'true',
                 'type'          => 'text',
                 'placeholder'   => __('Write short description', 'wcpb'),
@@ -131,7 +131,7 @@ class Woocommerce {
 							echo '<label for="product_banner_bg_image">'.$value["label"].'</label>';
 							echo '<input type="hidden" class="product_banner_bg_image" name="'.$value["id"].'" value="" placeholder="'.$value["label"].'"/>';
 							echo '<span class="wpbi-image-container"></span>';
-							echo '<button class="wpbi-image-upload-btn shorter">'.__("Upload","wp-wpbi").'</button>';
+							echo '<button class="wpbi-image-upload-btn button">'.__("Add Image", "wp-wpbi").'</button>';
 							echo '</p>';
 							break;
 

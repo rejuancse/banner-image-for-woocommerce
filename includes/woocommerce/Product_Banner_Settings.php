@@ -71,15 +71,6 @@ class WPBI_Extensions {
                     'label'     => __('Upload Banner Image','wcpb'),
                 ),
 
-                # Product Banner SubTitle
-                array(
-                    'id'        => 'product_banner_subtitle',
-                    'label'     => __('Product Banner SubTitle','wcpb'),
-                    'type'      => 'text', 
-                    'value'     => '',
-                    'desc'      => '<p>'.__('Write product page banner title', 'wcpb').'</p>',
-                ),
-
                 # Product Banner Title 
                 array(
                     'id'        => 'product_banner_title',
@@ -152,7 +143,7 @@ class WPBI_Extensions {
 
                 # Save Function
                 array(
-                    'id'        => 'wp_xewc_quick_view_admin_tab',
+                    'id'        => 'wp_wpbi_quick_view_admin_tab',
                     'type'      => 'hidden',
                     'value'     => 'tab_style',
                 ),
@@ -174,7 +165,7 @@ class WPBI_Extensions {
         
         if (wpbi_function()->post('wp_settings_page_nonce_field') && wp_verify_nonce( sanitize_text_field(wpbi_function()->post('wp_settings_page_nonce_field')), 'wp_settings_page_action' ) ){
 
-            $current_tab = sanitize_text_field(wpbi_function()->post('wp_xewc_quick_view_admin_tab'));
+            $current_tab = sanitize_text_field(wpbi_function()->post('wp_wpbi_quick_view_admin_tab'));
 
             if( ! empty($current_tab) ){
                 /**
@@ -192,9 +183,6 @@ class WPBI_Extensions {
                 # Banner Title
                 $product_status = sanitize_text_field(wpbi_function()->post('product_banner_title'));
                 wpbi_function()->update_text('product_banner_title', $product_status);
-
-                $banner_subtitle = sanitize_text_field(wpbi_function()->post('product_banner_subtitle'));
-                wpbi_function()->update_text('product_banner_subtitle', $banner_subtitle);
 
                 $short_text = sanitize_text_field(wpbi_function()->post('product_banner_short_text'));
                 wpbi_function()->update_text('product_banner_short_text', $short_text);

@@ -21,15 +21,6 @@ class Functions {
         return null;
     }
 
-    public function is_published($post_id = 0) {
-        global $post;
-        if ($post_id == 0) {
-            $post_id = $post->ID;
-        }
-        $status = get_post_status($post_id);
-        return $status == 'publish' ? true : false;
-    }
-
     public function update_text($option_name = '', $option_value = null) {
         if (!empty($option_value)) {
             update_option($option_name, $option_value);

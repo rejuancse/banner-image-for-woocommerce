@@ -270,7 +270,7 @@ class WC_Settings_Banner_Image_Plugin extends WC_Settings_Banner_Image_Page {
                 $settings = array (
 
                     'section_title' => array(
-                        'name'     => __( 'Gift Order Style', 'wcpb' ),
+                        'name'     => __( 'Gift Order Style', 'wcpb' ), 
                         'type'     => 'title',
                         'desc'     => '',
                         'id'       => 'wc_settings_tab_section_style'
