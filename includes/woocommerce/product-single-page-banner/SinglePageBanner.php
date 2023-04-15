@@ -3,7 +3,7 @@ namespace WPBI\woocommerce;
 
 defined( 'ABSPATH' ) || exit;
 
-class Woocommerce {
+class Product_Single_Page_Banner_Image {
 
     protected static $_instance = null;
     public static function instance() {

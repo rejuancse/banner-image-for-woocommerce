@@ -37,12 +37,12 @@ final class Product_Banner_Image {
 			if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) || is_plugin_active_for_network( 'woocommerce/woocommerce.php' ) ) {
 				if ( wpbi_function()->wc_version() ) {
 					require_once WPBI_DIR_PATH.'includes/woocommerce/Base.php';
-					require_once WPBI_DIR_PATH.'includes/woocommerce/Woocommerce.php';
-					require_once WPBI_DIR_PATH.'includes/woocommerce/CategoryBanner.php';
-					require_once WPBI_DIR_PATH.'includes/woocommerce/Product_Banner_Settings.php';
+					require_once WPBI_DIR_PATH.'includes/woocommerce/product-single-page-banner/SinglePageBanner.php';
+					require_once WPBI_DIR_PATH.'includes/woocommerce/category-page-banner/CategoryBanner.php';
+					require_once WPBI_DIR_PATH.'includes/woocommerce/product-page-banner/Product_Banner_Settings.php';
 
 					new \WPBI\woocommerce\Base();
-					new \WPBI\woocommerce\Woocommerce();
+					new \WPBI\woocommerce\Product_Single_Page_Banner_Image();
 				} else {
 					add_action( 'admin_notices', array( $initial_setup , 'wc_low_version' ) );
 					deactivate_plugins( plugin_basename( __FILE__ ) );

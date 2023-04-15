@@ -3,6 +3,9 @@ import '../sass/admin.scss';
 
 jQuery(document).ready(function($){
 
+    
+	$('.wpbi-color-field').wpColorPicker();
+
 	$('body').on('click','.wpbi-image-upload-btn',function(e) {
         e.preventDefault();
         var that = $(this);
