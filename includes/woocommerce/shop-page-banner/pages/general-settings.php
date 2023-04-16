@@ -65,6 +65,13 @@ $arr =  array(
         'desc'      => '<p>'.__('Add button URL', 'wcpb').'</p>',
     ),
 
+    array(
+        'id'        => 'enable_link_full_banner',
+        'type'      => 'checkbox',
+        'value'     => 'true',
+        'label'     => __('Enable Link full Banner','wcpb'),
+    ),
+
     # Save Function
     array(
         'id'        => 'wpbi_shop_general_settings_admin_tab',

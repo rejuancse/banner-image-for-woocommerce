@@ -140,6 +140,10 @@ class WPBI_Product_Banner_Image_Extensions {
                 # Button URL
                 $shop_page_banner_button_url = sanitize_text_field(wpbi_function()->post('shop_page_banner_button_url'));
                 wpbi_function()->update_text('shop_page_banner_button_url', $shop_page_banner_button_url);
+
+                # Enable Link Full Banner
+                $enable_link_full_banner = sanitize_text_field(wpbi_function()->post('enable_link_full_banner'));
+                wpbi_function()->update_text('enable_link_full_banner', $enable_link_full_banner);
             }
 
             /**
@@ -156,11 +160,12 @@ class WPBI_Product_Banner_Image_Extensions {
                 $banner_image_overlay_opacity = sanitize_text_field(wpbi_function()->post('shop_page_banner_image_overlay_opacity'));
                 wpbi_function()->update_text('shop_page_banner_image_overlay_opacity', $banner_image_overlay_opacity);
 
-
-
-
-
-                // Banner Title
+                $shop_banner_image_height = sanitize_text_field(wpbi_function()->post('shop_banner_image_height'));
+                wpbi_function()->update_text('shop_banner_image_height', $shop_banner_image_height);
+                
+                /*
+                * Banner SubTitle Style
+                * */ 
                 $shop_banner_subtitle_color = sanitize_text_field(wpbi_function()->post('shop_banner_subtitle_color'));
                 wpbi_function()->update_text('shop_banner_subtitle_color', $shop_banner_subtitle_color);
 
@@ -173,9 +178,9 @@ class WPBI_Product_Banner_Image_Extensions {
                 $shop_banner_subtitle_line_height = sanitize_text_field(wpbi_function()->post('shop_banner_subtitle_line_height'));
                 wpbi_function()->update_text('shop_banner_subtitle_line_height', $shop_banner_subtitle_line_height);
 
-
-
-                // Banner Title
+                /*
+                * Banner Title
+                * */ 
                 $shop_banner_title_font_size = sanitize_text_field(wpbi_function()->post('shop_banner_title_font_size'));
                 wpbi_function()->update_text('shop_banner_title_font_size', $shop_banner_title_font_size);
 
@@ -188,7 +193,9 @@ class WPBI_Product_Banner_Image_Extensions {
                 $shop_banner_title_color = sanitize_text_field(wpbi_function()->post('shop_banner_title_color'));
                 wpbi_function()->update_text('shop_banner_title_color', $shop_banner_title_color);
 
-                // Short Description Style
+                /*
+                * Short Description Style
+                * */ 
                 $shop_banner_desc_color = sanitize_text_field(wpbi_function()->post('shop_banner_desc_color'));
                 wpbi_function()->update_text('shop_banner_desc_color', $shop_banner_desc_color);
 
@@ -201,14 +208,9 @@ class WPBI_Product_Banner_Image_Extensions {
                 $desc_font_weight = sanitize_text_field(wpbi_function()->post('shop_banner_desc_font_weight'));
                 wpbi_function()->update_text('shop_banner_desc_font_weight', $desc_font_weight);
 
-
-
-
-
-
-
-
-                // Button Style
+                /*
+                * Button Style
+                * */ 
                 $button_text_color = sanitize_text_field(wpbi_function()->post('shop_page_banner_button_text_color'));
                 wpbi_function()->update_text('shop_page_banner_button_text_color', $button_text_color);
 
@@ -229,6 +231,12 @@ class WPBI_Product_Banner_Image_Extensions {
 
                 $button_line_height = sanitize_text_field(wpbi_function()->post('shop_banner_button_line_height'));
                 wpbi_function()->update_text('shop_banner_button_line_height', $button_line_height);
+
+                $button_padding = sanitize_text_field(wpbi_function()->post('shop_banner_button_padding'));
+                wpbi_function()->update_text('shop_banner_button_padding', $button_padding);
+
+                $button_margin = sanitize_text_field(wpbi_function()->post('shop_banner_button_margin'));
+                wpbi_function()->update_text('shop_banner_button_margin', $button_margin);
             }
         }
     }

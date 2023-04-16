@@ -88,14 +88,6 @@ $arr =  array(
         'desc'      => '<p>'.__('Write subtitle line height. Ex. 40', 'wcpb').'</p>',
     ),
 
-
-
-
-
-
-
-
-
     #Style Seperator
     array(
         'type'      => 'seperator',
@@ -142,11 +134,6 @@ $arr =  array(
         'value'     => '',
         'desc'      => '<p>'.__('Write Title line height. Ex. 40', 'wcpb').'</p>',
     ),
-
-
-
-
-
 
     # Short description Style Seperator
     array(
@@ -195,7 +182,6 @@ $arr =  array(
         'value'     => '',
         'desc'      => '<p>'.__('Write desc line height. Ex. 40', 'wcpb').'</p>',
     ),
-
 
     # Button Style Seperator
     array(
@@ -266,6 +252,23 @@ $arr =  array(
         'type'      => 'number', 
         'value'     => '',
         'desc'      => '<p>'.__('Write button line height. Ex. 40', 'wcpb').'</p>',
+    ),
+
+
+    array (
+        'id'        => 'shop_banner_button_padding',
+        'label'     => __('Banner Button Padding', 'wcpb'),
+        'type'      => 'text', 
+        'value'     => '',
+        'desc'      => '<p>'.__('Add button Padding. Ex. 10px 20px 10px 20px', 'wcpb').'</p>',
+    ),
+
+    array (
+        'id'        => 'shop_banner_button_margin',
+        'label'     => __('Banner Button Margin', 'wcpb'),
+        'type'      => 'text', 
+        'value'     => '',
+        'desc'      => '<p>'.__('Add button margin. Ex. 10px 20px 10px 20px', 'wcpb').'</p>',
     ),
     
 

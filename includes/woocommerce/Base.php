@@ -34,7 +34,7 @@ class Base {
 
     public function admin_script(){
         wp_enqueue_style( 'wp-color-picker' );
-        wp_enqueue_style( 'wpbi-wpbi-css', WPBI_DIR_URL .'assets/build/css/admin.css', false, WPBI_VERSION );
+        wp_enqueue_style( 'wpbi-admin', WPBI_DIR_URL .'assets/build/css/admin.css', false, WPBI_VERSION );
 
         wp_enqueue_script( 'wpbi-jquery-scripts', WPBI_DIR_URL .'assets/build/js/admin.js', array('jquery', 'wp-color-picker'), WPBI_VERSION, true );
     } 
@@ -44,7 +44,9 @@ class Base {
      * @frontend
      */
     public function frontend_script(){
-        wp_enqueue_script( 'jquery' );
-        wp_enqueue_script( 'jquery-ui-datepicker', array( 'jquery' ) );
+        // wp_enqueue_script( 'jquery' );
+        // wp_enqueue_script( 'jquery-ui-datepicker', array( 'jquery' ) );
+
+        wp_enqueue_style( 'wpbi-main', WPBI_DIR_URL .'assets/build/css/main.css', false, WPBI_VERSION );
     }
 }
