@@ -57,12 +57,16 @@ class Shop_Page_Banner_Image {
         $overlay_opacity = get_option( 'shop_page_banner_image_overlay_opacity', '.5' );
 
         // Title
+        $subtitle_color = get_option( 'shop_banner_subtitle_color', '#000' );
+        $subtitle_font_size = get_option( 'shop_banner_subtitle_font_size', '36' );
+        $subtitle_line_weight = get_option( 'shop_banner_subtitle_font_weight', '400' );
+        $subtitle_line_height = get_option( 'shop_banner_subtitle_line_height', '36' );
+
+        // Sub Title
         $title_color = get_option( 'shop_banner_title_color', '250' );
         $title_font_size = get_option( 'shop_banner_title_font_size', '250' );
         $title_line_weight = get_option( 'shop_banner_title_font_weight', '250' );
         $title_line_height = get_option( 'shop_banner_title_line_height', '250' );
-
-        // Sub Title
 
 
         // Short Description
@@ -108,6 +112,14 @@ class Shop_Page_Banner_Image {
                 top: 0;
                 background-color: <?php echo $overlay_color; ?>;
                 opacity: <?php echo $overlay_opacity; ?>;
+            }
+
+            /* Sub Title Color */
+            .product-banner-image-wrap .banner-content span {
+                color: <?php echo $subtitle_color; ?>;
+                font-size: <?php echo !empty($subtitle_font_size) ? $subtitle_font_size.'px' : '56px'; ?>;
+                line-height: <?php echo !empty($subtitle_line_height) ? $subtitle_line_height.'px' : '56px'; ?>;
+                font-weight: <?php echo !empty($subtitle_line_weight) ? $subtitle_line_weight : '700'; ?>;
             }
 
             /* Title Color */

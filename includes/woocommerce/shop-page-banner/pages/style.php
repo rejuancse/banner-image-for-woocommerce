@@ -38,6 +38,64 @@ $arr =  array(
         'desc'      => '<p>'.__('Write height. Ex. .5', 'wcpb').'</p>',
     ),
 
+
+
+
+    #Sub Heading style Seperator
+    array(
+        'type'      => 'seperator',
+        'label'     => __('Sub Title Style Settings','wcpb'),
+        'top_line'  => 'true',
+    ),
+
+    # Button Background Color
+    array(
+        'id'        => 'shop_banner_subtitle_color',
+        'type'      => 'color',
+        'label'     => __('Banner subtitle Color','wcpb'),
+        'desc'      => __('Select button background color.','wcpb'),
+        'value'     => '#000000',
+    ),
+
+    # Product Banner subtitle 
+    array (
+        'id'        => 'shop_banner_subtitle_font_size',
+        'label'     => __('Banner subtitle Font Size','wcpb'),
+        'type'      => 'number', 
+        'value'     => '',
+        'desc'      => '<p>'.__('Write subtitle font size. Ex. 44', 'wcpb').'</p>',
+    ),
+
+    array(
+        'id'        => 'shop_banner_subtitle_font_weight',
+        'type'      => 'dropdown',
+        'option'    => array(
+            '400'    => __('400','wcpb'),
+            '500'    => __('500','wcpb'),
+            '600'    => __('600','wcpb'),
+            '700'    => __('700','wcpb'),
+            '800'    => __('800','wcpb'),
+            '900'    => __('900','wcpb'),
+        ),
+        'label'     => __('Banner subtitle Font Weight','wcpb'),
+    ),
+
+    array (
+        'id'        => 'shop_banner_subtitle_line_height',
+        'label'     => __('Banner subtitle Line Height','wcpb'),
+        'type'      => 'number', 
+        'value'     => '',
+        'desc'      => '<p>'.__('Write subtitle line height. Ex. 40', 'wcpb').'</p>',
+    ),
+
+
+
+
+
+
+
+
+
     #Style Seperator
     array(
         'type'      => 'seperator',
