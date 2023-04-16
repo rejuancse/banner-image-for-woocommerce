@@ -24,7 +24,36 @@
         }
     }
 
+    textarea,
+    input[type=range],
+    input[type=text] {
+        width: 230px;
+    }
+
+    textarea {
+        height: 100px;
+    }
+
     button.wpbi-image-upload-btn {
         display: block;
+    }
+
+    #sliderRange {
+        background: #04AA6D;
+        background: linear-gradient(to right, #82CFD0 0%, #82CFD0 40%, #000 100%);
+        border-radius: 8px;
+        height: 10px;
+        outline: none;
+        transition: background 450ms ease-in;
+        -webkit-appearance: none;
+    
+        &::-webkit-slider-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            -webkit-appearance: none;
+            cursor: ew-resize;
+            background: #434343;
+        }
     }
 }

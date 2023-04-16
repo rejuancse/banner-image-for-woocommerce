@@ -22,9 +22,7 @@ class Functions {
     }
 
     public function update_text($option_name = '', $option_value = null) {
-        if (!empty($option_value)) {
-            update_option($option_name, $option_value);
-        }
+        update_option($option_name, $option_value);
     }
 
     public function update_checkbox($option_name = '', $option_value = null, $checked_default_value = 'false') {

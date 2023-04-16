@@ -27,9 +27,42 @@
   background: #000;
   color: #fff;
 }
+.banner_image_wrap textarea,
+.banner_image_wrap input[type=range],
+.banner_image_wrap input[type=text],
+.form-table textarea,
+.form-table input[type=range],
+.form-table input[type=text] {
+  width: 230px;
+}
+.banner_image_wrap textarea,
+.form-table textarea {
+  height: 100px;
+}
 .banner_image_wrap button.wpbi-image-upload-btn,
 .form-table button.wpbi-image-upload-btn {
   display: block;
+}
+.banner_image_wrap #sliderRange,
+.form-table #sliderRange {
+  background: #04AA6D;
+  background: -webkit-gradient(linear, left top, right top, from(#82CFD0), color-stop(40%, #82CFD0), to(#000));
+  background: linear-gradient(to right, #82CFD0 0%, #82CFD0 40%, #000 100%);
+  border-radius: 8px;
+  height: 10px;
+  outline: none;
+  -webkit-transition: background 450ms ease-in;
+  transition: background 450ms ease-in;
+  -webkit-appearance: none;
+}
+.banner_image_wrap #sliderRange::-webkit-slider-thumb,
+.form-table #sliderRange::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  cursor: ew-resize;
+  background: #434343;
 }
 
 /*# sourceMappingURL=admin.css.map*/

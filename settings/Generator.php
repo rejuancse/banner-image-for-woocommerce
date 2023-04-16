@@ -134,6 +134,22 @@ class Settings_Generator {
                         $html .= '</tr>';
                         break;
 
+                    case 'numberOverlay':
+                        $html .= '<tr>';
+                        $html .= '<th scope="row"><label for="'.$value["id"].'">'.$value["label"].'</label></th>';
+                        $html .= '<td>';
+                        $data = '';
+                        $var = get_option( $value["id"] );
+                        if( isset($value["min"]) != "" ){ $data .= 'min="'.$value["min"].'"'; }
+                        if( isset($value["max"]) != "" ){ $data .= ' max="'.$value["max"].'"'; }
+                        // $html .= '<input type="number" step="0.1" min="0.1" max="1" value="'.( $var ? $var : $value["value"]).'" '.$data.' name="'.$value["id"].'" />';
+                        // <input type="range" min="0.1" max="1" value=".5" class="slider" id="myRange">
+                        $html .= '<input type="range" step="0.1" min="0.1" max="1" value="'.( $var ? $var : $value["value"]).'" '.$data.' name="'.$value["id"].'" class="slider" id="sliderRange"/>';
+                        $html .= '<p>'.__('Value', 'wpbi').': <span id="rangeID"></span></p>';
+                        $html .= '</td>';
+                        $html .= '</tr>';
+                        break;
+
                     case 'radio':
                         $html .= '<tr>';
                         $html .= '<th scope="row"><label for="'.$value["id"].'">'.$value["label"].'</label></th>';
@@ -183,18 +199,6 @@ class Settings_Generator {
                         $html .= '</th>';
                         $html .= '</tr>';
                         break;
-
-                    // case 'color':
-                    //     $html .= '<tr>';
-                    //     $html .= '<th><label for="'.$value['id'].'">'.$value['label'].'</label></th>';
-                    //     $html .= '<td>';
-                    //     $var = get_option( $value['id'] );
-                    //     if(!$var){ $var = $value['value']; }
-                    //     $html .= '<input type="text" name="'.$value['id'].'" value="'.$var.'" id="'.$value['id'].'" class="wpbi-color-field" >';
-                    //     if(isset($value['desc'])){ $html .= '<p>'.$value['desc'].'</p>'; }
-                    //     $html .= '</td>';
-                    //     $html .= '</tr>';
-                    //     break;
 
                     case 'color':
                         $html .= '<tr>';

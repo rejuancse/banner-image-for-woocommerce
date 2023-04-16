@@ -39,7 +39,7 @@ final class Product_Banner_Image {
 					require_once WPBI_DIR_PATH.'includes/woocommerce/Base.php';
 					require_once WPBI_DIR_PATH.'includes/woocommerce/product-single-page-banner/SinglePageBanner.php';
 					require_once WPBI_DIR_PATH.'includes/woocommerce/category-page-banner/CategoryBanner.php';
-					require_once WPBI_DIR_PATH.'includes/woocommerce/product-page-banner/Product_Banner_Settings.php';
+					require_once WPBI_DIR_PATH.'includes/woocommerce/shop-page-banner/Product_Banner_Settings.php';
 
 					new \WPBI\woocommerce\Base();
 					new \WPBI\woocommerce\Product_Single_Page_Banner_Image();
@@ -69,11 +69,11 @@ final class Product_Banner_Image {
 		if ( is_admin() ) {
             require_once WPBI_DIR_PATH.'includes/Admin.php';
         } else {
-			require_once WPBI_DIR_PATH . 'includes/Frontend/Product_Page_Banner_Image.php';
+			require_once WPBI_DIR_PATH . 'includes/Frontend/Shop_Page_Banner_Image.php';
 			require_once WPBI_DIR_PATH . 'includes/Frontend/Product_Single_Page_Banner_Image.php';
 			require_once WPBI_DIR_PATH . 'includes/Frontend/Product_Category_Banner_Image.php';
 
-			new \WPBI\Frontend\Product_Page_Banner_Image();
+			new \WPBI\Frontend\Shop_Page_Banner_Image();
 			new \WPBI\Frontend\Product_Single_Page_Banner_Image();
 			new \WPBI\Frontend\Product_Category_Page_Banner_Image();
 		}
