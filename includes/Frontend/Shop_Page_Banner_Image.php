@@ -92,10 +92,7 @@ class Shop_Page_Banner_Image {
         $button_font_weight = get_option( 'shop_banner_button_font_weight', '400' );
         $button_line_height = get_option( 'shop_banner_button_line_height', '28' ); 
         $button_button_padding = get_option( 'shop_banner_button_padding', '10px 30px' ); 
-        $button_button_margin = get_option( 'shop_banner_button_margin', '0' ); 
-        
-        
-        ?>
+        $button_button_margin = get_option( 'shop_banner_button_margin', '0' ); ?>
 
         <style type="text/css">
             .product-banner-image-wrap {
@@ -170,7 +167,6 @@ class Shop_Page_Banner_Image {
                 background-color: <?php echo !empty($button_bg_hover_color) ? $button_bg_hover_color : '#000000'; ?>;
                 color: <?php echo !empty($button_text_hover_color) ? $button_text_hover_color : '#fff'; ?>;
             }
-
         </style>
     <?php }
 }

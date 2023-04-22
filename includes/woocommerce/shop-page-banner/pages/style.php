@@ -38,9 +38,6 @@ $arr =  array(
         'desc'      => '<p>'.__('Write height. Ex. .5', 'wcpb').'</p>',
     ),
 
-
-
-
     #Sub Heading style Seperator
     array(
         'type'      => 'seperator',
@@ -270,7 +267,6 @@ $arr =  array(
         'value'     => '',
         'desc'      => '<p>'.__('Add button margin. Ex. 10px 20px 10px 20px', 'wcpb').'</p>',
     ),
-    
 
     # Save Function
     array(

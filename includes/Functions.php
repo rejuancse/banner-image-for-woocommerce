@@ -65,5 +65,4 @@ class Functions {
         }
         return $url;
     }
-
 }
