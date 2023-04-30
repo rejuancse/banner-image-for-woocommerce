@@ -1,7 +1,7 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
-$arr =  array(
+$settings =  array(
 
     # Enable Product Banner
     array(
@@ -10,7 +10,7 @@ $arr =  array(
         'value'     => 'true',
         'label'     => __('Enable Shop Page Banner','wcpb'),
         'desc'      => '<p>'.__('Enable Banner Image','wcpb').'</p>',
-    ),
+    ), 
 
     # Banner Image
     array(
@@ -80,4 +80,4 @@ $arr =  array(
     ),
 );
 
-wpbi_function()->generator( $arr );
+wpbi_function()->generator( $settings );

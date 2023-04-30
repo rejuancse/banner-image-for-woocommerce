@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 $arr =  array(
     array(
         'id'        => 'shop_page_banner_text_align',
-        'type'      => 'dropdown',
+        'type'      => 'dropdown', 
         'option'    => array(
             'left'    => __('Left Align','wcpb'),
             'right'    => __('Right Align','wcpb'),

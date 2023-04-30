@@ -49,17 +49,14 @@ class WC_Settings_Banner_Image_Plugin extends WC_Settings_Banner_Image_Page {
         switch( $section ) {
             case 'category-page-banner-style' :
 				include WPBI_DIR_PATH.'includes/woocommerce/banner_settings/product-category-page-banner-style.php';
-				$settings = product_category_page_banner_style();
             	break;
 
 			case 'single-page-banner-style' :
 				include WPBI_DIR_PATH.'includes/woocommerce/banner_settings/product-single-page-banner-style.php';
-				$settings = product_single_page_banner_style();
             	break;
 
 			default:
 				include WPBI_DIR_PATH.'includes/woocommerce/banner_settings/default-settings.php';
-				$settings = default_settings();
 				break;
         }
 
