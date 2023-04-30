@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) || exit;
 $settings =  array(
 
     'section_title' => array(
-        'name'     => __( 'Shop Page Banner ', 'wcpb' ),
+        'name'     => __( 'Product Single Page Banner ', 'wcpb' ),
         'type'     => 'title',
         'desc'     => '',
         'id'       => 'wc_settings_product_general_option'

@@ -39,9 +39,16 @@ if ( ! class_exists( 'wpbi_product_category_image' ) ) {
             <div class="form-field">
                 <label for="term_meta[banner_image_visiblity]"><?php esc_html_e('Enable Banner Image', 'wpbi'); ?></label>
                 <select id="term_meta[banner_image_visiblity]" name="term_meta[banner_image_visiblity]">
-                    <option value="no" selected><?php esc_html_e('No', 'wpbi'); ?></option>
-                    <option value="yes"><?php esc_html_e('Yes', 'wpbi'); ?></option>
+                    <option value="no" selected><?php esc_html_e('Disable', 'wpbi'); ?></option>
+                    <option value="yes"><?php esc_html_e('Enable', 'wpbi'); ?></option>
                 </select>
+            </div>
+
+            <!-- Banner SubTitle -->
+            <div class="form-field">
+                <label for="term_meta[category_banner_subtitle]"><?php esc_html_e('Banner SubTitle', 'wpbi'); ?></label>
+                <input type="text" name="term_meta[category_banner_subtitle]" id="term_meta[category_banner_subtitle]" value="" />
+                <p class="description"><?php esc_html_e('Write Banner Title', 'wpbi'); ?></p>
             </div>
 
             <!-- Banner Title -->
@@ -54,7 +61,7 @@ if ( ! class_exists( 'wpbi_product_category_image' ) ) {
             <!-- Banner Short Description -->
             <div class="form-field">
                 <label for="term_meta[category_banner_short_desc]"><?php esc_html_e('Banner Short Description', 'wpbi'); ?></label>
-                <input type="text" name="term_meta[category_banner_short_desc]" id="term_meta[category_banner_short_desc]" value="" />
+                <input type="text" class="cat-desc"  name="term_meta[category_banner_short_desc]" id="term_meta[category_banner_short_desc]" value="" />
                 <p class="description"><?php esc_html_e('Write Banner Short Description', 'wpbi'); ?></p>
             </div>
 
@@ -70,6 +77,15 @@ if ( ! class_exists( 'wpbi_product_category_image' ) ) {
                 <label for="term_meta[category_banner_Button_url]"><?php esc_html_e('Banner Button URL', 'wpbi'); ?></label>
                 <input type="text" name="term_meta[category_banner_Button_url]" id="term_meta[category_banner_Button_url]" value="" />
                 <p class="description"><?php esc_html_e('Write Banner BTN URL', 'wpbi'); ?></p>
+            </div>
+
+            <!-- Enable Full Banner Link -->
+            <div class="form-field">
+                <label for="term_meta[category_banner_full_link]"><?php esc_html_e('Enable Full Banner Link', 'wpbi'); ?></label>
+                <select id="term_meta[category_banner_full_link]" name="term_meta[category_banner_full_link]">
+                    <option value="no" selected><?php esc_html_e('Disable', 'wpbi'); ?></option>
+                    <option value="yes"><?php esc_html_e('Enable', 'wpbi'); ?></option>
+                </select>
             </div>
 
             <!-- Banner Image -->
@@ -106,10 +122,24 @@ if ( ! class_exists( 'wpbi_product_category_image' ) ) {
                 </th>
                 <td>
                     <select name="term_meta[banner_image_visiblity]" id="term_meta[banner_image_visiblity]">
-                        <option value="no" <?php echo !empty($term_meta['banner_image_visiblity']) == 'no' ? 'selected' : ''; ?>><?php esc_html_e('No', 'wpbi'); ?></option>
-                        <option value="yes" <?php echo !empty($term_meta['banner_image_visiblity']) == 'yes' ? 'selected' : ''; ?>><?php esc_html_e('Yes', 'wpbi'); ?></option>
+                        <option value="no" <?php echo !empty($term_meta['banner_image_visiblity']) == 'no' ? 'selected' : ''; ?>><?php esc_html_e('Disable', 'wpbi'); ?></option>
+                        <option value="yes" <?php echo !empty($term_meta['banner_image_visiblity']) == 'yes' ? 'selected' : ''; ?>><?php esc_html_e('Enable', 'wpbi'); ?></option>
                     </select>
                     <p class="description"><?php esc_html_e('Enable Banner Image for category Page', 'wpbi'); ?></p>
+                </td>
+            </tr>
+
+            <!-- Banner SubTitle -->
+            <tr class="form-field">
+                <th scope="row" valign="top">
+                    <label for="term_meta[category_banner_subtitle]"><?php esc_html_e('Banner SubTitle', 'wpbi'); ?></label>
+                </th>
+                <td>
+                    <input type="text" 
+                    name="term_meta[category_banner_subtitle]" 
+                    id="term_meta[category_banner_subtitle]" 
+                    value="<?php echo !empty( $term_meta['category_banner_subtitle'] ) ? esc_attr( $term_meta['category_banner_subtitle'] ) : ''; ?>" />
+                    <p class="description"><?php esc_attr_e('Write Banner Title', 'wpbi'); ?></p>
                 </td>
             </tr>
 
@@ -133,7 +163,7 @@ if ( ! class_exists( 'wpbi_product_category_image' ) ) {
                     <label for="term_meta[category_banner_short_desc]"><?php esc_html_e('Banner Short Descriptions', 'wpbi'); ?></label>
                 </th>
                 <td>
-                    <input type="text" 
+                    <input type="text" class="cat-desc" 
                     name="term_meta[category_banner_short_desc]" 
                     id="term_meta[category_banner_short_desc]" 
                     value="<?php echo !empty( $term_meta['category_banner_short_desc'] ) ? esc_attr( $term_meta['category_banner_short_desc'] ) : ''; ?>" />
@@ -166,6 +196,20 @@ if ( ! class_exists( 'wpbi_product_category_image' ) ) {
                     id="term_meta[category_banner_Button_url]" 
                     value="<?php echo !empty( $term_meta['category_banner_Button_url'] ) ? esc_attr( $term_meta['category_banner_Button_url'] ) : ''; ?>" />
                     <p class="description"><?php esc_attr_e('Write Banner Button URL', 'wpbi'); ?></p>
+                </td>
+            </tr>
+
+            <!-- Enable Full Banner Link -->
+            <tr class="form-field">
+                <th scope="row" valign="top">
+                    <label for="term_meta[category_banner_full_link]"><?php esc_html_e('Enable Full Banner Link', 'wpbi'); ?></label>
+                </th>
+                <td>
+                    <select name="term_meta[category_banner_full_link]" id="term_meta[category_banner_full_link]">
+                        <option value="no" <?php echo !empty($term_meta['category_banner_full_link']) == 'no' ? 'selected' : ''; ?>><?php esc_html_e('Disable', 'wpbi'); ?></option>
+                        <option value="yes" <?php echo !empty($term_meta['category_banner_full_link']) == 'yes' ? 'selected' : ''; ?>><?php esc_html_e('Enable', 'wpbi'); ?></option>
+                    </select>
+                    <p class="description"><?php esc_html_e('Enable Full Banner Link', 'wpbi'); ?></p>
                 </td>
             </tr>
 

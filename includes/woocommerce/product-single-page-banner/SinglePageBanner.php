@@ -59,6 +59,17 @@ class Product_Single_Page_Banner_Image {
                 'value'         => '',
                 'field_type'    => 'image'
             ),
+
+            // Banner Sub Heading
+            array(
+                'id'            => 'product_banner_subtitle[]',
+                'label'         => __('Banner Sub Heading', 'wcpb'),
+                'desc_tip'      => 'true',
+                'type'          => 'text',
+                'placeholder'   => __('Write Banner Sub Heading', 'wcpb'),
+                'value'         => '',
+                'field_type'    => 'textfield',
+            ),
             
             // Banner Title
             array(
@@ -79,7 +90,7 @@ class Product_Single_Page_Banner_Image {
                 'type'          => 'text',
                 'placeholder'   => __('Write short description', 'wcpb'),
                 'value'         => '',
-                'field_type'    => 'textfield',
+                'field_type'    => 'textareafield',
             ),
 
 			// Button Name
@@ -103,6 +114,16 @@ class Product_Single_Page_Banner_Image {
                 'value'         => '',
                 'field_type'    => 'textfield',
             ),
+
+            // Enable Banner
+            array(
+                'id'            => 'enable_link_full_banner_image[]',
+                'label'         => __('Enable Link full Banner', 'wcpb'),
+                'desc_tip'      => 'true',
+                'type'          => 'checkbox',
+                'placeholder'   => __('Enable Link full Banner', 'wcpb'),
+                'field_type'    => 'checkboxfield'
+            ),
         );
         ?>
 
@@ -122,6 +143,10 @@ class Product_Single_Page_Banner_Image {
 
 				foreach ($woocommerce_meta_field as $value) {
 					switch ($value['field_type']) {
+                        case 'textareafield':
+                            woocommerce_wp_textarea_input($value);
+                            break;
+
 						case 'checkboxfield':
 							woocommerce_wp_checkbox($value);
 							break;
@@ -160,6 +185,11 @@ class Product_Single_Page_Banner_Image {
                                 $value['value'] = '';
                             }
                             switch ($value['field_type']) {
+
+                                case 'textareafield':
+                                    $value['value'] = wp_unslash($value['value']);
+                                    woocommerce_wp_textarea_input($value);
+                                    break;
 
 								case 'checkboxfield':
 									woocommerce_wp_checkbox($value);
@@ -206,19 +236,23 @@ class Product_Single_Page_Banner_Image {
 		$data             = array();
 
 		$enable_banner    = $_POST['enable_banner_image'];
+		$banner_subtitle  = $_POST['product_banner_subtitle'];
 		$banner_title     = $_POST['product_banner_title'];
 		$description      = $_POST['product_banner_description'];
 		$image_field      = $_POST['product_banner_bg_image'];
 		$button_name      = $_POST['wp_banner_button_name'];
 		$button_url       = $_POST['wp_banner_button_url'];
+		$enable_link_banner = $_POST['enable_link_full_banner_image'];
 		
 		$data[] = array (
 			'enable_banner_image'       => $enable_banner[0],
+			'product_banner_subtitle'   => $banner_subtitle[0],
 			'product_banner_title'      => $banner_title[0],
 			'product_banner_description' => $description[0],
 			'product_banner_bg_image'   => intval($image_field[0]),
 			'wp_banner_button_name'     => $button_name[0],
 			'wp_banner_button_url'      => $button_url[0],
+			'enable_link_full_banner_image' => $enable_link_banner[0],
 		);
 
 		$data_json = json_encode( $data, JSON_UNESCAPED_UNICODE );

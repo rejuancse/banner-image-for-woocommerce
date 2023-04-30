@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) || exit;
 $settings =  array(
 
     'section_title' => array(
-        'name'     => __( 'Category Page Banner ', 'wcpb' ),
+        'name'     => __( 'Category Page Banner', 'wcpb' ),
         'type'     => 'title',
         'desc'     => '',
         'id'       => 'wc_settings_category_general_option'
@@ -38,7 +38,7 @@ $settings =  array(
     'category_banner_overlay_color' => array(
         'name' 		=> __( 'Overlay Color', 'wcpb' ),
         'type' 		=> 'color',
-        'id'   	=> 'wc_settings_tab_btn_border_color',
+        'id'   	=> 'wc_settings_tab_btn_overlay_color',
         'css'      => 'width:6em;',
         'default'  => '#000000',
         'autoload' => false,
@@ -192,7 +192,7 @@ $settings =  array(
     'category_banner_desc_color' => array(
         'name' 		=> __( 'Banner desc Color', 'wcpb' ),
         'type' 		=> 'color',
-        'id'   	=> 'wc_settings_tab_category_title_color',
+        'id'   	=> 'wc_settings_tab_category_desc_color',
         'css'      => 'width:6em;',
         'default'  => '#363636',
         'autoload' => false,

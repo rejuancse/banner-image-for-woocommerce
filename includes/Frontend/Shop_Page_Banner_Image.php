@@ -72,16 +72,16 @@ class Shop_Page_Banner_Image {
         $subtitle_line_height = get_option( 'shop_banner_subtitle_line_height', '36' );
 
         // Sub Title
-        $title_color = get_option( 'shop_banner_title_color', '250' );
-        $title_font_size = get_option( 'shop_banner_title_font_size', '250' );
-        $title_line_weight = get_option( 'shop_banner_title_font_weight', '250' );
-        $title_line_height = get_option( 'shop_banner_title_line_height', '250' );
+        $title_color = get_option( 'shop_banner_title_color', '#000' );
+        $title_font_size = get_option( 'shop_banner_title_font_size', '28' );
+        $title_line_weight = get_option( 'shop_banner_title_font_weight', '400' );
+        $title_line_height = get_option( 'shop_banner_title_line_height', '35' );
 
         // Short Description
-        $desc_color = get_option( 'shop_banner_desc_color', '250' );
-        $desc_font_size = get_option( 'shop_banner_desc_font_size', '250' );
-        $desc_line_weight = get_option( 'shop_banner_desc_font_weight', '250' );
-        $desc_line_height = get_option( 'shop_banner_desc_line_height', '250' );
+        $desc_color = get_option( 'shop_banner_desc_color', '#000000' );
+        $desc_font_size = get_option( 'shop_banner_desc_font_size', '18' );
+        $desc_line_weight = get_option( 'shop_banner_desc_font_weight', '400' );
+        $desc_line_height = get_option( 'shop_banner_desc_line_height', '28' );
 
         // Button
         $button_text_color = get_option( 'shop_page_banner_button_text_color', '#ffffff' );
