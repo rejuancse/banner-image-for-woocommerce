@@ -8,8 +8,8 @@ $settings =  array(
         'id'        => 'enable_shop_page_banner',
         'type'      => 'checkbox',
         'value'     => 'true',
-        'label'     => __('Enable Shop Page Banner','wcpb'),
-        'desc'      => '<p>'.__('Enable Banner Image','wcpb').'</p>',
+        'label'     => __('Enable Shop Page Banner','wppb'),
+        'desc'      => '<p>'.__('Enable Banner Image','wppb').'</p>',
     ), 
 
     # Banner Image
@@ -17,59 +17,59 @@ $settings =  array(
         'id'        => 'shop_page_banner_image',
         'type'      => 'image',
         'value'     => 'true',
-        'label'     => __('Upload Banner Image','wcpb'),
+        'label'     => __('Upload Banner Image','wppb'),
     ),
 
     # Shop Page Banner Sub Heading
     array(
         'id'        => 'shop_page_banner_sub_heading',
-        'label'     => __('Banner Sub Heading','wcpb'),
+        'label'     => __('Banner Sub Heading','wppb'),
         'type'      => 'text', 
         'value'     => '',
-        'desc'      => '<p>'.__('Write Shop Page Banner Sub Heading', 'wcpb').'</p>',
+        'desc'      => '<p>'.__('Write Shop Page Banner Sub Heading', 'wppb').'</p>',
     ),
 
     # Shop Page Banner Title 
     array(
         'id'        => 'shop_page_banner_title',
-        'label'     => __('Banner Title','wcpb'),
+        'label'     => __('Banner Title','wppb'),
         'type'      => 'text', 
         'value'     => '',
-        'desc'      => '<p>'.__('Write banner title', 'wcpb').'</p>',
+        'desc'      => '<p>'.__('Write banner title', 'wppb').'</p>',
     ),
 
     # Shop Page Banner Short Description
     array(
         'id'        => 'shop_page_banner_short_desc',
-        'label'     => __('Banner Short Description','wcpb'),
+        'label'     => __('Banner Short Description','wppb'),
         'type'      => 'textarea', 
         'value'     => '',
-        'desc'      => '<p>'.__('Write banner short description', 'wcpb').'</p>',
+        'desc'      => '<p>'.__('Write banner short description', 'wppb').'</p>',
     ),
 
     # Shop page Banner Button Name
     array(
         'id'        => 'shop_page_banner_button_name',
-        'label'     => __('Banner Button Name','wcpb'),
+        'label'     => __('Banner Button Name','wppb'),
         'type'      => 'text', 
         'value'     => '',
-        'desc'      => '<p>'.__('Write banner button name', 'wcpb').'</p>',
+        'desc'      => '<p>'.__('Write banner button name', 'wppb').'</p>',
     ),
 
     # Shop Page Banner Button URL
     array(
         'id'        => 'shop_page_banner_button_url',
-        'label'     => __('Banner Button URL','wcpb'),
+        'label'     => __('Banner Button URL','wppb'),
         'type'      => 'text', 
         'value'     => '',
-        'desc'      => '<p>'.__('Add button URL', 'wcpb').'</p>',
+        'desc'      => '<p>'.__('Add button URL', 'wppb').'</p>',
     ),
 
     array(
         'id'        => 'enable_link_full_banner',
         'type'      => 'checkbox',
         'value'     => 'true',
-        'label'     => __('Enable Link full Banner','wcpb'),
+        'label'     => __('Enable Link full Banner','wppb'),
     ),
 
     # Save Function

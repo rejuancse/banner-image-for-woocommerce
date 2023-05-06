@@ -21,7 +21,7 @@ final class Product_Banner_Image {
 		do_action('wpbi_before_load');
 		$this->run();
 		do_action('wpbi_after_load');
-
+		
 		add_action( 'plugins_loaded', [ $this, 'init_plugin' ] );
 	}
 
@@ -44,16 +44,16 @@ final class Product_Banner_Image {
 					require_once WPBI_DIR_PATH.'includes/woocommerce/Base.php';
 					new \WPBI\woocommerce\Base();
 
-					if( $disable_product_single_banner == 'no' && isset( $disable_product_single_banner ) ) {
+					if( $disable_product_single_banner != 'yes' ) {
 						require_once WPBI_DIR_PATH.'includes/woocommerce/product-single-page-banner/SinglePageBanner.php';
 						new \WPBI\woocommerce\Product_Single_Page_Banner_Image();
 					}
 
-					if( $disable_category_banner == 'no' && isset( $disable_category_banner ) ) {
+					if( $disable_category_banner != 'yes' ) {
 						require_once WPBI_DIR_PATH.'includes/woocommerce/category-page-banner/CategoryBanner.php';
 					}
 
-					if( $disable_shop_banner == 'no' && isset( $disable_shop_banner ) ) {
+					if( $disable_shop_banner != 'yes' ) {
 						require_once WPBI_DIR_PATH.'includes/woocommerce/shop-page-banner/Product_Banner_Settings.php';
 					}
 					

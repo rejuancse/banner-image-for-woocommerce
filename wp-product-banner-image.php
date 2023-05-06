@@ -38,7 +38,7 @@ define('WPBI_DIR_PATH', plugin_dir_path( WPBI_FILE ));
 */
 add_action('init', 'wpbi_language_load');
 function wpbi_language_load(){
-    load_plugin_textdomain('wcpb', false, basename(dirname( WPBI_FILE )).'/languages/');
+    load_plugin_textdomain('wppb', false, basename(dirname( WPBI_FILE )).'/languages/');
 }
 
 if (!function_exists('wpbi_function')) {

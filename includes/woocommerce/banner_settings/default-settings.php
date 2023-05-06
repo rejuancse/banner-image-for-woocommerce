@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 
 $settings = array (
     'section_title' => array(
-        'name'     => __( 'General Settings', 'wcpb' ),
+        'name'     => __( 'General Settings', 'wppb' ),
         'type'     => 'title',
         'desc'     => '',
         'id'       => 'wc_settings_tab_demo_section_title'
@@ -14,21 +14,24 @@ $settings = array (
         'name' => __( 'Disable Shop page Banner image' ),
         'type' => 'checkbox',
         'desc' => __( 'Disable'),
-        'id'	=> 'disable_shop_banner' 
+        'id'	=> 'disable_shop_banner',
+        'default' => 'no'
     ),
 
     'disable_category_page_banner' => array(
         'name' => __( 'Disable Category page Banner image' ),
         'type' => 'checkbox',
         'desc' => __( 'Disable'),
-        'id'	=> 'disable_category_banner'
+        'id'	=> 'disable_category_banner',
+        'default' => 'no'
     ),
 
     'disable_product_single_page_banner' => array(
         'name' => __( 'Disable product single page Banner image' ),
         'type' => 'checkbox',
         'desc' => __( 'Disable'),
-        'id'	=> 'disable_product_single_banner'
+        'id'	=> 'disable_product_single_banner',
+        'default' => 'no'
     ),
 
     'section_end' => array(

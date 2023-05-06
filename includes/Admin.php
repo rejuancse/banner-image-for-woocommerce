@@ -22,7 +22,7 @@ class WC_Settings_Banner_Image_Plugin extends WC_Settings_Banner_Image_Page {
      * @return array
      */
     public function add_settings_tab( $settings_tabs ) {
-        $settings_tabs[$this->id] = __( 'Settings Banner Image', 'wcpb' );
+        $settings_tabs[$this->id] = __( 'Settings Banner Image', 'wppb' );
         return $settings_tabs;
     }
 
@@ -33,8 +33,8 @@ class WC_Settings_Banner_Image_Plugin extends WC_Settings_Banner_Image_Page {
      */
     public function get_sections() {
         $sections = array(
-            'category-page-banner-style' 	=> __( 'Category Page Banner Image Style', 'wcpb' ),
-            'single-page-banner-style' 		=> __( 'Product Single Page Banner Image Style', 'wcpb' ),
+            'category-page-banner-style' 	=> __( 'Category Page Banner Image Style', 'wppb' ),
+            'single-page-banner-style' 		=> __( 'Product Single Page Banner Image Style', 'wppb' ),
         );
 
         return apply_filters( 'woocommerce_get_sections_' . $this->id, $sections );

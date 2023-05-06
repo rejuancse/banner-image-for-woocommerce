@@ -123,20 +123,20 @@ if (! class_exists('Initial_Setup')) {
                         <img src="<?php echo WPBI_DIR_URL.'assets/images/woocommerce-icon.png'; ?>" alt="logo" />
                     </div>
                     <div class="wpbi-install-notice-content">
-                        <h2><?php _e('Thanks for using WP Product Banner Image', 'wcpb'); ?></h2>
+                        <h2><?php _e('Thanks for using WP Product Banner Image', 'wppb'); ?></h2>
                         <?php 
                             printf(
                                 '<p>%1$s <a target="_blank" href="%2$s">%3$s</a> %4$s</p>', 
-                                __('You must have','wcpb'), 
+                                __('You must have','wppb'), 
                                 'https://wordpress.org/plugins/woocommerce/', 
-                                __('WooCommerce','wcpb'), 
-                                __('installed and activated on this website in order to use WP Product Banner Image.','wcpb')
+                                __('WooCommerce','wppb'), 
+                                __('installed and activated on this website in order to use WP Product Banner Image.','wppb')
                             );
                         ?>
-                        <a href="#" target="_blank"><?php _e('Learn more about WP Product Banner Image', 'wcpb'); ?></a>
+                        <a href="#" target="_blank"><?php _e('Learn more about WP Product Banner Image', 'wppb'); ?></a>
                     </div>
                     <div class="wpbi-install-notice-button">
-                        <a  class="button button-primary" href="<?php echo add_query_arg(array('action' => 'activate_woocommerce_free'), admin_url()); ?>"><?php _e('Activate WooCommerce', 'wcpb'); ?></a>
+                        <a  class="button button-primary" href="<?php echo add_query_arg(array('action' => 'activate_woocommerce_free'), admin_url()); ?>"><?php _e('Activate WooCommerce', 'wppb'); ?></a>
                     </div>
                 </div>
             </div>
@@ -153,20 +153,20 @@ if (! class_exists('Initial_Setup')) {
                         <img src="<?php echo WPBI_DIR_URL.'assets/images/woocommerce-icon.png'; ?>" alt="logo" />
                     </div>
                     <div class="wpbi-install-notice-content">
-                        <h2><?php _e('Thanks for using WP Product Banner Image', 'wcpb'); ?></h2>
+                        <h2><?php _e('Thanks for using WP Product Banner Image', 'wppb'); ?></h2>
                         <?php 
                             printf(
                                 '<p>%1$s <a target="_blank" href="%2$s">%3$s</a> %4$s</p>', 
-                                __('You must have', 'wcpb'), 
+                                __('You must have', 'wppb'), 
                                 'https://wordpress.org/plugins/woocommerce/', 
-                                __('WooCommerce', 'wcpb'), 
-                                __('installed and activated on this website in order to use WP Product Banner Image.','wcpb')
+                                __('WooCommerce', 'wppb'), 
+                                __('installed and activated on this website in order to use WP Product Banner Image.','wppb')
                             );
                         ?>
-                        <a href="#" target="_blank"><?php _e('Learn more about WP Product Banner Image', 'wcpb'); ?></a>
+                        <a href="#" target="_blank"><?php _e('Learn more about WP Product Banner Image', 'wppb'); ?></a>
                     </div>
                     <div class="wpbi-install-notice-button">
-                        <a class="install-wpbi-button button button-primary" data-slug="woocommerce" href="<?php echo add_query_arg(array('action' => 'install_woocommerce_free'), admin_url()); ?>"><?php _e('Install WooCommerce', 'wcpb'); ?></a>
+                        <a class="install-wpbi-button button button-primary" data-slug="woocommerce" href="<?php echo add_query_arg(array('action' => 'install_woocommerce_free'), admin_url()); ?>"><?php _e('Install WooCommerce', 'wppb'); ?></a>
                     </div>
                 </div>
                 <div id="wpbi_install_msg"></div>
@@ -228,10 +228,10 @@ if (! class_exists('Initial_Setup')) {
         public static function wc_low_version(){
             printf(
                 '<div class="notice notice-error is-dismissible"><p>%1$s <a target="_blank" href="%2$s">%3$s</a> %4$s</p></div>', 
-                __('Your', 'wcpb'), 
+                __('Your', 'wppb'), 
                 'https://wordpress.org/plugins/woocommerce/', 
-                __('WooCommerce', 'wcpb'), 
-                __('version is below then 3.0, please update.','wcpb') 
+                __('WooCommerce', 'wppb'), 
+                __('version is below then 3.0, please update.','wppb') 
             );
         }
     }

@@ -21,7 +21,7 @@ class Product_Single_Page_Banner_Image {
 
     public function wp_banner_image_data_tab( $product_data_tabs ) {
 		$product_data_tabs['product-banner-image'] = array(
-			'label'     => __( 'Product Banner Image', 'wcpb' ),
+			'label'     => __( 'Product Banner Image', 'wppb' ),
 			'target'    => 'banner_image_options',
 			'class'     => array( 'show_if_simple' ),
 		);
@@ -43,17 +43,17 @@ class Product_Single_Page_Banner_Image {
             // Enable Banner
             array(
                 'id'            => 'enable_banner_image[]',
-                'label'         => __('Enable Banner Image', 'wcpb'),
+                'label'         => __('Enable Banner Image', 'wppb'),
                 'desc_tip'      => 'true',
                 'type'          => 'checkbox',
-                'placeholder'   => __('Enable Banner Image', 'wcpb'),
+                'placeholder'   => __('Enable Banner Image', 'wppb'),
                 'field_type'    => 'checkboxfield'
             ),
 
             // Banner Image
             array(
                 'id'            => 'product_banner_bg_image[]',
-                'label'         => __('Upload Banner Image', 'wcpb'),
+                'label'         => __('Upload Banner Image', 'wppb'),
                 'desc_tip'      => 'true',
                 'type'          => 'image',
                 'value'         => '',
@@ -63,10 +63,10 @@ class Product_Single_Page_Banner_Image {
             // Banner Sub Heading
             array(
                 'id'            => 'product_banner_subtitle[]',
-                'label'         => __('Banner Sub Heading', 'wcpb'),
+                'label'         => __('Banner Sub Heading', 'wppb'),
                 'desc_tip'      => 'true',
                 'type'          => 'text',
-                'placeholder'   => __('Write Banner Sub Heading', 'wcpb'),
+                'placeholder'   => __('Write Banner Sub Heading', 'wppb'),
                 'value'         => '',
                 'field_type'    => 'textfield',
             ),
@@ -74,10 +74,10 @@ class Product_Single_Page_Banner_Image {
             // Banner Title
             array(
                 'id'            => 'product_banner_title[]',
-                'label'         => __('Banner Title', 'wcpb'),
+                'label'         => __('Banner Title', 'wppb'),
                 'desc_tip'      => 'true',
                 'type'          => 'text',
-                'placeholder'   => __('Write Banner Title', 'wcpb'),
+                'placeholder'   => __('Write Banner Title', 'wppb'),
                 'value'         => '',
                 'field_type'    => 'textfield',
             ),
@@ -85,10 +85,10 @@ class Product_Single_Page_Banner_Image {
 			// Short Description
             array(
                 'id'            => 'product_banner_description[]',
-                'label'         => __('Banner Short Description', 'wcpb'),
+                'label'         => __('Banner Short Description', 'wppb'),
                 'desc_tip'      => 'true',
                 'type'          => 'text',
-                'placeholder'   => __('Write short description', 'wcpb'),
+                'placeholder'   => __('Write short description', 'wppb'),
                 'value'         => '',
                 'field_type'    => 'textareafield',
             ),
@@ -96,10 +96,10 @@ class Product_Single_Page_Banner_Image {
 			// Button Name
             array(
                 'id'            => 'wp_banner_button_name[]',
-                'label'         => __('Button Name', 'wcpb'),
+                'label'         => __('Button Name', 'wppb'),
                 'desc_tip'      => 'true',
                 'type'          => 'text',
-                'placeholder'   => __('Write Banner button Name', 'wcpb'),
+                'placeholder'   => __('Write Banner button Name', 'wppb'),
                 'value'         => '',
                 'field_type'    => 'textfield',
             ),
@@ -107,10 +107,10 @@ class Product_Single_Page_Banner_Image {
 			// Banner URL
             array(
                 'id'            => 'wp_banner_button_url[]',
-                'label'         => __('Banner URL', 'wcpb'),
+                'label'         => __('Banner URL', 'wppb'),
                 'desc_tip'      => 'true',
                 'type'          => 'text',
-                'placeholder'   => __('Add custom URL', 'wcpb'),
+                'placeholder'   => __('Add custom URL', 'wppb'),
                 'value'         => '',
                 'field_type'    => 'textfield',
             ),
@@ -118,10 +118,10 @@ class Product_Single_Page_Banner_Image {
             // Enable Banner
             array(
                 'id'            => 'enable_link_full_banner_image[]',
-                'label'         => __('Enable Link full Banner', 'wcpb'),
+                'label'         => __('Enable Link full Banner', 'wppb'),
                 'desc_tip'      => 'true',
                 'type'          => 'checkbox',
-                'placeholder'   => __('Enable Link full Banner', 'wcpb'),
+                'placeholder'   => __('Enable Link full Banner', 'wppb'),
                 'field_type'    => 'checkboxfield'
             ),
         );
