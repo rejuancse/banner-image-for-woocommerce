@@ -64,7 +64,6 @@ class Product_Category_Page_Banner_Image {
     public function product_category_page_banner_activation_css() { 
         $text_align = get_option( 'category_banner_image_align', 'left' );
         $banner_height = get_option( 'category_single_page_banner_height', '280' );
-        $overlay_color = get_option( 'wc_settings_tab_btn_overlay_color', '#000000' );
 
         // Title
         $title_color = get_option( 'wc_settings_tab_category_title_color', '#000' );
@@ -119,7 +118,6 @@ class Product_Category_Page_Banner_Image {
                 height: 100%;
                 left: 0;
                 top: 0;
-                background-color: <?php echo $overlay_color; ?>;
                 opacity: <?php echo $overlay_opacity; ?>;
             }
 

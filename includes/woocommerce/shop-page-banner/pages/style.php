@@ -22,7 +22,7 @@ $arr =  array(
         'desc'      => '<p>'.__('Write height. Ex. 300', 'wcpb').'</p>',
     ),
 
-    array(
+    array( 
         'id'        => 'shop_page_banner_overlay_color',
         'type'      => 'color',
         'label'     => __('Banner Overlay Color','wcpb'),

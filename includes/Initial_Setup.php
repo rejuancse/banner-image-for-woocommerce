@@ -157,9 +157,9 @@ if (! class_exists('Initial_Setup')) {
                         <?php 
                             printf(
                                 '<p>%1$s <a target="_blank" href="%2$s">%3$s</a> %4$s</p>', 
-                                __('You must have','wcpb'), 
+                                __('You must have', 'wcpb'), 
                                 'https://wordpress.org/plugins/woocommerce/', 
-                                __('WooCommerce','wcpb'), 
+                                __('WooCommerce', 'wcpb'), 
                                 __('installed and activated on this website in order to use WP Product Banner Image.','wcpb')
                             );
                         ?>

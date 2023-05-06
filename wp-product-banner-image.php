@@ -32,7 +32,6 @@ define('WPBI_FILE', __FILE__);
 define('WPBI_VERSION', '1.0.0');
 define('WPBI_DIR_URL', plugin_dir_url( WPBI_FILE ));
 define('WPBI_DIR_PATH', plugin_dir_path( WPBI_FILE ));
-define('WPBI_BASENAME', plugin_basename( WPBI_FILE ));
 
 /**
 * Load Text Domain Language

@@ -12,15 +12,16 @@ class Shop_Page_Banner_Image {
         $this->product_banner_activation_css();
 
         if(is_shop()) {
-            $enable_banner = get_option( 'enable_product_banner', 'true' );
+            $enable_banner = get_option( 'enable_shop_page_banner', 'true' );
             $shop_page_banner_image = get_option( 'shop_page_banner_image', 9 );
             $image_url = wp_get_attachment_url( $shop_page_banner_image );
+            
             $sub_heading = get_option( 'shop_page_banner_sub_heading', 'desc' );
-            $banner_title = get_option( 'product_banner_title', 'desc' );
+            $banner_title = get_option( 'shop_page_banner_title', 'desc' );
             $banner_short_text = get_option( 'shop_page_banner_short_desc', 'desc' );
             $enable_link_full_banner = get_option( 'enable_link_full_banner', 'true' );
-            $button_name = get_option( 'product_banner_button_name', 'desc' );
-            $button_url = get_option( 'product_banner_button_url', 'desc' ); ?>
+            $button_name = get_option( 'shop_page_banner_button_name', 'desc' );
+            $button_url = get_option( 'shop_page_banner_button_url', 'desc' ); ?>
 
             <?php if( isset( $enable_banner ) && 'true' == $enable_banner ) { ?> 
                 <?php if( !empty( $button_url ) && $enable_link_full_banner == 'true') { ?>

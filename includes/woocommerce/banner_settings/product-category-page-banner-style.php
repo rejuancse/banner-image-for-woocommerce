@@ -35,16 +35,6 @@ $settings =  array(
         'css'       => 'min-width:300px;'
     ),
 
-    'category_banner_overlay_color' => array(
-        'name' 		=> __( 'Overlay Color', 'wcpb' ),
-        'type' 		=> 'color',
-        'id'   	=> 'wc_settings_tab_btn_overlay_color',
-        'css'      => 'width:6em;',
-        'default'  => '#000000',
-        'autoload' => false,
-        'desc_tip' => true,
-    ),
-
     'category_overview_sectionend' => array (
         'type'      => 'sectionend',
         'id'        => 'wc_settings_category_general_option'
