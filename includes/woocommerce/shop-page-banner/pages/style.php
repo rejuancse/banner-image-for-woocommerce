@@ -22,22 +22,6 @@ $arr =  array(
         'desc'      => '<p>'.__('Write height. Ex. 300', 'wppb').'</p>',
     ),
 
-    array( 
-        'id'        => 'shop_page_banner_overlay_color',
-        'type'      => 'color',
-        'label'     => __('Banner Overlay Color','wppb'),
-        'desc'      => __('Select background overlay color.', 'wppb'),
-        'value'     => '',
-    ),
-
-    array (
-        'id'        => 'shop_page_banner_image_overlay_opacity',
-        'label'     => __('Overlay Opacity', 'wppb'),
-        'type'      => 'numberOverlay', 
-        'value'     => '',
-        'desc'      => '<p>'.__('Write height. Ex. .5', 'wppb').'</p>',
-    ),
-
     #Sub Heading style Seperator
     array(
         'type'      => 'seperator',

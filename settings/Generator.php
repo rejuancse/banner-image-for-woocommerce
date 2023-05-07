@@ -123,40 +123,6 @@ class Settings_Generator {
                         $html .= '</tr>';
                         break;
 
-                    case 'numberOverlay':
-                        $html .= '<tr>';
-                        $html .= '<th scope="row"><label for="'.$value["id"].'">'.$value["label"].'</label></th>';
-                        $html .= '<td>';
-                        $data = '';
-                        $var = get_option( $value["id"] );
-                        if( isset($value["min"]) != "" ){ $data .= 'min="'.$value["min"].'"'; }
-                        if( isset($value["max"]) != "" ){ $data .= ' max="'.$value["max"].'"'; }
-                        $html .= '<input type="range" step="0.1" min="0.1" max="1" value="'.( $var ? $var : $value["value"]).'" '.$data.' name="'.$value["id"].'" class="slider" id="sliderRange"/>';
-                        $html .= '<p>'.__('Value', 'wpbi').': <span id="rangeID"></span></p>';
-                        $html .= '</td>';
-                        $html .= '</tr>';
-                        break;
-
-                    case 'radio':
-                        $html .= '<tr>';
-                        $html .= '<th scope="row"><label for="'.$value["id"].'">'.$value["label"].'</label></th>';
-                        $html .= '<td>';
-                        $data = '';
-                        $var = get_option( $value["id"] );
-                        if( ! $var ){ $var =  ! empty($value["value"]) ? $value["value"] : ''  ; }
-                        if(!empty($value['option'])){
-                            foreach( $value['option'] as $key => $val ){
-                                $cehcked = ($key == $var) ? ' checked="checked" ' : '';
-                                $html .= '<label> <input type="radio" name="'.$value['id'].'" value="'.$key.'" '.$cehcked.' > '.$val.' </label> <br>';
-                            }
-                        }
-
-                        if( isset($value['desc']) ){ $html .= '<p>'.$value['desc'].'</p>'; }
-
-                        $html .= '</td>';
-                        $html .= '</tr>';
-                        break;
-
                     case 'checkbox':
                         $html .= '<tr>';
                         $html .= '<th><label for="'.$value['id'].'">'.$value['label'].'</label></th>';

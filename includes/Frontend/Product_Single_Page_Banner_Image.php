@@ -70,21 +70,21 @@ class Product_Single_Page_Banner_Image {
 
         // Title
         $title_color = get_option( 'wc_settings_tab_product_title_color', '#000' );
-        $title_font_size = get_option( 'wc_settings_tab_product_title_fontsize', '36' );
-        $title_line_weight = get_option( 'wc_settings_tab_product_title_fontweight', '400' );
-        $title_line_height = get_option( 'wc_settings_tab_product_title_lineheight', '36' );
+        $title_font_size = get_option( 'wc_settings_tab_product_title_fontsize', '48' );
+        $title_line_weight = get_option( 'wc_settings_tab_product_title_fontweight', '700' );
+        $title_line_height = get_option( 'wc_settings_tab_product_title_lineheight', '50' );
 
         // Sub Title
         $subtitle_color = get_option( 'wc_settings_tab_product_subtitle_color', '#000' );
-        $subtitle_font_size = get_option( 'wc_settings_tab_product_subtitle_fontsize', '28' );
+        $subtitle_font_size = get_option( 'wc_settings_tab_product_subtitle_fontsize', '18' );
         $subtitle_line_weight = get_option( 'product_banner_subtitle_fontweight', '400' );
-        $subtitle_line_height = get_option( 'wc_settings_tab_product_subtitle_lineheight', '52' );
+        $subtitle_line_height = get_option( 'wc_settings_tab_product_subtitle_lineheight', '20' );
 
         // Short Description
         $desc_color = get_option( 'wc_settings_tab_product_title_color', '#333333' );
         $desc_font_size = get_option( 'wc_settings_tab_product_desc_fontsize', '18' );
         $desc_line_weight = get_option( 'wc_settings_tab_product_desc_fontweight', '400' );
-        $desc_line_height = get_option( 'wc_settings_tab_product_desc_lineheight', '40' );
+        $desc_line_height = get_option( 'wc_settings_tab_product_desc_lineheight', '24' );
 
         // Button
         $button_text_color = get_option( 'wc_settings_tab_product_button_text_color', '#ffffff' );
@@ -106,11 +106,18 @@ class Product_Single_Page_Banner_Image {
                 z-index: 1;
                 display: flex;
                 align-items: center;
-                justify-content: <?php echo $text_align; ?>;
-                text-align: <?php echo $text_align; ?>;
-                height: <?php echo $banner_height; ?>px;
+                justify-content: <?php echo !empty($text_align) ? $text_align : 'left'; ?>;
+                text-align: <?php echo !empty($text_align) ? $text_align : 'left'; ?>;
+                height: <?php echo !empty($banner_height) ? $banner_height.'px' : '380px'; ?>;
                 padding: 30px 92px;
                 margin-bottom: 30px;
+            }
+
+            @media only screen and (max-width: 767px) {
+                .product-single-page-banner-image {
+                    padding: 30px 40px;
+                    height: 280px;
+                }
             }
 
             .product-single-page-banner-image:before {
@@ -121,34 +128,33 @@ class Product_Single_Page_Banner_Image {
                 height: 100%;
                 left: 0;
                 top: 0;
-                opacity: <?php echo $overlay_opacity; ?>;
             }
 
             /* Sub Title Color */
             .product-single-page-banner-image .banner-content span {
-                color: <?php echo $subtitle_color; ?>;
-                font-size: <?php echo !empty($subtitle_font_size) ? $subtitle_font_size.'px' : '56px'; ?>;
-                line-height: <?php echo !empty($subtitle_line_height) ? $subtitle_line_height.'px' : '56px'; ?>;
-                font-weight: <?php echo !empty($subtitle_line_weight) ? $subtitle_line_weight : '700'; ?>;
+                color: <?php echo !empty($subtitle_color) ? $subtitle_color : '#000000'; ?>;
+                font-size: <?php echo !empty($subtitle_font_size) ? $subtitle_font_size.'px' : '20px'; ?>;
+                line-height: <?php echo !empty($subtitle_line_height) ? $subtitle_line_height.'px' : '22px'; ?>;
+                font-weight: <?php echo !empty($subtitle_line_weight) ? $subtitle_line_weight : '400'; ?>;
             }
 
             /* Title Color */
             .product-single-page-banner-image .banner-content h2 {
-                margin: 0;
+                margin: 5px 0 15px;
                 padding: 0;
-                color: <?php echo $title_color; ?>;
-                font-size: <?php echo !empty($title_font_size) ? $title_font_size.'px' : '56px'; ?>;
-                line-height: <?php echo !empty($title_line_height) ? $title_line_height.'px' : '56px'; ?>;
+                color: <?php echo !empty($title_color) ? $title_color : '#000000'; ?>;
+                font-size: <?php echo !empty($title_font_size) ? $title_font_size.'px' : '48px'; ?>;
+                line-height: <?php echo !empty($title_line_height) ? $title_line_height.'px' : '50px'; ?>;
                 font-weight: <?php echo !empty($title_line_weight) ? $title_line_weight : '700'; ?>;
             }
 
             .product-single-page-banner-image .banner-content p {
                 margin: 0;
                 padding: 0;
-                color: <?php echo $desc_color; ?>;
-                font-size: <?php echo !empty($desc_font_size) ? $desc_font_size.'px' : '56px'; ?>;
-                line-height: <?php echo !empty($desc_line_height) ? $desc_line_height.'px' : '56px'; ?>;
-                font-weight: <?php echo !empty($desc_line_weight) ? $desc_line_weight : '700'; ?>;
+                color: <?php echo !empty($desc_color) ? $desc_color : '#000000'; ?>;
+                font-size: <?php echo !empty($desc_font_size) ? $desc_font_size.'px' : '18px'; ?>;
+                line-height: <?php echo !empty($desc_line_height) ? $desc_line_height.'px' : '20px'; ?>;
+                font-weight: <?php echo !empty($desc_line_weight) ? $desc_line_weight : '400'; ?>;
             }
 
             .product-single-page-banner-image .banner-content a {
@@ -157,7 +163,7 @@ class Product_Single_Page_Banner_Image {
                 transition: .4s;
                 text-decoration: none;
                 padding: <?php echo !empty($button_button_padding) ? $button_button_padding : '10px 30px'; ?>;
-                margin: <?php echo !empty($button_button_margin) ? $button_button_margin : '0'; ?>;
+                margin: <?php echo !empty($button_button_margin) ? $button_button_margin : '15px 0 0'; ?>;
                 background-color: <?php echo !empty($button_bg_color) ? $button_bg_color : '#000000'; ?>;
                 color: <?php echo !empty($button_text_color) ? $button_text_color : '#fff'; ?>;
                 font-size: <?php echo !empty($button_font_size) ? $button_font_size.'px' : '18px'; ?>;

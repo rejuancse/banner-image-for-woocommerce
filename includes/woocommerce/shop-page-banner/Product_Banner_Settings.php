@@ -154,12 +154,6 @@ class WPBI_Product_Banner_Image_Extensions {
                 $shop_page_banner_text_align = sanitize_text_field(wpbi_function()->post('shop_page_banner_text_align'));
                 wpbi_function()->update_text('shop_page_banner_text_align', $shop_page_banner_text_align);
 
-                $shop_page_banner_overlay_color = sanitize_text_field(wpbi_function()->post('shop_page_banner_overlay_color'));
-                wpbi_function()->update_text('shop_page_banner_overlay_color', $shop_page_banner_overlay_color);
-
-                $banner_image_overlay_opacity = sanitize_text_field(wpbi_function()->post('shop_page_banner_image_overlay_opacity'));
-                wpbi_function()->update_text('shop_page_banner_image_overlay_opacity', $banner_image_overlay_opacity);
-
                 $shop_banner_image_height = sanitize_text_field(wpbi_function()->post('shop_banner_image_height'));
                 wpbi_function()->update_text('shop_banner_image_height', $shop_banner_image_height);
                 
