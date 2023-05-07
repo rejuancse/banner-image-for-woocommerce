@@ -3,7 +3,6 @@
 defined( 'ABSPATH' ) || exit;
 
 $settings =  array(
-
     'section_title' => array(
         'name'     => __( 'Category Page Banner', 'wppb' ),
         'type'     => 'title',
@@ -167,7 +166,6 @@ $settings =  array(
         'type'      => 'sectionend',
         'id'        => 'wc_settings_category_banner_title'
     ),
-
 
     /*
     * Short Description Section
@@ -346,7 +344,6 @@ $settings =  array(
         'type'      => 'sectionend',
         'id'        => 'wc_settings_category_banner_button'
     ),
-
 );
 
 return $settings;

@@ -3,12 +3,12 @@
  * The admin class
  */
 
- if ( ! class_exists( 'WC_Settings_Banner_Image_Page', false ) ) :
+ if ( ! class_exists( 'WPPB_Settings_Banner_Image_Page', false ) ) :
 
 	/**
-	 * WC_Settings_Banner_Image_Page.
+	 * WPPB_Settings_Banner_Image_Page.
 	 */
-	abstract class WC_Settings_Banner_Image_Page {
+	abstract class WPPB_Settings_Banner_Image_Page {
 
 		/**
 		 * Setting page id.

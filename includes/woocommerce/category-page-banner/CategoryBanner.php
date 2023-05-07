@@ -1,9 +1,9 @@
 <?php 
-namespace WPBI\woocommerce;
+namespace WPPB\woocommerce;
 
-if ( ! class_exists( 'wpbi_product_category_image' ) ) {
+if ( ! class_exists( 'wppb_product_category_image' ) ) {
 
-    class wpbi_product_category_image {
+    class wppb_product_category_image {
     
         public function __construct() {
             //
@@ -337,7 +337,7 @@ if ( ! class_exists( 'wpbi_product_category_image' ) ) {
         <?php }
     }
 
-    $wpbi_product_category_image = new wpbi_product_category_image();
-    $wpbi_product_category_image -> init();   
+    $wppb_product_category_image = new wppb_product_category_image();
+    $wppb_product_category_image -> init();   
 }
 // Add term page

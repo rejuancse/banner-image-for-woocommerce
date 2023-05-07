@@ -1,8 +1,8 @@
 <?php
 
-namespace WPBI\Frontend;
+namespace WPPB\Frontend;
 
-class Shop_Page_Banner_Image {
+class WPPB_Shop_Page_Banner_Image {
     
     public function __construct() {
         add_action( 'woocommerce_before_shop_loop', array( $this, 'product_page_banner_image_callback_func' ) );
@@ -102,9 +102,9 @@ class Shop_Page_Banner_Image {
                 z-index: 1;
                 display: flex;
                 align-items: center;
-                justify-content: <?php echo !empty($text_align) ? $text_align : 'left'; ?>;
-                text-align: <?php echo !empty($text_align) ? $text_align : 'left'; ?>;
-                height: <?php echo !empty($banner_height) ? $banner_height.'px' : '380px'; ?>;
+                justify-content: <?php echo !empty($text_align) ? esc_attr($text_align) : 'left'; ?>;
+                text-align: <?php echo !empty($text_align) ? esc_attr($text_align) : 'left'; ?>;
+                height: <?php echo !empty($banner_height) ? esc_attr($banner_height).'px' : '380px'; ?>;
                 padding: 30px 92px;
                 margin-bottom: 30px;
             }
@@ -128,48 +128,48 @@ class Shop_Page_Banner_Image {
 
             /* Sub Title Color */
             .product-banner-image-wrap .banner-content span {
-                color: <?php echo !empty($subtitle_color) ? $subtitle_color : '#000000'; ?>;
-                font-size: <?php echo !empty($subtitle_font_size) ? $subtitle_font_size.'px' : '20px'; ?>;
-                line-height: <?php echo !empty($subtitle_line_height) ? $subtitle_line_height.'px' : '22px'; ?>;
-                font-weight: <?php echo !empty($subtitle_line_weight) ? $subtitle_line_weight : '500'; ?>;
+                color: <?php echo !empty($subtitle_color) ? esc_attr($subtitle_color) : '#000000'; ?>;
+                font-size: <?php echo !empty($subtitle_font_size) ? esc_attr($subtitle_font_size).'px' : '20px'; ?>;
+                line-height: <?php echo !empty($subtitle_line_height) ? esc_attr($subtitle_line_height).'px' : '22px'; ?>;
+                font-weight: <?php echo !empty($subtitle_line_weight) ? esc_attr($subtitle_line_weight) : '500'; ?>;
             }
 
             /* Title Color */
             .product-banner-image-wrap .banner-content h2 {
                 margin: 5px 0 15px;
                 padding: 0;
-                color: <?php echo !empty($title_color) ? $title_color : '#000000'; ?>;
-                font-size: <?php echo !empty($title_font_size) ? $title_font_size.'px' : '48px'; ?>;
-                line-height: <?php echo !empty($title_line_height) ? $title_line_height.'px' : '50px'; ?>;
-                font-weight: <?php echo !empty($title_line_weight) ? $title_line_weight : '700'; ?>;
+                color: <?php echo !empty($title_color) ? esc_attr($title_color) : '#000000'; ?>;
+                font-size: <?php echo !empty($title_font_size) ? esc_attr($title_font_size).'px' : '48px'; ?>;
+                line-height: <?php echo !empty($title_line_height) ? esc_attr($title_line_height).'px' : '50px'; ?>;
+                font-weight: <?php echo !empty($title_line_weight) ? esc_attr($title_line_weight) : '700'; ?>;
             }
 
-            .banner-content p {
+            .product-banner-image-wrap .banner-content p {
                 margin: 0;
                 padding: 0;
-                color: <?php echo !empty($desc_color) ? $desc_color : '#000000'; ?>;
-                font-size: <?php echo !empty($desc_font_size) ? $desc_font_size.'px' : '18px'; ?>;
-                line-height: <?php echo !empty($desc_line_height) ? $desc_line_height.'px' : '20px'; ?>;
-                font-weight: <?php echo !empty($desc_line_weight) ? $desc_line_weight : '400'; ?>;
+                color: <?php echo !empty($desc_color) ? esc_attr($desc_color) : '#000000'; ?>;
+                font-size: <?php echo !empty($desc_font_size) ? esc_attr($desc_font_size).'px' : '18px'; ?>;
+                line-height: <?php echo !empty($desc_line_height) ? esc_attr($desc_line_height).'px' : '20px'; ?>;
+                font-weight: <?php echo !empty($desc_line_weight) ? esc_attr($desc_line_weight) : '400'; ?>;
             }
 
-            .banner-content a {
+            .product-banner-image-wrap .banner-content a {
                 display: inline-block;
                 border-radius: 4px;
                 transition: .4s;
                 text-decoration: none;
-                padding: <?php echo !empty($button_button_padding) ? $button_button_padding : '10px 30px'; ?>;
-                margin: <?php echo !empty($button_button_margin) ? $button_button_margin : '15px 0 0'; ?>;
-                background-color: <?php echo !empty($button_bg_color) ? $button_bg_color : '#000000'; ?>;
-                color: <?php echo !empty($button_text_color) ? $button_text_color : '#fff'; ?>;
-                font-size: <?php echo !empty($button_font_size) ? $button_font_size.'px' : '18px'; ?>;
-                line-height: <?php echo !empty($button_line_height) ? $button_line_height.'px' : '30px'; ?>;
-                font-weight: <?php echo !empty($button_font_weight) ? $button_font_weight : '400'; ?>;
+                padding: <?php echo !empty($button_button_padding) ? esc_attr($button_button_padding) : '10px 30px'; ?>;
+                margin: <?php echo !empty($button_button_margin) ? esc_attr($button_button_margin) : '15px 0 0'; ?>;
+                background-color: <?php echo !empty($button_bg_color) ? esc_attr($button_bg_color) : '#000000'; ?>;
+                color: <?php echo !empty($button_text_color) ? esc_attr($button_text_color) : '#fff'; ?>;
+                font-size: <?php echo !empty($button_font_size) ? esc_attr($button_font_size).'px' : '18px'; ?>;
+                line-height: <?php echo !empty($button_line_height) ? esc_attr($button_line_height).'px' : '30px'; ?>;
+                font-weight: <?php echo !empty($button_font_weight) ? esc_attr($button_font_weight) : '400'; ?>;
             }
 
-            .banner-content a:hover {
-                background-color: <?php echo !empty($button_bg_hover_color) ? $button_bg_hover_color : '#000000'; ?>;
-                color: <?php echo !empty($button_text_hover_color) ? $button_text_hover_color : '#fff'; ?>;
+            .product-banner-image-wrap .banner-content a:hover {
+                background-color: <?php echo !empty($button_bg_hover_color) ? esc_attr($button_bg_hover_color) : '#000000'; ?>;
+                color: <?php echo !empty($button_text_hover_color) ? esc_attr($button_text_hover_color) : '#fff'; ?>;
             }
         </style>
     <?php }

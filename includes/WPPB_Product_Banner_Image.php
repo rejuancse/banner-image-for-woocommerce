@@ -1,9 +1,9 @@
 <?php
-namespace WPBI;
+namespace WPPB;
 
 defined( 'ABSPATH' ) || exit;
 
-final class Product_Banner_Image {
+final class WPPB_Product_Banner_Image {
 
 	protected static $_instance = null;
 
@@ -27,34 +27,34 @@ final class Product_Banner_Image {
 
 	// Include Core
 	public function includes_core() {
-		require_once WPBI_DIR_PATH.'includes/Initial_Setup.php';
+		require_once WPPB_DIR_PATH.'includes/WPPB_Initial_Setup.php';
 	}
 
 	//Checking Vendor
 	public function run() {
-		if( wpbi_function()->is_woocommerce() ) {
-			$initial_setup = new \WPBI\Initial_Setup();
+		if( wppb_function()->is_woocommerce() ) {
+			$initial_setup = new \WPPB\WPPB_Initial_Setup();
 			if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) || is_plugin_active_for_network( 'woocommerce/woocommerce.php' ) ) {
-				if ( wpbi_function()->wc_version() ) {
+				if ( wppb_function()->wc_version() ) {
 
 					$disable_shop_banner = get_option( "disable_shop_banner" );
 					$disable_category_banner = get_option( "disable_category_banner" );
 					$disable_product_single_banner = get_option( "disable_product_single_banner" );
 
-					require_once WPBI_DIR_PATH.'includes/woocommerce/Base.php';
-					new \WPBI\woocommerce\Base();
+					require_once WPPB_DIR_PATH.'includes/woocommerce/WPPB_Base.php';
+					new \WPPB\woocommerce\WPPB_Base();
 
 					if( $disable_product_single_banner != 'yes' ) {
-						require_once WPBI_DIR_PATH.'includes/woocommerce/product-single-page-banner/SinglePageBanner.php';
-						new \WPBI\woocommerce\Product_Single_Page_Banner_Image();
+						require_once WPPB_DIR_PATH.'includes/woocommerce/product-single-page-banner/SinglePageBanner.php';
+						new \WPPB\woocommerce\WPPB_Product_Single_Page_Banner_Image();
 					}
 
 					if( $disable_category_banner != 'yes' ) {
-						require_once WPBI_DIR_PATH.'includes/woocommerce/category-page-banner/CategoryBanner.php';
+						require_once WPPB_DIR_PATH.'includes/woocommerce/category-page-banner/CategoryBanner.php';
 					}
 
 					if( $disable_shop_banner != 'yes' ) {
-						require_once WPBI_DIR_PATH.'includes/woocommerce/shop-page-banner/Product_Banner_Settings.php';
+						require_once WPPB_DIR_PATH.'includes/woocommerce/shop-page-banner/Product_Banner_Settings.php';
 					}
 					
 				} else {
@@ -81,25 +81,25 @@ final class Product_Banner_Image {
      */
 	public function init_plugin() {
 		if ( is_admin() ) {
-            require_once WPBI_DIR_PATH.'includes/Admin.php';
+            require_once WPPB_DIR_PATH.'includes/Admin.php';
         } else {
-			require_once WPBI_DIR_PATH . 'includes/Frontend/Shop_Page_Banner_Image.php';
-			require_once WPBI_DIR_PATH . 'includes/Frontend/Product_Single_Page_Banner_Image.php';
-			require_once WPBI_DIR_PATH . 'includes/Frontend/Product_Category_Banner_Image.php';
+			require_once WPPB_DIR_PATH . 'includes/Frontend/WPPB_Shop_Page_Banner_Image.php';
+			require_once WPPB_DIR_PATH . 'includes/Frontend/WPPB_Product_Single_Page_Banner_Image.php';
+			require_once WPPB_DIR_PATH . 'includes/Frontend/WPPB_Product_Category_Banner_Image.php';
 
-			new \WPBI\Frontend\Shop_Page_Banner_Image();
-			new \WPBI\Frontend\Product_Single_Page_Banner_Image();
-			new \WPBI\Frontend\Product_Category_Page_Banner_Image();
+			new \WPPB\Frontend\WPPB_Shop_Page_Banner_Image();
+			new \WPPB\Frontend\WPPB_Product_Single_Page_Banner_Image();
+			new \WPPB\Frontend\WPPB_Product_Category_Page_Banner_Image();
 		}
     }
 
 	// Include Addons directory
 	public function include_addons() {
-		$addons_dir = array_filter(glob(WPBI_DIR_PATH.'addons/*'), 'is_dir');
+		$addons_dir = array_filter(glob(WPPB_DIR_PATH.'addons/*'), 'is_dir');
 		if (count($addons_dir) > 0) {
 			foreach( $addons_dir as $key => $value ) {
 				$addon_dir_name = str_replace(dirname($value).'/', '', $value);
-				$file_name = WPBI_DIR_PATH . 'addons/'.$addon_dir_name.'/'.$addon_dir_name.'.php';
+				$file_name = WPPB_DIR_PATH . 'addons/'.$addon_dir_name.'/'.$addon_dir_name.'.php';
 				if ( file_exists($file_name) ) {
 					include_once $file_name;
 				}
@@ -109,8 +109,8 @@ final class Product_Banner_Image {
 
 	// Activation & Deactivation Hook
 	public function initial_activation() {
-		$initial_setup = new \WPBI\Initial_Setup();
-		register_activation_hook( WPBI_FILE, array( $initial_setup, 'initial_plugin_activation' ) );
-		register_deactivation_hook( WPBI_FILE , array( $initial_setup, 'initial_plugin_deactivation' ) );
+		$initial_setup = new \WPPB\WPPB_Initial_Setup();
+		register_activation_hook( WPPB_FILE, array( $initial_setup, 'initial_plugin_activation' ) );
+		register_deactivation_hook( WPPB_FILE , array( $initial_setup, 'initial_plugin_deactivation' ) );
 	}
 }

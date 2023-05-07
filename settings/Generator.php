@@ -1,9 +1,9 @@
 <?php
-namespace WPBI\settings;
+namespace WPPB\settings;
 
 defined( 'ABSPATH' ) || exit;
 
-class Settings_Generator {
+class WPPB_Settings_Generator {
 
     // Settings Option Generator
     public function generator( $arr ){
@@ -15,7 +15,6 @@ class Settings_Generator {
         foreach ($arr as $value) {
             if(isset( $value['type'] )){
                 switch ( $value['type'] ) {
-
                     case 'image':
                         $html .= '<tr>';
                             $html .= '<th><label for="'.$value['id'].'">'.$value['label'].'</label></th>';
@@ -179,6 +178,7 @@ class Settings_Generator {
                 }
             }
         }
+        
         $html .= '</tbody>';
         $html .= '</table>';
 

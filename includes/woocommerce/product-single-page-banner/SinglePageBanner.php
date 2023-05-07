@@ -1,9 +1,9 @@
 <?php
-namespace WPBI\woocommerce;
+namespace WPPB\woocommerce;
 
 defined( 'ABSPATH' ) || exit;
 
-class Product_Single_Page_Banner_Image {
+class WPPB_Product_Single_Page_Banner_Image {
 
     protected static $_instance = null;
     public static function instance() {
@@ -15,7 +15,7 @@ class Product_Single_Page_Banner_Image {
 
     public function __construct() {
 		add_filter( 'woocommerce_product_data_tabs', array($this, 'wp_banner_image_data_tab') );
-        add_action( 'woocommerce_product_data_panels', array( $this, 'wp_banner_image_data_fields' ) );
+        add_action( 'woocommerce_product_data_panels', array( $this, 'wppb_banner_image_data_fields' ) );
         add_action( 'woocommerce_process_product_meta',  array($this, 'save_banner_info_action'));
     }
 
@@ -32,7 +32,7 @@ class Product_Single_Page_Banner_Image {
     * Add BannerImage tab Content(Woocommerce).
     * Only show the fields under BannerImage Tab
     */
-    function wp_banner_image_data_fields($post_id){
+    function wppb_banner_image_data_fields($post_id){
         global $post;
 
         $var = get_post_meta($post->ID, 'wp_product_banner_image', true);
@@ -256,7 +256,7 @@ class Product_Single_Page_Banner_Image {
 		);
 
 		$data_json = json_encode( $data, JSON_UNESCAPED_UNICODE );
-		wpbi_function()->update_meta($post_id, 'wp_product_banner_image', wp_slash($data_json));
+		wppb_function()->update_meta($post_id, 'wp_product_banner_image', wp_slash($data_json));
     }
 
 } //End class bracket

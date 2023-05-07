@@ -260,4 +260,4 @@ $arr =  array(
     ),
 );
 
-wpbi_function()->generator( $arr );
+wppb_function()->generator( $arr );

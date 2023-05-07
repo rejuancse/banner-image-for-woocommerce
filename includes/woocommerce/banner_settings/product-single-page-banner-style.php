@@ -168,7 +168,6 @@ $settings =  array(
         'id'        => 'wc_settings_product_banner_title'
     ),
 
-
     /*
     * Short Description Section
     **/ 
@@ -346,7 +345,6 @@ $settings =  array(
         'type'      => 'sectionend',
         'id'        => 'wc_settings_product_banner_button'
     ),
-
 );
 
 return $settings;

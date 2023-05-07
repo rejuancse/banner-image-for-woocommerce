@@ -1,8 +1,8 @@
 <?php
 
-include WPBI_DIR_PATH.'includes/woocommerce/banner_settings/banner-general-settings.php';
+include WPPB_DIR_PATH.'includes/woocommerce/banner_settings/banner-general-settings.php';
 
-class WC_Settings_Banner_Image_Plugin extends WC_Settings_Banner_Image_Page {
+class WPPB_Settings_Banner_Image_Plugin extends WPPB_Settings_Banner_Image_Page {
 
     /**
      * Constructor
@@ -48,15 +48,15 @@ class WC_Settings_Banner_Image_Plugin extends WC_Settings_Banner_Image_Page {
     public function get_settings( $section = null ) {
         switch( $section ) {
             case 'category-page-banner-style' :
-				include WPBI_DIR_PATH.'includes/woocommerce/banner_settings/product-category-page-banner-style.php';
+				include WPPB_DIR_PATH.'includes/woocommerce/banner_settings/product-category-page-banner-style.php';
             	break;
 
 			case 'single-page-banner-style' :
-				include WPBI_DIR_PATH.'includes/woocommerce/banner_settings/product-single-page-banner-style.php';
+				include WPPB_DIR_PATH.'includes/woocommerce/banner_settings/product-single-page-banner-style.php';
             	break;
 
 			default:
-				include WPBI_DIR_PATH.'includes/woocommerce/banner_settings/default-settings.php';
+				include WPPB_DIR_PATH.'includes/woocommerce/banner_settings/default-settings.php';
 				break;
         }
 
@@ -82,4 +82,4 @@ class WC_Settings_Banner_Image_Plugin extends WC_Settings_Banner_Image_Page {
     }
 }
 
-return new WC_Settings_Banner_Image_Plugin();
+return new WPPB_Settings_Banner_Image_Plugin();

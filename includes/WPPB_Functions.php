@@ -1,16 +1,16 @@
 <?php
 
-namespace WPBI;
+namespace WPPB;
 
 use WP_Query;
 
 defined('ABSPATH') || exit;
 
-class Functions {
+class WPPB_Functions {
 
     public function generator($arr) {
-        require_once WPBI_DIR_PATH . 'settings/Generator.php';
-        $generator = new \WPBI\settings\Settings_Generator();
+        require_once WPPB_DIR_PATH . 'settings/Generator.php';
+        $generator = new \WPPB\settings\WPPB_Settings_Generator();
         $generator->generator($arr);
     }
 

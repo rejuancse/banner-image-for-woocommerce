@@ -1,11 +1,11 @@
 <?php
-namespace WPBI;
+namespace WPPB;
 
 defined( 'ABSPATH' ) || exit;
 
-if (! class_exists('Initial_Setup')) {
+if (! class_exists('WPPB_Initial_Setup')) {
 
-    class Initial_Setup {
+    class WPPB_Initial_Setup {
 
         public function __construct() {
             add_action('wp_ajax_install_woocommerce_plugin', array($this, 'install_woocommerce_plugin'));
@@ -19,7 +19,7 @@ if (! class_exists('Initial_Setup')) {
             if ( ! $template_path ) { 
                 $template_path = $woocommerce->template_url;
             }
-            $plugin_path  = WPBI_DIR_PATH . '/woocommerce/';
+            $plugin_path  = WPPB_DIR_PATH . '/woocommerce/';
             $template = locate_template(
                 array(
                     $template_path . $template_name,
@@ -46,7 +46,7 @@ if (! class_exists('Initial_Setup')) {
          * Deactivation Hook For Banner Image
          */
         public function initial_plugin_deactivation(){
-
+            
         }
 
         public function activation_css() {
@@ -120,7 +120,7 @@ if (! class_exists('Initial_Setup')) {
             <div class="notice notice-error wpbi-install-notice">
                 <div class="wpbi-install-notice-inner">
                     <div class="wpbi-install-notice-icon">
-                        <img src="<?php echo WPBI_DIR_URL.'assets/images/woocommerce-icon.png'; ?>" alt="logo" />
+                        <img src="<?php echo WPPB_DIR_URL.'assets/images/woocommerce-icon.png'; ?>" alt="logo" />
                     </div>
                     <div class="wpbi-install-notice-content">
                         <h2><?php _e('Thanks for using WP Product Banner Image', 'wppb'); ?></h2>
@@ -150,7 +150,7 @@ if (! class_exists('Initial_Setup')) {
             <div class="notice notice-error wpbi-install-notice">
                 <div class="wpbi-install-notice-inner">
                     <div class="wpbi-install-notice-icon">
-                        <img src="<?php echo WPBI_DIR_URL.'assets/images/woocommerce-icon.png'; ?>" alt="logo" />
+                        <img src="<?php echo WPPB_DIR_URL.'assets/images/woocommerce-icon.png'; ?>" alt="logo" />
                     </div>
                     <div class="wpbi-install-notice-content">
                         <h2><?php _e('Thanks for using WP Product Banner Image', 'wppb'); ?></h2>

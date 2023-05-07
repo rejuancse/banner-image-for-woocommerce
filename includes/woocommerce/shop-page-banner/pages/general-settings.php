@@ -80,4 +80,4 @@ $settings =  array(
     ),
 );
 
-wpbi_function()->generator( $settings );
+wppb_function()->generator( $settings );

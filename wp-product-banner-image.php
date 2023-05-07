@@ -28,27 +28,27 @@ if( !function_exists('is_plugin_active_for_network') ){
 * @Directory Path
 * @Plugin Base Name
 */
-define('WPBI_FILE', __FILE__);
-define('WPBI_VERSION', '1.0.0');
-define('WPBI_DIR_URL', plugin_dir_url( WPBI_FILE ));
-define('WPBI_DIR_PATH', plugin_dir_path( WPBI_FILE ));
+define('WPPB_FILE', __FILE__);
+define('WPPB_VERSION', '1.0.0');
+define('WPPB_DIR_URL', plugin_dir_url( WPPB_FILE ));
+define('WPPB_DIR_PATH', plugin_dir_path( WPPB_FILE ));
 
 /**
 * Load Text Domain Language
 */
 add_action('init', 'wpbi_language_load');
 function wpbi_language_load(){
-    load_plugin_textdomain('wppb', false, basename(dirname( WPBI_FILE )).'/languages/');
+    load_plugin_textdomain('wppb', false, basename(dirname( WPPB_FILE )).'/languages/');
 }
 
-if (!function_exists('wpbi_function')) {
-    function wpbi_function() {
-        require_once WPBI_DIR_PATH . 'includes/Functions.php';
-        return new \WPBI\Functions();
+if (!function_exists('wppb_function')) {
+    function wppb_function() {
+        require_once WPPB_DIR_PATH . 'includes/WPPB_Functions.php';
+        return new \WPPB\WPPB_Functions();
     }
 }
 
-if (!class_exists( 'Product_Banner_Image' )) {
-    require_once WPBI_DIR_PATH . 'includes/Product_Banner_Image.php';
-    new \WPBI\Product_Banner_Image();
+if (!class_exists( 'WPPB_Product_Banner_Image' )) {
+    require_once WPPB_DIR_PATH . 'includes/WPPB_Product_Banner_Image.php';
+    new \WPPB\WPPB_Product_Banner_Image();
 }
