@@ -1,0 +1,576 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Product Banner Image for WooCommerce\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-07 18:53+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.4; wp-6.2\n"
+"X-Domain: wppb"
+
+#: includes/woocommerce/shop-page-banner/pages/style.php:148
+msgid "300"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:81
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:145
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:209
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:303
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:80
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:144
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:208
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:302
+#: includes/woocommerce/shop-page-banner/pages/style.php:54
+#: includes/woocommerce/shop-page-banner/pages/style.php:101
+#: includes/woocommerce/shop-page-banner/pages/style.php:149
+#: includes/woocommerce/shop-page-banner/pages/style.php:220
+msgid "400"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:82
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:146
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:210
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:304
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:81
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:145
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:209
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:303
+#: includes/woocommerce/shop-page-banner/pages/style.php:55
+#: includes/woocommerce/shop-page-banner/pages/style.php:102
+#: includes/woocommerce/shop-page-banner/pages/style.php:150
+#: includes/woocommerce/shop-page-banner/pages/style.php:221
+msgid "500"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:83
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:147
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:211
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:305
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:82
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:146
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:210
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:304
+#: includes/woocommerce/shop-page-banner/pages/style.php:56
+#: includes/woocommerce/shop-page-banner/pages/style.php:103
+#: includes/woocommerce/shop-page-banner/pages/style.php:151
+#: includes/woocommerce/shop-page-banner/pages/style.php:222
+msgid "600"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:84
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:148
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:212
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:306
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:83
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:147
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:211
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:305
+#: includes/woocommerce/shop-page-banner/pages/style.php:57
+#: includes/woocommerce/shop-page-banner/pages/style.php:104
+#: includes/woocommerce/shop-page-banner/pages/style.php:152
+#: includes/woocommerce/shop-page-banner/pages/style.php:223
+msgid "700"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:85
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:149
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:213
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:307
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:84
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:148
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:212
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:306
+#: includes/woocommerce/shop-page-banner/pages/style.php:58
+#: includes/woocommerce/shop-page-banner/pages/style.php:105
+#: includes/woocommerce/shop-page-banner/pages/style.php:153
+#: includes/woocommerce/shop-page-banner/pages/style.php:224
+msgid "800"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:86
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:150
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:214
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:308
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:85
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:149
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:213
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:307
+#: includes/woocommerce/shop-page-banner/pages/style.php:59
+#: includes/woocommerce/shop-page-banner/pages/style.php:106
+#: includes/woocommerce/shop-page-banner/pages/style.php:154
+#: includes/woocommerce/shop-page-banner/pages/style.php:225
+msgid "900"
+msgstr ""
+
+#: includes/WPPB_Initial_Setup.php:139
+msgid "Activate WooCommerce"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/style.php:252
+msgid "Add button margin. Ex. 10px 20px 10px 20px"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:326
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:336
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:325
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:335
+#: includes/woocommerce/shop-page-banner/pages/style.php:244
+msgid "Add button Padding. Ex. 10px 20px 10px 20px"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/general-settings.php:65
+msgid "Add button URL"
+msgstr ""
+
+#: includes/woocommerce/product-single-page-banner/SinglePageBanner.php:113
+msgid "Add custom URL"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:286
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:285
+#: includes/woocommerce/shop-page-banner/pages/style.php:210
+msgid "Banner button Font Size"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:296
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:295
+#: includes/woocommerce/shop-page-banner/pages/style.php:227
+msgid "Banner button Font Weight"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:314
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:313
+#: includes/woocommerce/shop-page-banner/pages/style.php:232
+msgid "Banner button Line Height"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:334
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:333
+#: includes/woocommerce/shop-page-banner/pages/style.php:249
+msgid "Banner Button Margin"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/general-settings.php:53
+msgid "Banner Button Name"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:324
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:323
+#: includes/woocommerce/shop-page-banner/pages/style.php:241
+msgid "Banner Button Padding"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/style.php:178
+msgid "Banner button text Color"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/general-settings.php:62
+msgid "Banner Button URL"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:182
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:181
+#: includes/woocommerce/shop-page-banner/pages/style.php:130
+msgid "Banner desc Color"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:192
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:191
+#: includes/woocommerce/shop-page-banner/pages/style.php:138
+msgid "Banner desc Font Size"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:202
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:201
+#: includes/woocommerce/shop-page-banner/pages/style.php:156
+msgid "Banner desc Font Weight"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:220
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:219
+#: includes/woocommerce/shop-page-banner/pages/style.php:161
+msgid "Banner desc Line Height"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:30
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:29
+#: includes/woocommerce/shop-page-banner/pages/style.php:19
+msgid "Banner height"
+msgstr ""
+
+#: includes/woocommerce/product-single-page-banner/SinglePageBanner.php:88
+#: includes/woocommerce/shop-page-banner/pages/general-settings.php:44
+msgid "Banner Short Description"
+msgstr ""
+
+#: includes/woocommerce/product-single-page-banner/SinglePageBanner.php:66
+#: includes/woocommerce/shop-page-banner/pages/general-settings.php:26
+msgid "Banner Sub Heading"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:54
+#: includes/woocommerce/shop-page-banner/pages/style.php:36
+msgid "Banner subtitle Color"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:53
+msgid "Banner subtitle Font Color"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:64
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:63
+#: includes/woocommerce/shop-page-banner/pages/style.php:44
+msgid "Banner subtitle Font Size"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/style.php:61
+msgid "Banner subtitle Font Weight"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:92
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:156
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:91
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:155
+#: includes/woocommerce/shop-page-banner/pages/style.php:66
+msgid "Banner subtitle Line Height"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:15
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:74
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:138
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:14
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:73
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:137
+#: includes/woocommerce/shop-page-banner/pages/style.php:13
+msgid "Banner Text Align"
+msgstr ""
+
+#: includes/woocommerce/product-single-page-banner/SinglePageBanner.php:77
+#: includes/woocommerce/shop-page-banner/pages/general-settings.php:35
+msgid "Banner Title"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:118
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:117
+#: includes/woocommerce/shop-page-banner/pages/style.php:83
+msgid "Banner Title Color"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:128
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:127
+#: includes/woocommerce/shop-page-banner/pages/style.php:91
+msgid "Banner Title Font Size"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/style.php:108
+msgid "Banner Title Font Weight"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/style.php:113
+msgid "Banner Title Line Height"
+msgstr ""
+
+#: includes/woocommerce/product-single-page-banner/SinglePageBanner.php:110
+msgid "Banner URL"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:246
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:256
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:245
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:255
+#: includes/woocommerce/shop-page-banner/pages/style.php:186
+msgid "Button BG Color"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:276
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:275
+#: includes/woocommerce/shop-page-banner/pages/style.php:202
+msgid "Button BG Hover Color"
+msgstr ""
+
+#: includes/woocommerce/product-single-page-banner/SinglePageBanner.php:99
+msgid "Button Name"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:239
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:238
+#: includes/woocommerce/shop-page-banner/pages/style.php:170
+msgid "Button Style Settings"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:266
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:265
+#: includes/woocommerce/shop-page-banner/pages/style.php:194
+msgid "Button text hover Color"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:7
+msgid "Category Page Banner"
+msgstr ""
+
+#: includes/Admin.php:36
+msgid "Category Page Banner Image Style"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:23
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:22
+#: includes/woocommerce/shop-page-banner/pages/style.php:11
+msgid "Center Align"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/style.php:14
+msgid "Default text align left."
+msgstr ""
+
+#: includes/woocommerce/product-single-page-banner/SinglePageBanner.php:46
+#: includes/woocommerce/product-single-page-banner/SinglePageBanner.php:49
+#: includes/woocommerce/shop-page-banner/pages/general-settings.php:12
+msgid "Enable Banner Image"
+msgstr ""
+
+#: includes/woocommerce/product-single-page-banner/SinglePageBanner.php:121
+#: includes/woocommerce/product-single-page-banner/SinglePageBanner.php:124
+#: includes/woocommerce/shop-page-banner/pages/general-settings.php:72
+msgid "Enable Link full Banner"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/general-settings.php:11
+msgid "Enable Shop Page Banner"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/default-settings.php:7
+#: includes/woocommerce/shop-page-banner/Product_Banner_Settings.php:54
+msgid "General Settings"
+msgstr ""
+
+#: includes/WPPB_Initial_Setup.php:169
+msgid "Install WooCommerce"
+msgstr ""
+
+#: includes/WPPB_Initial_Setup.php:133 includes/WPPB_Initial_Setup.php:163
+msgid ""
+"installed and activated on this website in order to use WP Product Banner "
+"Image."
+msgstr ""
+
+#: includes/WPPB_Initial_Setup.php:136 includes/WPPB_Initial_Setup.php:166
+msgid "Learn more about WP Product Banner Image"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:22
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:21
+#: includes/woocommerce/shop-page-banner/pages/style.php:9
+msgid "Left Align"
+msgstr ""
+
+#: includes/woocommerce/product-single-page-banner/SinglePageBanner.php:24
+msgid "Product Banner Image"
+msgstr ""
+
+#. Name of the plugin
+msgid "Product Banner Image for WooCommerce"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Product Banner Image for WooCommerce is easily manage gift order in "
+"woocommerce platform. In this plugin you can easily handle order as a gift."
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:8
+msgid "Product Single Page Banner "
+msgstr ""
+
+#: includes/Admin.php:37
+msgid "Product Single Page Banner Image Style"
+msgstr ""
+
+#. Author of the plugin
+msgid "Rejuan Ahamed"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:24
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:23
+#: includes/woocommerce/shop-page-banner/pages/style.php:10
+msgid "Right Align"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/style.php:37
+#: includes/woocommerce/shop-page-banner/pages/style.php:84
+#: includes/woocommerce/shop-page-banner/pages/style.php:131
+#: includes/woocommerce/shop-page-banner/pages/style.php:187
+#: includes/woocommerce/shop-page-banner/pages/style.php:195
+msgid "Select button background color."
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/style.php:203
+msgid "Select button background hover color."
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/style.php:179
+msgid "Select button text color."
+msgstr ""
+
+#: includes/Admin.php:25
+msgid "Settings Banner Image"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:175
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:174
+#: includes/woocommerce/shop-page-banner/pages/style.php:122
+msgid "Short Description Style Settings"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/Product_Banner_Settings.php:59
+msgid "Style"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:47
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:46
+#: includes/woocommerce/shop-page-banner/pages/style.php:28
+msgid "Sub Title Style Settings"
+msgstr ""
+
+#: includes/WPPB_Initial_Setup.php:126 includes/WPPB_Initial_Setup.php:156
+msgid "Thanks for using WP Product Banner Image"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:111
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:110
+#: includes/woocommerce/shop-page-banner/pages/style.php:75
+msgid "Title Style Settings"
+msgstr ""
+
+#: includes/woocommerce/product-single-page-banner/SinglePageBanner.php:56
+#: includes/woocommerce/shop-page-banner/pages/general-settings.php:20
+msgid "Upload Banner Image"
+msgstr ""
+
+#: includes/WPPB_Initial_Setup.php:234
+msgid "version is below then 3.0, please update."
+msgstr ""
+
+#: includes/WPPB_Initial_Setup.php:132 includes/WPPB_Initial_Setup.php:162
+#: includes/WPPB_Initial_Setup.php:233
+msgid "WooCommerce"
+msgstr ""
+
+#: includes/woocommerce/product-single-page-banner/SinglePageBanner.php:102
+msgid "Write Banner button Name"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/general-settings.php:56
+msgid "Write banner button name"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/general-settings.php:47
+msgid "Write banner short description"
+msgstr ""
+
+#: includes/woocommerce/product-single-page-banner/SinglePageBanner.php:69
+msgid "Write Banner Sub Heading"
+msgstr ""
+
+#: includes/woocommerce/product-single-page-banner/SinglePageBanner.php:80
+msgid "Write Banner Title"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/general-settings.php:38
+msgid "Write banner title"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/style.php:213
+msgid "Write button font size. Ex. 44"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/style.php:235
+msgid "Write button line height. Ex. 40"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/style.php:141
+msgid "Write desc font size. Ex. 44"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:222
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:316
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:315
+msgid "Write desc line height. Ex. 20"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:221
+#: includes/woocommerce/shop-page-banner/pages/style.php:164
+msgid "Write desc line height. Ex. 40"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:194
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:288
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:193
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:287
+msgid "Write height. Ex. 20"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:65
+msgid "Write height. Ex. 28"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:32
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:66
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:31
+#: includes/woocommerce/shop-page-banner/pages/style.php:22
+msgid "Write height. Ex. 300"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:130
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:129
+msgid "Write height. Ex. 80"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/general-settings.php:29
+msgid "Write Shop Page Banner Sub Heading"
+msgstr ""
+
+#: includes/woocommerce/product-single-page-banner/SinglePageBanner.php:91
+msgid "Write short description"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/style.php:47
+msgid "Write subtitle font size. Ex. 44"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:158
+msgid "Write subtitle line height. Ex. 28"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:157
+#: includes/woocommerce/shop-page-banner/pages/style.php:69
+msgid "Write subtitle line height. Ex. 40"
+msgstr ""
+
+#: includes/woocommerce/banner_settings/product-single-page-banner-style.php:94
+#: includes/woocommerce/banner_settings/product-category-page-banner-style.php:93
+msgid "Write subtitle line height. Ex. 52"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/style.php:94
+msgid "Write Title font size. Ex. 44"
+msgstr ""
+
+#: includes/woocommerce/shop-page-banner/pages/style.php:116
+msgid "Write Title line height. Ex. 40"
+msgstr ""
+
+#: includes/WPPB_Initial_Setup.php:130 includes/WPPB_Initial_Setup.php:160
+msgid "You must have"
+msgstr ""
+
+#: includes/WPPB_Initial_Setup.php:231
+msgid "Your"
+msgstr ""

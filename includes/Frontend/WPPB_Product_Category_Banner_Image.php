@@ -115,16 +115,6 @@ class WPPB_Product_Category_Page_Banner_Image {
                 }
             }
 
-            .product-category-page-banner-image:before {
-                content: '';
-                position: absolute;
-                width: 100%;
-                z-index: -1;
-                height: 100%;
-                left: 0;
-                top: 0;
-            }
-
             /* Sub Title Color */
             .product-category-page-banner-image .banner-content span {
                 color: <?php echo !empty($subtitle_color) ? esc_attr($subtitle_color) : '#000000'; ?>;
@@ -135,7 +125,7 @@ class WPPB_Product_Category_Page_Banner_Image {
 
             /* Title Color */
             .product-category-page-banner-image .banner-content h2 {
-                margin: 5px 0 15px;
+                margin: 5px 0 10px;
                 padding: 0;
                 color: <?php echo !empty($title_color) ? esc_attr($title_color) : '#000000'; ?>;
                 font-size: <?php echo !empty($title_font_size) ? esc_attr($title_font_size).'px' : '48px'; ?>;

@@ -26,24 +26,4 @@ jQuery(document).ready(function($){
 	    $(that).parent().parent().find( '.product_banner_bg_image' ).val( '' );
         $(that).parent().parent().find( '.wpbi-image-container' ).html( '' );
 	});
-
-
-    const progress = document.querySelector('#sliderRange');
-    
-    var slider = document.getElementById("sliderRange");
-    var output = document.getElementById("rangeID");
-    output.innerHTML = slider.value;
-
-    slider.oninput = function() {
-        output.innerHTML = this.value;
-    }
-
-    progress.addEventListener('input', function() {
-        const value = this.value;
-        this.style.background = `linear-gradient(to right, #82CFD0 0%, #82CFD0 ${value}%, #000 100%)`
-    })
-    
- 
-
-
 });

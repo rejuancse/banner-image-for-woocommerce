@@ -64,17 +64,17 @@ class WPPB_Shop_Page_Banner_Image {
         $text_align = get_option( 'shop_page_banner_text_align', 'left' );
         $banner_height = get_option( 'shop_banner_image_height', '280' );
 
-        // Title
-        $subtitle_color = get_option( 'shop_banner_subtitle_color', '#000' );
-        $subtitle_font_size = get_option( 'shop_banner_subtitle_font_size', '36' );
-        $subtitle_line_weight = get_option( 'shop_banner_subtitle_font_weight', '400' );
-        $subtitle_line_height = get_option( 'shop_banner_subtitle_line_height', '36' );
-
         // Sub Title
+        $subtitle_color = get_option( 'shop_banner_subtitle_color', '#000' );
+        $subtitle_font_size = get_option( 'shop_banner_subtitle_font_size', '22' );
+        $subtitle_line_weight = get_option( 'shop_banner_subtitle_font_weight', '400' );
+        $subtitle_line_height = get_option( 'shop_banner_subtitle_line_height', '26' );
+
+        // Title
         $title_color = get_option( 'shop_banner_title_color', '#000' );
-        $title_font_size = get_option( 'shop_banner_title_font_size', '28' );
-        $title_line_weight = get_option( 'shop_banner_title_font_weight', '400' );
-        $title_line_height = get_option( 'shop_banner_title_line_height', '35' );
+        $title_font_size = get_option( 'shop_banner_title_font_size', '48' );
+        $title_line_weight = get_option( 'shop_banner_title_font_weight', '700' );
+        $title_line_height = get_option( 'shop_banner_title_line_height', '52' );
 
         // Short Description
         $desc_color = get_option( 'shop_banner_desc_color', '#000000' );
@@ -116,16 +116,6 @@ class WPPB_Shop_Page_Banner_Image {
                 }
             }
 
-            .product-banner-image-wrap:before {
-                content: '';
-                position: absolute;
-                width: 100%;
-                z-index: -1;
-                height: 100%;
-                left: 0;
-                top: 0;
-            }
-
             /* Sub Title Color */
             .product-banner-image-wrap .banner-content span {
                 color: <?php echo !empty($subtitle_color) ? esc_attr($subtitle_color) : '#000000'; ?>;
@@ -136,7 +126,7 @@ class WPPB_Shop_Page_Banner_Image {
 
             /* Title Color */
             .product-banner-image-wrap .banner-content h2 {
-                margin: 5px 0 15px;
+                margin: 5px 0 10px;
                 padding: 0;
                 color: <?php echo !empty($title_color) ? esc_attr($title_color) : '#000000'; ?>;
                 font-size: <?php echo !empty($title_font_size) ? esc_attr($title_font_size).'px' : '48px'; ?>;
