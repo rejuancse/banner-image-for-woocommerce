@@ -42,7 +42,7 @@ $settings =  array(
 
     /*
     * Sub Title Section
-    * */ 
+    * */
     'section_banner_subtitle' => array (
         'name'     => __( 'Sub Title Style Settings', 'wppb' ),
         'type'     => 'title',
@@ -67,7 +67,7 @@ $settings =  array(
         'desc_tip'  => true,
         'id'        => 'wc_settings_tab_product_subtitle_fontsize',
         'css'       => 'min-width:300px;',
-        'default'   => '28'
+        'default'   => '22'
     ),
 
     'product_banner_subtitle_fontweight' => array(
@@ -95,7 +95,7 @@ $settings =  array(
         'desc_tip'  => true,
         'id'        => 'wc_settings_tab_product_subtitle_lineheight',
         'css'       => 'min-width:300px;',
-        'default'   => '52'
+        'default'   => '26'
     ),
 
     // Section end
@@ -106,7 +106,7 @@ $settings =  array(
 
     /*
     * Title Section
-    **/ 
+    **/
     'section_banner_product_title' => array (
         'name'     => __( 'Title Style Settings', 'wppb' ),
         'type'     => 'title',
@@ -127,11 +127,11 @@ $settings =  array(
     'product_banner_title_fontsize' => array(
         'title'     => __( 'Banner Title Font Size', 'wppb' ),
         'type'      => 'number',
-        'desc'      => __( 'Write height. Ex. 80', 'wppb' ),
+        'desc'      => __( 'Write height. Ex. 48', 'wppb' ),
         'desc_tip'  => true,
         'id'        => 'wc_settings_tab_product_title_fontsize',
         'css'       => 'min-width:300px;',
-        'default'   => '92'
+        'default'   => '48'
     ),
 
     'product_banner_title_fontweight' => array(
@@ -159,7 +159,7 @@ $settings =  array(
         'desc_tip'  => true,
         'id'        => 'wc_settings_tab_product_title_lineheight',
         'css'       => 'min-width:300px;',
-        'default'   => '28'
+        'default'   => '52'
     ),
 
     // Section end
@@ -170,7 +170,7 @@ $settings =  array(
 
     /*
     * Short Description Section
-    **/ 
+    **/
     'section_banner_product_desc' => array (
         'name'     => __( 'Short Description Style Settings', 'wppb' ),
         'type'     => 'title',
@@ -195,7 +195,7 @@ $settings =  array(
         'desc_tip'  => true,
         'id'        => 'wc_settings_tab_product_desc_fontsize',
         'css'       => 'min-width:300px;',
-        'default'   => '20'
+        'default'   => '18'
     ),
 
     'product_banner_desc_fontweight' => array(
@@ -223,7 +223,7 @@ $settings =  array(
         'desc_tip'  => true,
         'id'        => 'wc_settings_tab_product_desc_lineheight',
         'css'       => 'min-width:300px;',
-        'default'   => '40'
+        'default'   => '28'
     ),
 
     // Section end
@@ -234,7 +234,7 @@ $settings =  array(
 
     /*
     * Button Section
-    **/ 
+    **/
     'product_banner_button_sectionstart' => array (
         'name'     => __( 'Button Style Settings', 'wppb' ),
         'type'     => 'title',
@@ -327,7 +327,7 @@ $settings =  array(
         'desc_tip'  => true,
         'id'        => 'wc_settings_tab_product_button_padding',
         'css'       => 'min-width:300px;',
-        'default'   => '10px 30px 10px 30px'
+        'default'   => '15px 36px 15px 36px'
     ),
 
     'product_banner_button_margin' => array(
@@ -337,7 +337,7 @@ $settings =  array(
         'desc_tip'  => true,
         'id'        => 'wc_settings_tab_product_button_margin',
         'css'       => 'min-width:300px;',
-        'default'   => '10px 30px 10px 30px'
+        'default'   => '15px 0 0'
     ),
 
     // Section end
