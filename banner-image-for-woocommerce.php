@@ -106,7 +106,7 @@ final class BIW_ProductBannerImage {
      * @ Frontend
      */
     public function frontend_script(){
-        wp_enqueue_style( 'biw-front', BIW_URL .'assets/css/main.css', false, BIW_VERSION );
+        wp_enqueue_style( 'biw-front', BIW_URL .'/assets/css/main.css', false, BIW_VERSION );
     }
 
     public function admin_script(){

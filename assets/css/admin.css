@@ -1,27 +1,27 @@
 .banner_image_wrap .biw-image-container,
 .form-table .biw-image-container {
-  position: relative;
+    position: relative;
 }
 .banner_image_wrap .biw-image-container .biw-image-remove,
 .form-table .biw-image-container .biw-image-remove {
-  position: absolute;
-  right: 5px;
-  background: #cf0000;
-  color: #fff;
-  font-weight: 700;
-  width: 23px;
-  height: 23px;
-  text-align: center;
-  margin-top: 5px;
-  border-radius: 4px;
-  cursor: pointer;
-  line-height: 25px;
-  transition: 0.4s;
+    position: absolute;
+    right: 5px;
+    background: #cf0000;
+    color: #fff;
+    font-weight: 700;
+    width: 23px;
+    height: 23px;
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    line-height: 25px;
+    transition: 0.4s;
 }
 .banner_image_wrap .biw-image-container .biw-image-remove:hover,
 .form-table .biw-image-container .biw-image-remove:hover {
-  background: #000;
-  color: #fff;
+    background: #000;
+    color: #fff;
 }
 .banner_image_wrap textarea,
 .form-table textarea,
@@ -29,13 +29,58 @@
 .form-table input[type='range'],
 .banner_image_wrap input[type='text'],
 .form-table input[type='text'] {
-  width: 230px;
+    width: 230px;
 }
 .banner_image_wrap textarea,
 .form-table textarea {
-  height: 100px;
+    height: 100px;
 }
 .banner_image_wrap button.biw-image-upload-btn,
 .form-table button.biw-image-upload-btn {
-  display: block;
+    display: block;
+}
+
+.banner_image_wrap .wpbi-image-container,
+.form-table .wpbi-image-container {
+    position: relative;
+}
+.banner_image_wrap .wpbi-image-container .wpbi-image-remove,
+.form-table .wpbi-image-container .wpbi-image-remove {
+    position: absolute;
+    right: 5px;
+    background: #cf0000;
+    color: #fff;
+    font-weight: 700;
+    width: 23px;
+    height: 23px;
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    line-height: 25px;
+    transition: 0.4s;
+}
+.banner_image_wrap .wpbi-image-container .wpbi-image-remove:hover,
+.form-table .wpbi-image-container .wpbi-image-remove:hover {
+    background: #000;
+    color: #fff;
+}
+.banner_image_wrap textarea,
+.form-table textarea,
+.banner_image_wrap input[type=range],
+.form-table input[type=range],
+.banner_image_wrap input[type=text], .form-table input[type=text] {
+    width: 230px;
+}
+.banner_image_wrap textarea,
+.form-table textarea {
+    height: 100px;
+}
+.banner_image_wrap button.wpbi-image-upload-btn,
+.form-table button.wpbi-image-upload-btn {
+    display: block;
+}
+
+.product_data_tabs .show_if_simple {
+    display: block !important;
 }

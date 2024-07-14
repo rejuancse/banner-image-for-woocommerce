@@ -31,7 +31,7 @@ if ( ! class_exists( 'BIW_Category_Banner_Image' ) ) {
                 <h2><?php esc_html_e('Category Banner BG Image', 'biw'); ?></h2>
             </div>
 
-            <!-- Banner Image -->
+            <!-- Banner Image --> 
             <div class="form-field term-group">
                 <label for="category-image-id"><?php _e('Upload Banner Image', 'biw'); ?></label>
                 <input type="hidden" id="category-image-id" name="category-image-id" class="custom_media_url" value="">
