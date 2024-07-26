@@ -24,7 +24,7 @@ class Product_Single_Page_Banner {
 
                         <div class="is-layout-constrained">
                             <?php if( !empty( $value['wp_banner_button_url'] ) && $value['enable_link_full_banner_image'] == 'yes') { ?>
-                            <a href="<?php echo esc_url($value['wp_banner_button_url']); ?>" class="wpbi-full-banner-link">
+                            <a href="<?php echo esc_url($value['wp_banner_button_url']); ?>" class="biw-wrap-full-banner-link">
                             <?php } ?>
 
                                 <div class="product-single-page-banner-image alignwide" style="background-image: url(<?php echo !empty($value['product_banner_bg_image']) ? wp_get_attachment_url( $value["product_banner_bg_image"] ) : ''; ?>); background-repeat: no-repeat; background-size: cover;">
@@ -66,37 +66,37 @@ class Product_Single_Page_Banner {
 
 
     public function product_single_page_banner_activation_css() {
-        $text_align = get_option( 'product_banner_image_align', 'left' );
-        $banner_height = get_option( 'product_single_page_banner_height', '280' );
+        $text_align = get_option( 'product_single_page_banner_text_align', 'left' );
+        $banner_height = get_option( 'product_single_banner_image_height', '280' );
 
         // Title
-        $title_color = get_option( 'wc_settings_tab_product_title_color', '#000' );
-        $title_font_size = get_option( 'wc_settings_tab_product_title_fontsize', '48' );
-        $title_line_weight = get_option( 'wc_settings_tab_product_title_fontweight', '700' );
-        $title_line_height = get_option( 'wc_settings_tab_product_title_lineheight', '50' );
+        $title_color = get_option( 'product_single_banner_title_color', '#000' );
+        $title_font_size = get_option( 'product_single_banner_title_font_size', '48' );
+        $title_line_weight = get_option( 'product_single_banner_title_font_weight', '700' );
+        $title_line_height = get_option( 'product_single_banner_title_line_height', '50' );
 
         // Sub Title
-        $subtitle_color = get_option( 'wc_settings_tab_product_subtitle_color', '#000' );
-        $subtitle_font_size = get_option( 'wc_settings_tab_product_subtitle_fontsize', '18' );
-        $subtitle_line_weight = get_option( 'product_banner_subtitle_fontweight', '400' );
-        $subtitle_line_height = get_option( 'wc_settings_tab_product_subtitle_lineheight', '20' );
+        $subtitle_color = get_option( 'product_single_banner_subtitle_color', '#000' );
+        $subtitle_font_size = get_option( 'product_single_banner_subtitle_font_size', '18' );
+        $subtitle_line_weight = get_option( 'product_single_banner_subtitle_font_weight', '400' );
+        $subtitle_line_height = get_option( 'product_single_banner_subtitle_line_height', '20' );
 
         // Short Description
-        $desc_color = get_option( 'wc_settings_tab_product_title_color', '#333333' );
-        $desc_font_size = get_option( 'wc_settings_tab_product_desc_fontsize', '18' );
-        $desc_line_weight = get_option( 'wc_settings_tab_product_desc_fontweight', '400' );
-        $desc_line_height = get_option( 'wc_settings_tab_product_desc_lineheight', '24' );
+        $desc_color = get_option( 'product_single_banner_desc_color', '#333333' );
+        $desc_font_size = get_option( 'product_single_banner_desc_font_size', '18' );
+        $desc_line_weight = get_option( 'product_single_banner_desc_font_weight', '400' );
+        $desc_line_height = get_option( 'product_single_banner_desc_line_height', '24' );
 
         // Button
-        $button_text_color = get_option( 'wc_settings_tab_product_button_text_color', '#ffffff' );
-        $button_bg_color = get_option( 'wc_settings_tab_product_button_bg_color', '#000000' );
-        $button_text_hover_color = get_option( 'wc_settings_tab_product_button_text_hover_color', '#ffffff' );
-        $button_bg_hover_color = get_option( 'wc_settings_tab_product_button_bg_hover_color', '#000000' );
-        $button_font_size = get_option( 'wc_settings_tab_product_button_fontsize', '18' );
-        $button_font_weight = get_option( 'wc_settings_tab_product_button_fontweight', '400' );
-        $button_line_height = get_option( 'wc_settings_tab_product_button_lineheight', '28' );
-        $button_button_padding = get_option( 'wc_settings_tab_product_button_padding', '10px 30px' );
-        $button_button_margin = get_option( 'wc_settings_tab_product_button_margin', '0' ); ?>
+        $button_text_color = get_option( 'product_single_page_banner_button_text_color', '#ffffff' );
+        $button_bg_color = get_option( 'product_single_page_banner_button_bg_color', '#000000' );
+        $button_text_hover_color = get_option( 'product_single_page_banner_button_text_hover_color', '#ffffff' );
+        $button_bg_hover_color = get_option( 'product_single_page_banner_button_bg_hover_color', '#000000' );
+        $button_font_size = get_option( 'product_single_banner_button_font_size', '18' );
+        $button_font_weight = get_option( 'product_single_banner_button_font_weight', '400' );
+        $button_line_height = get_option( 'product_single_banner_button_line_height', '28' );
+        $button_button_padding = get_option( 'product_single_banner_button_padding', '10px 30px' );
+        $button_button_margin = get_option( 'product_single_banner_button_margin', '0' ); ?>
 
         <style type="text/css">
             .product-single-page-banner-image {

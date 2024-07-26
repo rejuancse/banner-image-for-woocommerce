@@ -24,7 +24,7 @@ class Category_Page_Banner_image {
 
             <?php if( isset( $enable_banner ) && 'true' == $enable_banner ) { ?>
                 <?php if ( is_array($term_meta) && isset($term_meta['category_banner_full_link']) && $term_meta['category_banner_full_link'] == 'yes' ) { ?>
-                    <a href="<?php echo esc_url($term_meta['category_banner_Button_url']); ?>" class="wpbi-full-banner-link">
+                    <a href="<?php echo esc_url($term_meta['category_banner_Button_url']); ?>" class="biw-wrap-full-banner-link">
                 <?php } ?>
 
 

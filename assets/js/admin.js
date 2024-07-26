@@ -34,8 +34,8 @@ jQuery(document).ready(function ($) {
     });
 
     // Enable Color Picker
-    $('.wpbi-color-field').wpColorPicker();
-    $('body').on('click', '.wpbi-image-upload-btn',function(e) {
+    $('.biw-wrap-color-field').wpColorPicker();
+    $('body').on('click', '.biw-wrap-image-upload-btn',function(e) {
         e.preventDefault();
         var that = $(this);
         var image = wp.media({
@@ -46,14 +46,14 @@ jQuery(document).ready(function ($) {
             var uploaded_url = uploaded_image.toJSON().url;
             uploaded_image = uploaded_image.toJSON().id;
             $(that).parent().find( '.product_banner_bg_image' ).val( uploaded_image );
-            $(that).parent().find( '.wpbi-image-container' ).html( '<img width="400" src="'+uploaded_url+'" ><span class="wpbi-image-remove">X</span>' );
+            $(that).parent().find( '.biw-wrap-image-container' ).html( '<img width="400" src="'+uploaded_url+'" ><span class="biw-wrap-image-remove">X</span>' );
         });
     });
 
-    $('body').on('click','.wpbi-image-remove',function(e) {
+    $('body').on('click','.biw-wrap-image-remove',function(e) {
         var that = $(this);
         $(that).parent().parent().find( '.product_banner_bg_image' ).val( '' );
-        $(that).parent().parent().find( '.wpbi-image-container' ).html( '' );
+        $(that).parent().parent().find( '.biw-wrap-image-container' ).html( '' );
     });
 
 });

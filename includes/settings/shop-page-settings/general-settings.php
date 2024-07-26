@@ -7,8 +7,8 @@ $settings =  array(
         'id'        => 'enable_shop_page_banner',
         'type'      => 'checkbox',
         'value'     => 'true',
-        'label'     => __('Enable Shop Page Banner','biw'),
-        'desc'      => '<p>'.__('Enable Banner Image','biw').'</p>',
+        'label'     => __('Enable Shop Page Banner', 'biw'),
+        'desc'      => '<p>'.__('Enable Banner Image', 'biw').'</p>',
     ),
 
     # Banner Image

@@ -13,7 +13,7 @@ class Admin {
     function __construct() {
         new Admin\Initial_Setup();
         new Admin\BIW_Menu();
-        new Admin\BIW_Category_Banner_Image();
         new Admin\BIW_Product_Banner_Image();
+        new Admin\BIW_Category_Banner_Image();
     }
 }

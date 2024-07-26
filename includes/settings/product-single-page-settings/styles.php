@@ -3,7 +3,7 @@ defined( 'ABSPATH' ) || exit;
 
 $arr =  array(
     array(
-        'id'        => 'category_banner_text_align',
+        'id'        => 'product_single_page_banner_text_align',
         'type'      => 'dropdown',
         'option'    => array(
             'left'    => __('Left Align', 'biw'),
@@ -15,7 +15,7 @@ $arr =  array(
     ),
 
     array (
-        'id'        => 'category_banner_height',
+        'id'        => 'product_single_banner_image_height',
         'label'     => __('Banner height', 'biw'),
         'type'      => 'number',
         'value'     => '',
@@ -31,7 +31,7 @@ $arr =  array(
 
     # Button Background Color
     array(
-        'id'        => 'category_banner_subtitle_color',
+        'id'        => 'product_single_banner_subtitle_color',
         'type'      => 'color',
         'label'     => __('Banner subtitle Color', 'biw'),
         'desc'      => __('Select button background color.', 'biw'),
@@ -40,7 +40,7 @@ $arr =  array(
 
     # Product Banner subtitle
     array (
-        'id'        => 'category_banner_subtitle_fontsize',
+        'id'        => 'product_single_banner_subtitle_font_size',
         'label'     => __('Banner subtitle Font Size', 'biw'),
         'type'      => 'number',
         'value'     => '',
@@ -48,7 +48,7 @@ $arr =  array(
     ),
 
     array(
-        'id'        => 'category_banner_subtitle_fontweight',
+        'id'        => 'product_single_banner_subtitle_font_weight',
         'type'      => 'dropdown',
         'option'    => array(
             '400'    => __('300', 'biw'),
@@ -63,7 +63,7 @@ $arr =  array(
     ),
 
     array (
-        'id'        => 'category_banner_subtitle_lineheight',
+        'id'        => 'product_single_banner_subtitle_line_height',
         'label'     => __('Banner subtitle Line Height', 'biw'),
         'type'      => 'number',
         'value'     => '',
@@ -79,7 +79,7 @@ $arr =  array(
 
     # Button Background Color
     array(
-        'id'        => 'category_banner_title_color',
+        'id'        => 'product_single_banner_title_color',
         'type'      => 'color',
         'label'     => __('Banner Title Color', 'biw'),
         'desc'      => __('Select button background color.', 'biw'),
@@ -88,7 +88,7 @@ $arr =  array(
 
     # Product Banner Title
     array (
-        'id'        => 'category_banner_title_fontsize',
+        'id'        => 'product_single_banner_title_font_size',
         'label'     => __('Banner Title Font Size', 'biw'),
         'type'      => 'number',
         'value'     => '',
@@ -96,7 +96,7 @@ $arr =  array(
     ),
 
     array(
-        'id'        => 'category_banner_title_fontweight',
+        'id'        => 'product_single_banner_title_font_weight',
         'type'      => 'dropdown',
         'option'    => array(
             '400'    => __('400', 'biw'),
@@ -110,7 +110,7 @@ $arr =  array(
     ),
 
     array (
-        'id'        => 'category_banner_title_lineheight',
+        'id'        => 'product_single_banner_title_line_height',
         'label'     => __('Banner Title Line Height', 'biw'),
         'type'      => 'number',
         'value'     => '',
@@ -126,7 +126,7 @@ $arr =  array(
 
     # Button Background Color
     array(
-        'id'        => 'category_banner_desc_color',
+        'id'        => 'product_single_banner_desc_color',
         'type'      => 'color',
         'label'     => __('Banner desc Color', 'biw'),
         'desc'      => __('Select button background color.', 'biw'),
@@ -135,7 +135,7 @@ $arr =  array(
 
     # Product Banner desc
     array (
-        'id'        => 'category_banner_desc_fontsize',
+        'id'        => 'product_single_banner_desc_font_size',
         'label'     => __('Banner desc Font Size', 'biw'),
         'type'      => 'number',
         'value'     => '',
@@ -143,7 +143,7 @@ $arr =  array(
     ),
 
     array(
-        'id'        => 'category_banner_desc_fontweight',
+        'id'        => 'product_single_banner_desc_font_weight',
         'type'      => 'dropdown',
         'option'    => array(
             '300'    => __('300', 'biw'),
@@ -158,7 +158,7 @@ $arr =  array(
     ),
 
     array (
-        'id'        => 'category_banner_desc_lineheight',
+        'id'        => 'product_single_banner_desc_line_height',
         'label'     => __('Banner desc Line Height', 'biw'),
         'type'      => 'number',
         'value'     => '',
@@ -174,7 +174,7 @@ $arr =  array(
 
     # Button Background Color
     array(
-        'id'        => 'category_banner_button_text_color',
+        'id'        => 'product_single_page_banner_button_text_color',
         'type'      => 'color',
         'label'     => __('Banner button text Color', 'biw'),
         'desc'      => __('Select button text color.', 'biw'),
@@ -182,7 +182,7 @@ $arr =  array(
     ),
 
     array(
-        'id'        => 'category_banner_button_bg_color',
+        'id'        => 'product_single_page_banner_button_bg_color',
         'type'      => 'color',
         'label'     => __('Button BG Color', 'biw'),
         'desc'      => __('Select button background color.', 'biw'),
@@ -190,7 +190,7 @@ $arr =  array(
     ),
 
     array(
-        'id'        => 'category_banner_button_text_hover_color',
+        'id'        => 'product_single_page_banner_button_text_hover_color',
         'type'      => 'color',
         'label'     => __('Button text hover Color', 'biw'),
         'desc'      => __('Select button background color.', 'biw'),
@@ -198,7 +198,7 @@ $arr =  array(
     ),
 
     array(
-        'id'        => 'category_banner_button_bg_hover_color',
+        'id'        => 'product_single_page_banner_button_bg_hover_color',
         'type'      => 'color',
         'label'     => __('Button BG Hover Color', 'biw'),
         'desc'      => __('Select button background hover color.', 'biw'),
@@ -207,7 +207,7 @@ $arr =  array(
 
     # Product Banner desc
     array (
-        'id'        => 'category_banner_button_fontsize',
+        'id'        => 'product_single_banner_button_font_size',
         'label'     => __('Banner button Font Size', 'biw'),
         'type'      => 'number',
         'value'     => '',
@@ -215,7 +215,7 @@ $arr =  array(
     ),
 
     array(
-        'id'        => 'category_banner_button_fontweight',
+        'id'        => 'product_single_banner_button_font_weight',
         'type'      => 'dropdown',
         'option'    => array(
             '400'    => __('400', 'biw'),
@@ -229,7 +229,7 @@ $arr =  array(
     ),
 
     array (
-        'id'        => 'category_banner_button_lineheight',
+        'id'        => 'product_single_banner_button_line_height',
         'label'     => __('Banner button Line Height', 'biw'),
         'type'      => 'number',
         'value'     => '',
@@ -237,7 +237,7 @@ $arr =  array(
     ),
 
     array (
-        'id'        => 'category_banner_button_padding',
+        'id'        => 'product_single_banner_button_padding',
         'label'     => __('Banner Button Padding', 'biw'),
         'type'      => 'text',
         'value'     => '',
@@ -245,7 +245,7 @@ $arr =  array(
     ),
 
     array (
-        'id'        => 'category_banner_button_margin',
+        'id'        => 'product_single_banner_button_margin',
         'label'     => __('Banner Button Margin', 'biw'),
         'type'      => 'text',
         'value'     => '',
@@ -254,7 +254,7 @@ $arr =  array(
 
     # Save Function
     array(
-        'id'        => 'biw_category_style_admin_tab',
+        'id'        => 'biw_product_single_style_admin_tab',
         'type'      => 'hidden',
         'value'     => 'tab_style',
     ),

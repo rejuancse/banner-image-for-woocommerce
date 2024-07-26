@@ -156,8 +156,8 @@ if ( ! class_exists( 'BIW_Product_Banner_Image' ) ) {
                                 echo '<p class="form-field">';
                                 echo '<label for="product_banner_bg_image">'.$value["label"].'</label>';
                                 echo '<input type="hidden" class="product_banner_bg_image" name="'.$value["id"].'" value="" placeholder="'.$value["label"].'"/>';
-                                echo '<span class="wpbi-image-container"></span>';
-                                echo '<button class="wpbi-image-upload-btn button">'.__("Add Image", "wp-wpbi").'</button>';
+                                echo '<span class="biw-wrap-image-container"></span>';
+                                echo '<button class="biw-wrap-image-upload-btn button">'.__("Add Image", "biw").'</button>';
                                 echo '</p>';
                                 break;
 
@@ -201,15 +201,15 @@ if ( ! class_exists( 'BIW_Product_Banner_Image' ) ) {
                                         $raw_id = $image_id;
                                         if( $image_id!=0 && $image_id!='' ){
                                             $image_id = wp_get_attachment_url( $image_id );
-                                            $image_id = '<img width="450" src="'.$image_id.'"><span class="wpbi-image-remove">x</span>';
+                                            $image_id = '<img width="450" src="'.$image_id.'"><span class="biw-wrap-image-remove">x</span>';
                                         }else{
                                             $image_id = '';
                                         }
                                         echo '<p class="form-field">';
                                         echo '<label for="product_banner_bg_image">'.$value["label"].'</label>';
                                         echo '<input type="hidden" class="product_banner_bg_image" name="'.$value["id"].'" value="'.$raw_id.'" placeholder="'.$value["label"].'"/>';
-                                        echo '<span class="wpbi-image-container">'.$image_id.'</span>';
-                                        echo '<button class="wpbi-image-upload-btn button">'.__("Add Image", "wp-wpbi").'</button>';
+                                        echo '<span class="biw-wrap-image-container">'.$image_id.'</span>';
+                                        echo '<button class="biw-wrap-image-upload-btn button">'.__("Add Image", "biw").'</button>';
                                         echo '</p>';
                                         break;
 

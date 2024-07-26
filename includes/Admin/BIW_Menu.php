@@ -15,6 +15,7 @@ class BIW_Menu {
             add_action( 'admin_menu', [ $this, 'biw_admin_menu' ] );
             add_action('admin_init', array($this, 'Save_Shop_Page_Settings' ));
             add_action('admin_init', array($this, 'Save_Category_Page_Banner' ));
+            add_action('admin_init', array($this, 'Save_Product_Single_Page_Banner' ));
         }
     }
 
@@ -24,21 +25,30 @@ class BIW_Menu {
      * @return void
      */
     public function biw_admin_menu() {
-        add_menu_page(
-            __( 'Product Banner Image', 'biw' ),
+        add_menu_page (
+            __( 'Banner Image', 'biw' ),
             __( 'Shop Page Banner Image', 'biw' ),
             'manage_options', 'biw-menu',
             [ $this, 'biw_shop_page_callback_func' ],
             'dashicons-superhero',
         );
 
-        add_submenu_page(
-            'biw-menu',                            // parent slug
-            'Product Category Banner Image Title',  // page title
-            'Product Category Banner',              // menu title
-            'manage_options',                       // capability
-            'biw-product-category',                // slug
-            [ $this, 'biw_category_page_callback_func' ] // callback
+        add_submenu_page (
+            'biw-menu',                                     // parent slug
+            'Product Category Banner',                      // page title
+            'Product Category Banner',                      // menu title
+            'manage_options',                               // capability
+            'biw-product-category',                         // slug
+            [ $this, 'biw_category_page_callback_func' ]    // callback
+        );
+
+        add_submenu_page (
+            'biw-menu',                                 // parent slug
+            'Product Single Page Banner',               // page title
+            'Product Single Page Banner',               // menu title
+            'manage_options',                           // capability
+            'biw-product-single-page',                  // slug
+            [ $this, 'biw_single_page_callback_func' ]  // callback
         );
     }
 
@@ -61,6 +71,24 @@ class BIW_Menu {
     }
 
     /**
+     * Render the plugin page -> Product Single Page
+     *
+     * @return void
+     */
+    public function biw_single_page_callback_func() {
+        $Product_Single_Page_Settings = new Product_Single_Page_Settings();
+        $Product_Single_Page_Settings->Product_Single_Page_Banner();
+    }
+
+    /**
+     * Add Product Single Page settings action
+     */
+    public function Save_Product_Single_Page_Banner() {
+        $Product_Single_Page_Settings = new Product_Single_Page_Settings();
+        $Product_Single_Page_Settings->Product_Single_Page_Banner_Save();
+    }
+
+    /**
      * Render the plugin page -> Category Page
      *
      * @return void
@@ -69,7 +97,6 @@ class BIW_Menu {
         $Category_Page_Settings = new Category_Page_Settings();
         $Category_Page_Settings->Category_Page_Banner();
     }
-
 
     /**
      * Render the plugin page -> Category Page
