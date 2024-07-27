@@ -1,5 +1,5 @@
 <?php
-namespace BIW\settings;
+namespace BIFW\settings;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -32,7 +32,7 @@ class Generator {
                                 $html .= '<p class="form-field">';
                                 $html .= '<input type="hidden" class="product_banner_bg_image" name="'.$value["id"].'" value="'.$raw_id.'" placeholder="'.$value["label"].'"/>';
                                 $html .= '<span class="biw-image-container">'.$image_id.'</span>';
-                                $html .= '<button class="biw-image-upload-btn button">'.__("Add Image", "wp-biw").'</button>';
+                                $html .= '<button class="biw-image-upload-btn button">' . esc_html__("Add Image", "biw") . '</button>';
                                 $html .= '</p>';
 
                             $html .= '</td>';

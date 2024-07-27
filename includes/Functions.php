@@ -1,6 +1,6 @@
 <?php
 
-namespace BIW;
+namespace BIFW;
 
 use WP_Query;
 
@@ -9,7 +9,7 @@ defined('ABSPATH') || exit;
 class Functions {
 
     public function generator($arr) {
-        require_once BIW_PATH . '/includes/settings/Generator.php';
+        require_once BIFW_PATH . '/includes/settings/Generator.php';
         $generator = new settings\Generator;
         $generator->generator($arr);
     }

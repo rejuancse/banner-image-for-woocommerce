@@ -105,8 +105,8 @@ msgstr ""
 msgid "Add button URL"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:40
-#: includes/Admin/BIW_Category_Banner_Image.php:119
+#: includes/Admin/BIFW_Category_Banner_Image.php:40
+#: includes/Admin/BIFW_Category_Banner_Image.php:119
 msgid "Add Image"
 msgstr ""
 
@@ -130,8 +130,8 @@ msgstr ""
 msgid "Banner Button Margin"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:68
-#: includes/Admin/BIW_Category_Banner_Image.php:170
+#: includes/Admin/BIFW_Category_Banner_Image.php:68
+#: includes/Admin/BIFW_Category_Banner_Image.php:170
 #: includes/settings/shop-page-settings/general-settings.php:52
 msgid "Banner Button Name"
 msgstr ""
@@ -146,8 +146,8 @@ msgstr ""
 msgid "Banner button text Color"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:75
-#: includes/Admin/BIW_Category_Banner_Image.php:184
+#: includes/Admin/BIFW_Category_Banner_Image.php:75
+#: includes/Admin/BIFW_Category_Banner_Image.php:184
 #: includes/settings/shop-page-settings/general-settings.php:61
 msgid "Banner Button URL"
 msgstr ""
@@ -177,12 +177,12 @@ msgstr ""
 msgid "Banner height"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:61
+#: includes/Admin/BIFW_Category_Banner_Image.php:61
 #: includes/settings/shop-page-settings/general-settings.php:43
 msgid "Banner Short Description"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:156
+#: includes/Admin/BIFW_Category_Banner_Image.php:156
 msgid "Banner Short Descriptions"
 msgstr ""
 
@@ -190,8 +190,8 @@ msgstr ""
 msgid "Banner Sub Heading"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:47
-#: includes/Admin/BIW_Category_Banner_Image.php:128
+#: includes/Admin/BIFW_Category_Banner_Image.php:47
+#: includes/Admin/BIFW_Category_Banner_Image.php:128
 msgid "Banner SubTitle"
 msgstr ""
 
@@ -220,8 +220,8 @@ msgstr ""
 msgid "Banner Text Align"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:54
-#: includes/Admin/BIW_Category_Banner_Image.php:142
+#: includes/Admin/BIFW_Category_Banner_Image.php:54
+#: includes/Admin/BIFW_Category_Banner_Image.php:142
 #: includes/settings/shop-page-settings/general-settings.php:34
 msgid "Banner Title"
 msgstr ""
@@ -266,8 +266,8 @@ msgstr ""
 msgid "Button text hover Color"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:31
-#: includes/Admin/BIW_Category_Banner_Image.php:101
+#: includes/Admin/BIFW_Category_Banner_Image.php:31
+#: includes/Admin/BIFW_Category_Banner_Image.php:101
 msgid "Category Banner BG Image"
 msgstr ""
 
@@ -290,13 +290,13 @@ msgstr ""
 msgid "Default text align left."
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:84
-#: includes/Admin/BIW_Category_Banner_Image.php:202
+#: includes/Admin/BIFW_Category_Banner_Image.php:84
+#: includes/Admin/BIFW_Category_Banner_Image.php:202
 msgid "Disable"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:85
-#: includes/Admin/BIW_Category_Banner_Image.php:203
+#: includes/Admin/BIFW_Category_Banner_Image.php:85
+#: includes/Admin/BIFW_Category_Banner_Image.php:203
 msgid "Enable"
 msgstr ""
 
@@ -309,9 +309,9 @@ msgstr ""
 msgid "Enable Category Page Banner"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:82
-#: includes/Admin/BIW_Category_Banner_Image.php:198
-#: includes/Admin/BIW_Category_Banner_Image.php:205
+#: includes/Admin/BIFW_Category_Banner_Image.php:82
+#: includes/Admin/BIFW_Category_Banner_Image.php:198
+#: includes/Admin/BIFW_Category_Banner_Image.php:205
 msgid "Enable Full Banner Link"
 msgstr ""
 
@@ -333,7 +333,7 @@ msgstr ""
 msgid "Left Align"
 msgstr ""
 
-#: includes/Admin/BIW_Menu.php:28
+#: includes/Admin/BIFW_Menu.php:28
 msgid "Product Banner Image"
 msgstr ""
 
@@ -352,8 +352,8 @@ msgstr ""
 msgid "Rejuan Ahamed"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:41
-#: includes/Admin/BIW_Category_Banner_Image.php:120
+#: includes/Admin/BIFW_Category_Banner_Image.php:41
+#: includes/Admin/BIFW_Category_Banner_Image.php:120
 msgid "Remove Image"
 msgstr ""
 
@@ -385,7 +385,7 @@ msgstr ""
 msgid "Select button text color."
 msgstr ""
 
-#: includes/Admin/BIW_Menu.php:29
+#: includes/Admin/BIFW_Menu.php:29
 msgid "Shop Page Banner Image"
 msgstr ""
 
@@ -413,8 +413,8 @@ msgstr ""
 msgid "Title Style Settings"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:36
-#: includes/Admin/BIW_Category_Banner_Image.php:108
+#: includes/Admin/BIFW_Category_Banner_Image.php:36
+#: includes/Admin/BIFW_Category_Banner_Image.php:108
 #: includes/settings/shop-page-settings/general-settings.php:19
 msgid "Upload Banner Image"
 msgstr ""
@@ -423,15 +423,15 @@ msgstr ""
 msgid "WooCommerce"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:70
+#: includes/Admin/BIFW_Category_Banner_Image.php:70
 msgid "Write Banner BTN Name"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:77
+#: includes/Admin/BIFW_Category_Banner_Image.php:77
 msgid "Write Banner BTN URL"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:177
+#: includes/Admin/BIFW_Category_Banner_Image.php:177
 msgid "Write Banner Button Name"
 msgstr ""
 
@@ -439,11 +439,11 @@ msgstr ""
 msgid "Write banner button name"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:191
+#: includes/Admin/BIFW_Category_Banner_Image.php:191
 msgid "Write Banner Button URL"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:63
+#: includes/Admin/BIFW_Category_Banner_Image.php:63
 msgid "Write Banner Short Description"
 msgstr ""
 
@@ -451,14 +451,14 @@ msgstr ""
 msgid "Write banner short description"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:163
+#: includes/Admin/BIFW_Category_Banner_Image.php:163
 msgid "Write Banner Short Descriptions"
 msgstr ""
 
-#: includes/Admin/BIW_Category_Banner_Image.php:49
-#: includes/Admin/BIW_Category_Banner_Image.php:56
-#: includes/Admin/BIW_Category_Banner_Image.php:135
-#: includes/Admin/BIW_Category_Banner_Image.php:149
+#: includes/Admin/BIFW_Category_Banner_Image.php:49
+#: includes/Admin/BIFW_Category_Banner_Image.php:56
+#: includes/Admin/BIFW_Category_Banner_Image.php:135
+#: includes/Admin/BIFW_Category_Banner_Image.php:149
 msgid "Write Banner Title"
 msgstr ""
 

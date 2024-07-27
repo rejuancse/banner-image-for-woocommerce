@@ -1,11 +1,11 @@
 <?php
 
-namespace BIW\Admin;
+namespace BIFW\Admin;
 
 /**
  * The Menu handler class
  */
-class BIW_Menu {
+class BIFW_Menu {
 
     /**
      * Initialize the class

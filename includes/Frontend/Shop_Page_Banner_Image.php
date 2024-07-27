@@ -1,6 +1,6 @@
 <?php
 
-namespace BIW\Frontend;
+namespace BIFW\Frontend;
 
 /**
  * Shortcode handler class
@@ -12,6 +12,7 @@ class Shop_Page_Banner_Image {
      */
     public function __construct() {
         add_action( 'woocommerce_before_shop_loop', array( $this, 'product_page_banner_image_callback_func' ) );
+        add_action( 'wp_enqueue_scripts', array( $this, 'product_banner_activation_css' ) );
     }
 
     /**
@@ -23,8 +24,6 @@ class Shop_Page_Banner_Image {
      * @return string
      */
     public function product_page_banner_image_callback_func() {
-        $this->product_banner_activation_css();
-
         if(is_shop()) {
             $enable_banner = get_option( 'enable_shop_page_banner', 'true' );
             $shop_page_banner_image = get_option( 'shop_page_banner_image', 9 );
@@ -77,7 +76,7 @@ class Shop_Page_Banner_Image {
     /**
      * CSS handle
      */
-    public function product_banner_activation_css() {
+    function product_banner_activation_css() {
         $text_align = get_option( 'shop_page_banner_text_align', 'left' );
         $banner_height = get_option( 'shop_banner_image_height', '280' );
 
@@ -108,76 +107,57 @@ class Shop_Page_Banner_Image {
         $button_font_weight = get_option( 'shop_banner_button_font_weight', '400' );
         $button_line_height = get_option( 'shop_banner_button_line_height', '28' );
         $button_button_padding = get_option( 'shop_banner_button_padding', '10px 30px' );
-        $button_button_margin = get_option( 'shop_banner_button_margin', '0' ); ?>
+        $button_button_margin = get_option( 'shop_banner_button_margin', '0' );
 
-        <style type="text/css">
+        wp_register_style( 'shop-page-banner-image', BIFW_URL .'/assets/css/shop-page-banner-image.css', false, BIFW_VERSION );
+        wp_enqueue_style('shop-page-banner-image');
+
+        // Prepare dynamic inline styles
+        $custom_css = "
             .product-banner-image-wrap {
-                position: relative;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-                z-index: 1;
-                display: flex;
-                align-items: center;
-                justify-content: <?php echo !empty($text_align) ? esc_attr($text_align) : 'left'; ?>;
-                text-align: <?php echo !empty($text_align) ? esc_attr($text_align) : 'left'; ?>;
-                height: <?php echo !empty($banner_height) ? esc_html($banner_height).'px' : '380px'; ?>;
-                padding: 30px 92px;
-                margin-bottom: 30px;
+                justify-content: " . esc_attr($text_align ?? 'left') . ";
+                text-align: " . esc_attr($text_align ?? 'left') . ";
+                height: " . esc_html($banner_height ?? '380') . "px;
             }
 
-            @media only screen and (max-width: 767px) {
-                .product-banner-image-wrap {
-                    padding: 30px 40px;
-                    height: 280px;
-                }
-            }
-
-            /* Sub Title Color */
             .product-banner-image-wrap .banner-content span {
-                color: <?php echo !empty($subtitle_color) ? esc_attr($subtitle_color) : '#000000'; ?>;
-                font-size: <?php echo !empty($subtitle_font_size) ? esc_attr($subtitle_font_size).'px' : '20px'; ?>;
-                line-height: <?php echo !empty($subtitle_line_height) ? esc_html($subtitle_line_height).'px' : '22px'; ?>;
-                font-weight: <?php echo !empty($subtitle_line_weight) ? esc_attr($subtitle_line_weight) : '500'; ?>;
+                color: " . esc_attr($subtitle_color ?? '#000000') . ";
+                font-size: " . esc_attr($subtitle_font_size ?? '20') . "px;
+                line-height: " . esc_html($subtitle_line_height ?? '22') . "px;
+                font-weight: " . esc_attr($subtitle_line_weight ?? '500') . ";
             }
 
-            /* Title Color */
             .product-banner-image-wrap .banner-content h2 {
-                margin: 5px 0 10px;
-                padding: 0;
-                color: <?php echo !empty($title_color) ? esc_attr($title_color) : '#000000'; ?>;
-                font-size: <?php echo !empty($title_font_size) ? esc_attr($title_font_size).'px' : '48px'; ?>;
-                line-height: <?php echo !empty($title_line_height) ? esc_attr($title_line_height).'px' : '50px'; ?>;
-                font-weight: <?php echo !empty($title_line_weight) ? esc_attr($title_line_weight) : '700'; ?>;
+                color: " . esc_attr($title_color ?? '#000000') . ";
+                font-size: " . esc_attr($title_font_size ?? '48') . "px;
+                line-height: " . esc_html($title_line_height ?? '50') . "px;
+                font-weight: " . esc_attr($title_line_weight ?? '700') . ";
             }
 
             .product-banner-image-wrap .banner-content p {
-                margin: 0;
-                padding: 0;
-                color: <?php echo !empty($desc_color) ? esc_attr($desc_color) : '#000000'; ?>;
-                font-size: <?php echo !empty($desc_font_size) ? esc_html($desc_font_size).'px' : '18px'; ?>;
-                line-height: <?php echo !empty($desc_line_height) ? esc_attr($desc_line_height).'px' : '20px'; ?>;
-                font-weight: <?php echo !empty($desc_line_weight) ? esc_attr($desc_line_weight) : '400'; ?>;
+                color: " . esc_attr($desc_color ?? '#000000') . ";
+                font-size: " . esc_html($desc_font_size ?? '18') . "px;
+                line-height: " . esc_attr($desc_line_height ?? '20') . "px;
+                font-weight: " . esc_attr($desc_line_weight ?? '400') . ";
             }
 
             .product-banner-image-wrap .banner-content a {
-                display: inline-block;
-                border-radius: 4px;
-                transition: .4s;
-                text-decoration: none;
-                padding: <?php echo !empty($button_button_padding) ? esc_attr($button_button_padding) : '10px 30px'; ?>;
-                margin: <?php echo !empty($button_button_margin) ? esc_attr($button_button_margin) : '15px 0 0'; ?>;
-                background-color: <?php echo !empty($button_bg_color) ? esc_attr($button_bg_color) : '#000000'; ?>;
-                color: <?php echo !empty($button_text_color) ? esc_attr($button_text_color) : '#fff'; ?>;
-                font-size: <?php echo !empty($button_font_size) ? esc_attr($button_font_size).'px' : '18px'; ?>;
-                line-height: <?php echo !empty($button_line_height) ? esc_attr($button_line_height).'px' : '30px'; ?>;
-                font-weight: <?php echo !empty($button_font_weight) ? esc_attr($button_font_weight) : '400'; ?>;
+                padding: " . esc_attr($button_button_padding ?? '10px 30px') . ";
+                margin: " . esc_attr($button_button_margin ?? '15px 0 0') . ";
+                background-color: " . esc_attr($button_bg_color ?? '#000000') . ";
+                color: " . esc_attr($button_text_color ?? '#fff') . ";
+                font-size: " . esc_attr($button_font_size ?? '18') . "px;
+                line-height: " . esc_attr($button_line_height ?? '30') . "px;
+                font-weight: " . esc_attr($button_font_weight ?? '400') . ";
             }
 
             .product-banner-image-wrap .banner-content a:hover {
-                background-color: <?php echo !empty($button_bg_hover_color) ? esc_attr($button_bg_hover_color) : '#000000'; ?>;
-                color: <?php echo !empty($button_text_hover_color) ? esc_attr($button_text_hover_color) : '#fff'; ?>;
+                background-color: " . esc_attr($button_bg_hover_color ?? '#000000') . ";
+                color: " . esc_attr($button_text_hover_color ?? '#fff') . ";
             }
-        </style>
-    <?php }
+        ";
+
+        // Add inline styles
+        wp_add_inline_style('shop-page-banner-image', $custom_css);
+    }
 }

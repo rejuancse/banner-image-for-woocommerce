@@ -1,9 +1,9 @@
 <?php
-namespace BIW\Admin;
+namespace BIFW\Admin;
 
-if ( ! class_exists( 'BIW_Category_Banner_Image' ) ) {
+if ( ! class_exists( 'BIFW_Category_Banner_Image' ) ) {
 
-    class BIW_Category_Banner_Image {
+    class BIFW_Category_Banner_Image {
 
         /*
         * Initialize the class and start calling our hooks and filters
@@ -15,7 +15,6 @@ if ( ! class_exists( 'BIW_Category_Banner_Image' ) ) {
             add_action( 'product_cat_edit_form_fields', array ( $this, 'update_category_image' ), 10, 2 );
             add_action( 'edited_product_cat', array ( $this, 'updated_category_banner_image' ), 10, 2 );
             add_action( 'admin_enqueue_scripts', array( $this, 'load_media' ) );
-            add_action( 'admin_footer', array ( $this, 'add_script' ) );
         }
 
         public function load_media() {
@@ -31,9 +30,9 @@ if ( ! class_exists( 'BIW_Category_Banner_Image' ) ) {
                 <h2><?php esc_html_e('Category Banner BG Image', 'biw'); ?></h2>
             </div>
 
-            <!-- Banner Image --> 
+            <!-- Banner Image -->
             <div class="form-field term-group">
-                <label for="category-image-id"><?php _e('Upload Banner Image', 'biw'); ?></label>
+                <label for="category-image-id"><?php esc_html_e('Upload Banner Image', 'biw'); ?></label>
                 <input type="hidden" id="category-image-id" name="category-image-id" class="custom_media_url" value="">
                 <div id="category-image-wrapper"></div>
                 <p>
@@ -109,7 +108,7 @@ if ( ! class_exists( 'BIW_Category_Banner_Image' ) ) {
             <!-- Update Banner Image -->
             <tr class="form-field term-group-wrap">
                 <th scope="row">
-                    <label for="category-image-id"><?php _e( 'Upload Banner Image', 'biw' ); ?></label>
+                    <label for="category-image-id"><?php esc_html_e( 'Upload Banner Image', 'biw' ); ?></label>
                 </th>
                 <td>
                     <?php $image_id = get_term_meta ( $term -> term_id, 'category-image-id', true ); ?>
@@ -120,8 +119,8 @@ if ( ! class_exists( 'BIW_Category_Banner_Image' ) ) {
                         <?php } ?>
                     </div>
                     <p>
-                        <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php _e( 'Add Image', 'biw' ); ?>" />
-                        <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php _e( 'Remove Image', 'biw' ); ?>" />
+                        <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php esc_attr_e( 'Add Image', 'biw' ); ?>" />
+                        <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php esc_attr_e( 'Remove Image', 'biw' ); ?>" />
                     </p>
                     <?php wp_nonce_field( 'update_category_image_nonce_action', 'update_category_image_nonce' ); ?>
                 </td>
@@ -218,22 +217,22 @@ if ( ! class_exists( 'BIW_Category_Banner_Image' ) ) {
         * @since 1.0.0
         */
         public function save_category_image ( $term_id, $tt_id ) {
-            if ( ! isset( $_POST['save_category_image_nonce'] ) || ! wp_verify_nonce( $_POST['save_category_image_nonce'], 'save_category_image_nonce_action' ) ) {
+            if ( ! isset( $_POST['save_category_image_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['save_category_image_nonce'] ) ), 'save_category_image_nonce_action' ) ) {
                 return;
             }
 
             if( isset( $_POST['category-image-id'] ) && '' !== $_POST['category-image-id'] ) {
-                $image = $_POST['category-image-id'];
+                $image = intval( $_POST['category-image-id'] ); // Sanitize integer
                 add_term_meta( $term_id, 'category-image-id', $image, true );
             }
 
-            if ( isset( $_POST['term_meta'] ) ) {
+            if ( isset( $_POST['term_meta'] ) && is_array( $_POST['term_meta'] ) ) {
                 $t_id = $term_id;
                 $term_meta = get_option("taxonomy_$t_id");
                 $cat_keys = array_keys( $_POST['term_meta'] );
                 foreach ( $cat_keys as $key ) {
-                    if ( isset ( $_POST['term_meta'][$key] ) ) {
-                        $term_meta[$key] = $_POST['term_meta'][$key];
+                    if ( isset( $_POST['term_meta'][$key] ) ) {
+                        $term_meta[sanitize_key($key)] = sanitize_text_field( wp_unslash( $_POST['term_meta'][$key] ) );
                     }
                 }
                 // save the option array
@@ -248,84 +247,33 @@ if ( ! class_exists( 'BIW_Category_Banner_Image' ) ) {
         public function updated_category_banner_image ( $term_id, $tt_id ) {
             // Verify the nonce before processing the form data
             if ( ! isset( $_POST['update_category_image_nonce'] ) ||
-                 ! wp_verify_nonce( $_POST['update_category_image_nonce'], 'update_category_image_nonce_action' ) ) {
+                 ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['update_category_image_nonce'] ) ), 'update_category_image_nonce_action' ) ) {
                 return;
             }
 
             if( isset( $_POST['category-image-id'] ) && '' !== $_POST['category-image-id'] ) {
-                $image = $_POST['category-image-id'];
+                $image = intval( $_POST['category-image-id'] ); // Sanitize integer
                 update_term_meta( $term_id, 'category-image-id', $image );
             } else {
                 update_term_meta( $term_id, 'category-image-id', '' );
             }
 
-            if ( isset( $_POST['term_meta'] ) ) {
+            if ( isset( $_POST['term_meta'] ) && is_array( $_POST['term_meta'] ) ) {
                 $t_id = $term_id;
                 $term_meta = get_option("taxonomy_$t_id");
                 $cat_keys = array_keys( $_POST['term_meta'] );
                 foreach ( $cat_keys as $key ) {
-                    if ( isset ( $_POST['term_meta'][$key] ) ) {
-                        $term_meta[$key] = $_POST['term_meta'][$key];
+                    if ( isset( $_POST['term_meta'][$key] ) ) {
+                        $term_meta[sanitize_key($key)] = sanitize_text_field( wp_unslash( $_POST['term_meta'][$key] ) );
                     }
                 }
                 // save the option array
                 update_option("taxonomy_$t_id", $term_meta);
             }
         }
-
-        /*
-        * Add script
-        * @since 1.0.0
-        */
-        public function add_script() { ?>
-            <script>
-                jQuery(document).ready( function($) {
-                    function biw_media_upload(button_class) {
-                        var _custom_media = true,
-                        _orig_send_attachment = wp.media.editor.send.attachment;
-                        $('body').on('click', button_class, function(e) {
-                            var button_id = '#'+$(this).attr('id');
-                            var send_attachment_bkp = wp.media.editor.send.attachment;
-                            var button = $(button_id);
-                            _custom_media = true;
-                            wp.media.editor.send.attachment = function(props, attachment){
-                                if ( _custom_media ) {
-                                    $('#category-image-id').val(attachment.id);
-                                    $('#category-image-wrapper').html('<img class="custom_media_image" src="" style="margin:0;padding:0;max-height:100px;float:none;" />');
-                                    $('#category-image-wrapper .custom_media_image').attr('src',attachment.url).css('display','block');
-                                } else {
-                                    return _orig_send_attachment.apply( button_id, [props, attachment] );
-                                }
-                            }
-                            wp.media.editor.open(button);
-                            return false;
-                        });
-                    }
-
-                    biw_media_upload('.ct_tax_media_button.button');
-
-                    $('body').on('click','.ct_tax_media_remove',function(){
-                        $('#category-image-id').val('');
-                        $('#category-image-wrapper').html('<img class="custom_media_image" src="" style="margin:0;padding:0;max-height:100px;float:none;" />');
-                    });
-
-                    $(document).ajaxComplete(function(event, xhr, settings) {
-                        var queryStringArr = settings.data.split('&');
-                        if( $.inArray('action=add-tag', queryStringArr) !== -1 ){
-                            var xml = xhr.responseXML;
-                            $response = $(xml).find('term_id').text();
-                            if($response!=""){
-                                // Clear the thumb image
-                                $('#category-image-wrapper').html('');
-                            }
-                        }
-                    });
-                });
-            </script>
-        <?php }
     }
 
-    $BIW_Category_Banner_Image = new BIW_Category_Banner_Image();
-    $BIW_Category_Banner_Image -> init();
+    $BIFW_Category_Banner_Image = new BIFW_Category_Banner_Image();
+    $BIFW_Category_Banner_Image -> init();
 }
 // Add term page

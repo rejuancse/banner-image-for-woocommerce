@@ -5,7 +5,7 @@ Tags: Banner, Product Banner, Promotional Banner, Sales Banner
 Requires at least: 5.9
 Tested up to: 6.5
 Requires PHP: 7.2
-Stable tag:  1.0.0
+Stable tag:  1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,13 @@ A. Found a bug? Please let us know by posting on the support section of this plu
 
 
 == Changelog ==
+
+= 1.0.1 [27/07/2024] =
+* wp_enqueue issue fixed
+* Internationalization: Text domain does not match plugin slug issue fixed
+* Data Must be Sanitized, Escaped, and Validated issue fixed
+* Variables and options must be escaped when echo'd issue fixed
+* Generic function/class/define/namespace/option names issue fixed
 
 = 1.0.0 [22/06/2024] =
 * Initial version released

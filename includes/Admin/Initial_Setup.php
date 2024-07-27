@@ -1,5 +1,5 @@
 <?php
-namespace BIW\Admin;
+namespace BIFW\Admin;
 
 defined( 'ABSPATH' ) || exit;
 

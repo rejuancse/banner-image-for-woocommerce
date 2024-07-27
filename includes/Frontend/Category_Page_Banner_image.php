@@ -1,11 +1,12 @@
 <?php
 
-namespace BIW\Frontend;
+namespace BIFW\Frontend;
 
 class Category_Page_Banner_image {
 
     public function __construct() {
         add_action( 'woocommerce_before_shop_loop', array($this, 'biw_product_category_banner_image'));
+        add_action( 'wp_enqueue_scripts', array( $this, 'biw_product_category_banner_activation_css' ) );
     }
 
     public function biw_product_category_banner_image($term_id) {
@@ -14,7 +15,6 @@ class Category_Page_Banner_image {
         */
         if ( is_product_category() ){
             global $wp_query;
-            $this->biw_product_category_banner_activation_css();
 
             $enable_banner = get_option( 'enable_category_page_banner', 'true' );
             $cat = $wp_query->get_queried_object();
@@ -39,7 +39,7 @@ class Category_Page_Banner_image {
                             <?php } ?>
 
                             <?php if( !empty( $term_meta['category_banner_short_desc'] ) ) { ?>
-                                <?php echo wpautop(wp_unslash($term_meta['category_banner_short_desc'])); ?>
+                                <?php echo wp_kses_post(wp_unslash($term_meta['category_banner_short_desc'])); ?>
                             <?php } ?>
 
                             <?php if( !empty( $term_meta['category_banner_Button_url'] ) && $term_meta['category_banner_full_link'] !== 'yes' ) { ?>
@@ -92,76 +92,61 @@ class Category_Page_Banner_image {
         $button_font_weight = get_option( 'category_banner_button_fontweight', '400' );
         $button_line_height = get_option( 'category_banner_button_lineheight', '28' );
         $button_button_padding = get_option( 'category_banner_button_padding', '0' );
-        $button_button_margin = get_option( 'category_banner_button_margin', '0' ); ?>
+        $button_button_margin = get_option( 'category_banner_button_margin', '0' );
 
-        <style type="text/css">
+        // Register and enqueue the stylesheet
+        wp_register_style('category-page-banner-image', BIFW_URL . '/assets/css/category-page-banner-image.css', false, BIFW_VERSION);
+        wp_enqueue_style('category-page-banner-image');
+
+        // Construct the custom CSS string
+        $custom_css = "
             .product-category-page-banner-image {
-                position: relative;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-                z-index: 1;
-                display: flex;
-                align-items: center;
-                justify-content: <?php echo !empty($text_align) ? esc_attr($text_align) : 'left'; ?>;
-                text-align: <?php echo !empty($text_align) ? esc_attr($text_align) : 'left'; ?>;
-                height: <?php echo !empty($banner_height) ? esc_html($banner_height).'px' : '380px'; ?>;
-                padding: 30px 92px;
-                margin-bottom: 30px;
-            }
-
-            @media only screen and (max-width: 767px) {
-                .product-category-page-banner-image {
-                    padding: 30px 40px;
-                    height: 280px;
-                }
+                justify-content: " . (!empty($text_align) ? esc_attr($text_align) : 'left') . ";
+                text-align: " . (!empty($text_align) ? esc_attr($text_align) : 'left') . ";
+                height: " . (!empty($banner_height) ? esc_html($banner_height) . 'px' : '380px') . ";
             }
 
             /* Sub Title Color */
             .product-category-page-banner-image .banner-content span {
-                color: <?php echo !empty($subtitle_color) ? esc_attr($subtitle_color) : '#000000'; ?>;
-                font-size: <?php echo !empty($subtitle_font_size) ? esc_attr($subtitle_font_size).'px' : '20px'; ?>;
-                line-height: <?php echo !empty($subtitle_line_height) ? esc_html($subtitle_line_height).'px' : '22px'; ?>;
-                font-weight: <?php echo !empty($subtitle_line_weight) ? esc_attr($subtitle_line_weight) : '500'; ?>;
+                color: " . (!empty($subtitle_color) ? esc_attr($subtitle_color) : '#000000') . ";
+                font-size: " . (!empty($subtitle_font_size) ? esc_attr($subtitle_font_size) . 'px' : '20px') . ";
+                line-height: " . (!empty($subtitle_line_height) ? esc_html($subtitle_line_height) . 'px' : '22px') . ";
+                font-weight: " . (!empty($subtitle_line_weight) ? esc_attr($subtitle_line_weight) : '500') . ";
             }
 
             /* Title Color */
             .product-category-page-banner-image .banner-content h2 {
-                margin: 5px 0 10px;
-                padding: 0;
-                color: <?php echo !empty($title_color) ? esc_attr($title_color) : '#000000'; ?>;
-                font-size: <?php echo !empty($title_font_size) ? esc_html($title_font_size).'px' : '48px'; ?>;
-                line-height: <?php echo !empty($title_line_height) ? esc_attr($title_line_height).'px' : '50px'; ?>;
-                font-weight: <?php echo !empty($title_line_weight) ? esc_attr($title_line_weight) : '700'; ?>;
+                color: " . (!empty($title_color) ? esc_attr($title_color) : '#000000') . ";
+                font-size: " . (!empty($title_font_size) ? esc_html($title_font_size) . 'px' : '48px') . ";
+                line-height: " . (!empty($title_line_height) ? esc_attr($title_line_height) . 'px' : '50px') . ";
+                font-weight: " . (!empty($title_line_weight) ? esc_attr($title_line_weight) : '700') . ";
             }
 
             .product-category-page-banner-image .banner-content p {
-                margin: 0;
-                padding: 0;
-                color: <?php echo !empty($desc_color) ? esc_attr($desc_color) : '#000000'; ?>;
-                font-size: <?php echo !empty($desc_font_size) ? esc_attr($desc_font_size).'px' : '18px'; ?>;
-                line-height: <?php echo !empty($desc_line_height) ? esc_attr($desc_line_height).'px' : '20px'; ?>;
-                font-weight: <?php echo !empty($desc_line_weight) ? esc_attr($desc_line_weight) : '400'; ?>;
+                color: " . (!empty($desc_color) ? esc_attr($desc_color) : '#000000') . ";
+                font-size: " . (!empty($desc_font_size) ? esc_attr($desc_font_size) . 'px' : '18px') . ";
+                line-height: " . (!empty($desc_line_height) ? esc_attr($desc_line_height) . 'px' : '20px') . ";
+                font-weight: " . (!empty($desc_line_weight) ? esc_attr($desc_line_weight) : '400') . ";
             }
 
             .product-category-page-banner-image .banner-content a {
-                display: inline-block;
-                border-radius: 4px;
-                transition: .4s;
-                text-decoration: none;
-                padding: <?php echo !empty($button_button_padding) ? esc_attr($button_button_padding) : '10px 30px'; ?>;
-                margin: <?php echo !empty($button_button_margin) ? esc_attr($button_button_margin) : '15px 0 0'; ?>;
-                background-color: <?php echo !empty($button_bg_color) ? esc_attr($button_bg_color) : '#000000'; ?>;
-                color: <?php echo !empty($button_text_color) ? esc_attr($button_text_color) : '#fff'; ?>;
-                font-size: <?php echo !empty($button_font_size) ? esc_attr($button_font_size).'px' : '18px'; ?>;
-                line-height: <?php echo !empty($button_line_height) ? esc_attr($button_line_height).'px' : '30px'; ?>;
-                font-weight: <?php echo !empty($button_font_weight) ? esc_attr($button_font_weight) : '400'; ?>;
+                padding: " . (!empty($button_button_padding) ? esc_attr($button_button_padding) : '10px 30px') . ";
+                margin: " . (!empty($button_button_margin) ? esc_attr($button_button_margin) : '15px 0 0') . ";
+                background-color: " . (!empty($button_bg_color) ? esc_attr($button_bg_color) : '#000000') . ";
+                color: " . (!empty($button_text_color) ? esc_attr($button_text_color) : '#fff') . ";
+                font-size: " . (!empty($button_font_size) ? esc_attr($button_font_size) . 'px' : '18px') . ";
+                line-height: " . (!empty($button_line_height) ? esc_attr($button_line_height) . 'px' : '30px') . ";
+                font-weight: " . (!empty($button_font_weight) ? esc_attr($button_font_weight) : '400') . ";
             }
 
             .product-category-page-banner-image .banner-content a:hover {
-                background-color: <?php echo !empty($button_bg_hover_color) ? esc_attr($button_bg_hover_color) : '#000000'; ?>;
-                color: <?php echo !empty($button_text_hover_color) ? esc_attr($button_text_hover_color) : '#fff'; ?>;
+                background-color: " . (!empty($button_bg_hover_color) ? esc_attr($button_bg_hover_color) : '#000000') . ";
+                color: " . (!empty($button_text_hover_color) ? esc_attr($button_text_hover_color) : '#fff') . ";
             }
-        </style>
-    <?php }
+        ";
+
+        // Add the inline style to the registered stylesheet
+        wp_add_inline_style('category-page-banner-image', $custom_css);
+
+    }
 }

@@ -1,19 +1,19 @@
 <?php
 
-namespace BIW\Admin;
+namespace BIFW\Admin;
 
 class Category_Page_Settings {
     public function Category_Page_Banner() {
         if (biw_function()->post('wp_settings_page_nonce_field')) {
             echo '<div class="notice notice-success is-dismissible">';
-                echo '<p>' . __("Data have been Saved.", "biw") . '</p>';
+                echo '<p>' . esc_html__("Data have been Saved.", "biw") . '</p>';
             echo '</div>';
         }
 
-        $default_file = BIW_PATH . '/includes/settings/category-page-settings/general-settings.php';
-        $style = BIW_PATH . '/includes/settings/category-page-settings/styles.php';
+        $default_file = BIFW_PATH . '/includes/settings/category-page-settings/general-settings.php';
+        $style = BIFW_PATH . '/includes/settings/category-page-settings/styles.php';
 
-        $tabs = apply_filters('shop_banner_image_page_panel_tabs',
+        $tabs = apply_filters('bifw_bifw_shop_banner_image_page_panel_tabs',
             array(
                 'general_settings' => array(
                     'tab_name' => __('General Settings','biw'),
@@ -37,11 +37,11 @@ class Category_Page_Settings {
             $current_page = sanitize_text_field($_GET['tab']);
         }
 
-        echo '<h2 class="bannerimage-setting-title">' . __("Category Page Banner Image Settings", "biw") . '</h2>';
+        echo '<h2 class="bannerimage-setting-title">' . esc_html__("Category Page Banner Image Settings", "biw") . '</h2>';
         echo '<h2 class="nav-tab-wrapper">';
         foreach ($tabs as $tab => $name) {
             $class = ($tab == $current_page) ? ' nav-tab-active' : '';
-            echo "<a class='nav-tab$class' href='admin.php?page=biw-product-category&tab=$tab'>{$name['tab_name']}</a>";
+            echo "<a class='nav-tab$class' href='" . esc_url(admin_url('admin.php?page=biw-product-category&tab=' . $tab)) . "'>{$name['tab_name']}</a>";
         }
         echo '</h2>'; ?>
 
