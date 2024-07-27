@@ -1,6 +1,6 @@
 <?php
 
-namespace BIFW;
+namespace Banner_Image;
 
 /**
  * The admin class
@@ -12,7 +12,7 @@ class Admin {
      */
     function __construct() {
         new Admin\Initial_Setup();
-        new Admin\BIFW_Menu();
-        new Admin\BIFW_Category_Banner_Image();
+        new Admin\Banner_Image_Menu();
+        new Admin\Banner_Image_Category_Banner();
     }
 }

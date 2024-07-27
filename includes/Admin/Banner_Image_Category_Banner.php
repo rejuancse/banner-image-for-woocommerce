@@ -1,9 +1,9 @@
 <?php
-namespace BIFW\Admin;
+namespace Banner_Image\Admin;
 
-if ( ! class_exists( 'BIFW_Category_Banner_Image' ) ) {
+if ( ! class_exists( 'Banner_Image_Category_Banner' ) ) {
 
-    class BIFW_Category_Banner_Image {
+    class Banner_Image_Category_Banner {
 
         /*
         * Initialize the class and start calling our hooks and filters
@@ -27,17 +27,17 @@ if ( ! class_exists( 'BIFW_Category_Banner_Image' ) ) {
         */
         public function add_category_image ( $taxonomy ) { ?>
             <div class="form-field">
-                <h2><?php esc_html_e('Category Banner BG Image', 'biw'); ?></h2>
+                <h2><?php esc_html_e('Category Banner BG Image', 'banner-image'); ?></h2>
             </div>
 
             <!-- Banner Image -->
             <div class="form-field term-group">
-                <label for="category-image-id"><?php esc_html_e('Upload Banner Image', 'biw'); ?></label>
+                <label for="category-image-id"><?php esc_html_e('Upload Banner Image', 'banner-image'); ?></label>
                 <input type="hidden" id="category-image-id" name="category-image-id" class="custom_media_url" value="">
                 <div id="category-image-wrapper"></div>
                 <p>
-                    <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php _e( 'Add Image', 'biw' ); ?>" />
-                    <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php _e( 'Remove Image', 'biw' ); ?>" />
+                    <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php esc_attr_e( 'Add Image', 'banner-image' ); ?>" />
+                    <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php esc_attr_e( 'Remove Image', 'banner-image' ); ?>" />
 
                     <?php wp_nonce_field( 'save_category_image_nonce_action', 'save_category_image_nonce' ); ?>
                 </p>
@@ -45,45 +45,45 @@ if ( ! class_exists( 'BIFW_Category_Banner_Image' ) ) {
 
             <!-- Banner SubTitle -->
             <div class="form-field">
-                <label for="term_meta[category_banner_subtitle]"><?php esc_html_e('Banner SubTitle', 'biw'); ?></label>
+                <label for="term_meta[category_banner_subtitle]"><?php esc_html_e('Banner SubTitle', 'banner-image'); ?></label>
                 <input type="text" name="term_meta[category_banner_subtitle]" id="term_meta[category_banner_subtitle]" value="" />
-                <p class="description"><?php esc_html_e('Write Banner Title', 'biw'); ?></p>
+                <p class="description"><?php esc_html_e('Write Banner Title', 'banner-image'); ?></p>
             </div>
 
             <!-- Banner Title -->
             <div class="form-field">
-                <label for="term_meta[category_banner_title]"><?php esc_html_e('Banner Title', 'biw'); ?></label>
+                <label for="term_meta[category_banner_title]"><?php esc_html_e('Banner Title', 'banner-image'); ?></label>
                 <input type="text" name="term_meta[category_banner_title]" id="term_meta[category_banner_title]" value="" />
-                <p class="description"><?php esc_html_e('Write Banner Title', 'biw'); ?></p>
+                <p class="description"><?php esc_html_e('Write Banner Title', 'banner-image'); ?></p>
             </div>
 
             <!-- Banner Short Description -->
             <div class="form-field">
-                <label for="term_meta[category_banner_short_desc]"><?php esc_html_e('Banner Short Description', 'biw'); ?></label>
+                <label for="term_meta[category_banner_short_desc]"><?php esc_html_e('Banner Short Description', 'banner-image'); ?></label>
                 <input type="text" class="cat-desc"  name="term_meta[category_banner_short_desc]" id="term_meta[category_banner_short_desc]" value="" />
-                <p class="description"><?php esc_html_e('Write Banner Short Description', 'biw'); ?></p>
+                <p class="description"><?php esc_html_e('Write Banner Short Description', 'banner-image'); ?></p>
             </div>
 
             <!-- Banner Button Name -->
             <div class="form-field">
-                <label for="term_meta[category_banner_Button_Name]"><?php esc_html_e('Banner Button Name', 'biw'); ?></label>
+                <label for="term_meta[category_banner_Button_Name]"><?php esc_html_e('Banner Button Name', 'banner-image'); ?></label>
                 <input type="text" name="term_meta[category_banner_Button_Name]" id="term_meta[category_banner_Button_Name]" value="" />
-                <p class="description"><?php esc_html_e('Write Banner BTN Name', 'biw'); ?></p>
+                <p class="description"><?php esc_html_e('Write Banner BTN Name', 'banner-image'); ?></p>
             </div>
 
             <!-- Banner Button URL -->
             <div class="form-field">
-                <label for="term_meta[category_banner_Button_url]"><?php esc_html_e('Banner Button URL', 'biw'); ?></label>
+                <label for="term_meta[category_banner_Button_url]"><?php esc_html_e('Banner Button URL', 'banner-image'); ?></label>
                 <input type="text" name="term_meta[category_banner_Button_url]" id="term_meta[category_banner_Button_url]" value="" />
-                <p class="description"><?php esc_html_e('Write Banner BTN URL', 'biw'); ?></p>
+                <p class="description"><?php esc_html_e('Write Banner BTN URL', 'banner-image'); ?></p>
             </div>
 
             <!-- Enable Full Banner Link -->
             <div class="form-field">
-                <label for="term_meta[category_banner_full_link]"><?php esc_html_e('Enable Full Banner Link', 'biw'); ?></label>
+                <label for="term_meta[category_banner_full_link]"><?php esc_html_e('Enable Full Banner Link', 'banner-image'); ?></label>
                 <select id="term_meta[category_banner_full_link]" name="term_meta[category_banner_full_link]">
-                    <option value="no" selected><?php esc_html_e('Disable', 'biw'); ?></option>
-                    <option value="yes"><?php esc_html_e('Enable', 'biw'); ?></option>
+                    <option value="no" selected><?php esc_html_e('Disable', 'banner-image'); ?></option>
+                    <option value="yes"><?php esc_html_e('Enable', 'banner-image'); ?></option>
                 </select>
             </div>
 
@@ -97,18 +97,18 @@ if ( ! class_exists( 'BIFW_Category_Banner_Image' ) ) {
         */
         public function update_category_image ( $term, $taxonomy ) {
             $t_id = $term->term_id;
-            $term_meta = get_option("taxonomy_$t_id"); ?>
+            $term_meta = get_option("banner_image_taxonomy_$t_id"); ?>
 
             <tr class="form-field">
                 <th scope="row" valign="top">
-                    <h2><?php esc_html_e('Category Banner BG Image', 'biw'); ?></h2>
+                    <h2><?php esc_html_e('Category Banner BG Image', 'banner-image'); ?></h2>
                 </th>
             </tr>
 
             <!-- Update Banner Image -->
             <tr class="form-field term-group-wrap">
                 <th scope="row">
-                    <label for="category-image-id"><?php esc_html_e( 'Upload Banner Image', 'biw' ); ?></label>
+                    <label for="category-image-id"><?php esc_html_e( 'Upload Banner Image', 'banner-image' ); ?></label>
                 </th>
                 <td>
                     <?php $image_id = get_term_meta ( $term -> term_id, 'category-image-id', true ); ?>
@@ -119,8 +119,8 @@ if ( ! class_exists( 'BIFW_Category_Banner_Image' ) ) {
                         <?php } ?>
                     </div>
                     <p>
-                        <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php esc_attr_e( 'Add Image', 'biw' ); ?>" />
-                        <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php esc_attr_e( 'Remove Image', 'biw' ); ?>" />
+                        <input type="button" class="button button-secondary ct_tax_media_button" id="ct_tax_media_button" name="ct_tax_media_button" value="<?php esc_attr_e( 'Add Image', 'banner-image' ); ?>" />
+                        <input type="button" class="button button-secondary ct_tax_media_remove" id="ct_tax_media_remove" name="ct_tax_media_remove" value="<?php esc_attr_e( 'Remove Image', 'banner-image' ); ?>" />
                     </p>
                     <?php wp_nonce_field( 'update_category_image_nonce_action', 'update_category_image_nonce' ); ?>
                 </td>
@@ -129,84 +129,84 @@ if ( ! class_exists( 'BIFW_Category_Banner_Image' ) ) {
             <!-- Banner SubTitle -->
             <tr class="form-field">
                 <th scope="row" valign="top">
-                    <label for="term_meta[category_banner_subtitle]"><?php esc_html_e('Banner SubTitle', 'biw'); ?></label>
+                    <label for="term_meta[category_banner_subtitle]"><?php esc_html_e('Banner SubTitle', 'banner-image'); ?></label>
                 </th>
                 <td>
                     <input type="text"
                     name="term_meta[category_banner_subtitle]"
                     id="term_meta[category_banner_subtitle]"
                     value="<?php echo !empty( $term_meta['category_banner_subtitle'] ) ? esc_attr( $term_meta['category_banner_subtitle'] ) : ''; ?>" />
-                    <p class="description"><?php esc_attr_e('Write Banner Title', 'biw'); ?></p>
+                    <p class="description"><?php esc_attr_e('Write Banner Title', 'banner-image'); ?></p>
                 </td>
             </tr>
 
             <!-- Banner Title -->
             <tr class="form-field">
                 <th scope="row" valign="top">
-                    <label for="term_meta[category_banner_title]"><?php esc_html_e('Banner Title', 'biw'); ?></label>
+                    <label for="term_meta[category_banner_title]"><?php esc_html_e('Banner Title', 'banner-image'); ?></label>
                 </th>
                 <td>
                     <input type="text"
                     name="term_meta[category_banner_title]"
                     id="term_meta[category_banner_title]"
                     value="<?php echo !empty( $term_meta['category_banner_title'] ) ? esc_attr( $term_meta['category_banner_title'] ) : ''; ?>" />
-                    <p class="description"><?php esc_attr_e('Write Banner Title', 'biw'); ?></p>
+                    <p class="description"><?php esc_attr_e('Write Banner Title', 'banner-image'); ?></p>
                 </td>
             </tr>
 
             <!-- Banner Short Description -->
             <tr class="form-field">
                 <th scope="row" valign="top">
-                    <label for="term_meta[category_banner_short_desc]"><?php esc_html_e('Banner Short Descriptions', 'biw'); ?></label>
+                    <label for="term_meta[category_banner_short_desc]"><?php esc_html_e('Banner Short Descriptions', 'banner-image'); ?></label>
                 </th>
                 <td>
                     <input type="text" class="cat-desc"
                     name="term_meta[category_banner_short_desc]"
                     id="term_meta[category_banner_short_desc]"
                     value="<?php echo !empty( $term_meta['category_banner_short_desc'] ) ? esc_attr( $term_meta['category_banner_short_desc'] ) : ''; ?>" />
-                    <p class="description"><?php esc_html_e('Write Banner Short Descriptions', 'biw'); ?></p>
+                    <p class="description"><?php esc_html_e('Write Banner Short Descriptions', 'banner-image'); ?></p>
                 </td>
             </tr>
 
             <!-- Banner Button Name -->
             <tr class="form-field">
                 <th scope="row" valign="top">
-                    <label for="term_meta[category_banner_Button_Name]"><?php esc_html_e('Banner Button Name', 'biw'); ?></label>
+                    <label for="term_meta[category_banner_Button_Name]"><?php esc_html_e('Banner Button Name', 'banner-image'); ?></label>
                 </th>
                 <td>
                     <input type="text"
                     name="term_meta[category_banner_Button_Name]"
                     id="term_meta[category_banner_Button_Name]"
                     value="<?php echo !empty( $term_meta['category_banner_Button_Name'] ) ? esc_attr( $term_meta['category_banner_Button_Name'] ) : ''; ?>" />
-                    <p class="description"><?php esc_attr_e('Write Banner Button Name', 'biw'); ?></p>
+                    <p class="description"><?php esc_attr_e('Write Banner Button Name', 'banner-image'); ?></p>
                 </td>
             </tr>
 
             <!-- Banner Button URL -->
             <tr class="form-field">
                 <th scope="row" valign="top">
-                    <label for="term_meta[category_banner_Button_url]"><?php esc_html_e('Banner Button URL', 'biw'); ?></label>
+                    <label for="term_meta[category_banner_Button_url]"><?php esc_html_e('Banner Button URL', 'banner-image'); ?></label>
                 </th>
                 <td>
                     <input type="text"
                     name="term_meta[category_banner_Button_url]"
                     id="term_meta[category_banner_Button_url]"
                     value="<?php echo !empty( $term_meta['category_banner_Button_url'] ) ? esc_attr( $term_meta['category_banner_Button_url'] ) : ''; ?>" />
-                    <p class="description"><?php esc_attr_e('Write Banner Button URL', 'biw'); ?></p>
+                    <p class="description"><?php esc_attr_e('Write Banner Button URL', 'banner-image'); ?></p>
                 </td>
             </tr>
 
             <!-- Enable Full Banner Link -->
             <tr class="form-field">
                 <th scope="row" valign="top">
-                    <label for="term_meta[category_banner_full_link]"><?php esc_html_e('Enable Full Banner Link', 'biw'); ?></label>
+                    <label for="term_meta[category_banner_full_link]"><?php esc_html_e('Enable Full Banner Link', 'banner-image'); ?></label>
                 </th>
                 <td>
                     <select name="term_meta[category_banner_full_link]" id="term_meta[category_banner_full_link]">
-                        <option value="no" <?php echo !empty($term_meta['category_banner_full_link']) == 'no' ? 'selected' : ''; ?>><?php esc_html_e('Disable', 'biw'); ?></option>
-                        <option value="yes" <?php echo !empty($term_meta['category_banner_full_link']) == 'yes' ? 'selected' : ''; ?>><?php esc_html_e('Enable', 'biw'); ?></option>
+                        <option value="no" <?php echo !empty($term_meta['category_banner_full_link']) == 'no' ? 'selected' : ''; ?>><?php esc_html_e('Disable', 'banner-image'); ?></option>
+                        <option value="yes" <?php echo !empty($term_meta['category_banner_full_link']) == 'yes' ? 'selected' : ''; ?>><?php esc_html_e('Enable', 'banner-image'); ?></option>
                     </select>
-                    <p class="description"><?php esc_html_e('Enable Full Banner Link', 'biw'); ?></p>
+                    <p class="description"><?php esc_html_e('Enable Full Banner Link', 'banner-image'); ?></p>
                 </td>
             </tr>
         <?php
@@ -228,7 +228,7 @@ if ( ! class_exists( 'BIFW_Category_Banner_Image' ) ) {
 
             if ( isset( $_POST['term_meta'] ) && is_array( $_POST['term_meta'] ) ) {
                 $t_id = $term_id;
-                $term_meta = get_option("taxonomy_$t_id");
+                $term_meta = get_option("banner_image_taxonomy_$t_id");
                 $cat_keys = array_keys( $_POST['term_meta'] );
                 foreach ( $cat_keys as $key ) {
                     if ( isset( $_POST['term_meta'][$key] ) ) {
@@ -236,7 +236,7 @@ if ( ! class_exists( 'BIFW_Category_Banner_Image' ) ) {
                     }
                 }
                 // save the option array
-                update_option("taxonomy_$t_id", $term_meta);
+                update_option("banner_image_taxonomy_$t_id", $term_meta);
             }
         }
 
@@ -260,7 +260,7 @@ if ( ! class_exists( 'BIFW_Category_Banner_Image' ) ) {
 
             if ( isset( $_POST['term_meta'] ) && is_array( $_POST['term_meta'] ) ) {
                 $t_id = $term_id;
-                $term_meta = get_option("taxonomy_$t_id");
+                $term_meta = get_option("banner_image_taxonomy_$t_id");
                 $cat_keys = array_keys( $_POST['term_meta'] );
                 foreach ( $cat_keys as $key ) {
                     if ( isset( $_POST['term_meta'][$key] ) ) {
@@ -268,12 +268,12 @@ if ( ! class_exists( 'BIFW_Category_Banner_Image' ) ) {
                     }
                 }
                 // save the option array
-                update_option("taxonomy_$t_id", $term_meta);
+                update_option("banner_image_taxonomy_$t_id", $term_meta);
             }
         }
     }
 
-    $BIFW_Category_Banner_Image = new BIFW_Category_Banner_Image();
-    $BIFW_Category_Banner_Image -> init();
+    $Banner_Image_Category_Banner = new Banner_Image_Category_Banner();
+    $Banner_Image_Category_Banner -> init();
 }
 // Add term page

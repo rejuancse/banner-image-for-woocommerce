@@ -1,6 +1,6 @@
 <?php
 
-namespace BIFW\Frontend;
+namespace Banner_Image\Frontend;
 
 /**
  * Shortcode handler class
@@ -41,7 +41,8 @@ class Shop_Page_Banner_Image {
                 <a href="<?php echo esc_url($button_url); ?>" class="biw-full-banner-link">
                 <?php } ?>
 
-                    <div class="product-banner-image-wrap" style="background-image: url(<?php echo $image_url; ?>);">
+                    <div class="product-banner-image-wrap" style="background-image: url(<?php echo esc_url( $image_url ); ?>);">
+
                         <div class="banner-content">
                             <?php if( !empty( $sub_heading ) ) { ?>
                                 <span><?php echo esc_html($sub_heading); ?></span>
@@ -109,7 +110,7 @@ class Shop_Page_Banner_Image {
         $button_button_padding = get_option( 'shop_banner_button_padding', '10px 30px' );
         $button_button_margin = get_option( 'shop_banner_button_margin', '0' );
 
-        wp_register_style( 'shop-page-banner-image', BIFW_URL .'/assets/css/shop-page-banner-image.css', false, BIFW_VERSION );
+        wp_register_style( 'shop-page-banner-image', Banner_Image_URL .'/assets/css/shop-page-banner-image.css', false, Banner_Image_VERSION );
         wp_enqueue_style('shop-page-banner-image');
 
         // Prepare dynamic inline styles

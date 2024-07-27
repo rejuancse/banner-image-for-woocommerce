@@ -1,11 +1,11 @@
 <?php
 
-namespace BIFW\Admin;
+namespace Banner_Image\Admin;
 
 /**
  * The Menu handler class
  */
-class BIFW_Menu {
+class Banner_Image_Menu {
 
     /**
      * Initialize the class
@@ -25,8 +25,8 @@ class BIFW_Menu {
      */
     public function biw_admin_menu() {
         add_menu_page(
-            __( 'Product Banner Image', 'biw' ),
-            __( 'Shop Page Banner Image', 'biw' ),
+            __( 'Product Banner Image', 'banner-image' ),
+            __( 'Shop Page Banner Image', 'banner-image' ),
             'manage_options', 'biw-menu',
             [ $this, 'biw_shop_page_callback_func' ],
             'dashicons-superhero',

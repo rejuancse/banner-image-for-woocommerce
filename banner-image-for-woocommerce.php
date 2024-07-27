@@ -2,11 +2,11 @@
 /**
  * Plugin Name: Banner Image for WooCommerce
  * Description: Enhance your WooCommerce store with stunning product banner images. Showcase your products beautifully and boost sales effortlessly!
- * Version:           1.0.1
+ * Version:           1.0.2
  * Requires at least: 5.9
  * Requires PHP:      7.2
  * Author:            Rejuan Ahamed
- * Text Domain:       biw
+ * Text Domain:       banner-image
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -18,14 +18,14 @@ require_once __DIR__ . '/vendor/autoload.php';
 /**
  * The main plugin class
  */
-final class BIFW_ProductBannerImage {
+final class Banner_Image_ProductBannerImage {
 
     /**
      * Plugin version
      *
      * @var string
      */
-    const version = '1.0.1';
+    const version = '1.0.2';
 
     /**
      * Class construcotr
@@ -43,12 +43,12 @@ final class BIFW_ProductBannerImage {
     * Load Text Domain Language
     */
     function biw_language_load(){
-        load_plugin_textdomain( 'biw', false, basename(dirname( __FILE__ )).'/languages/');
+        load_plugin_textdomain( 'banner-image', false, basename(dirname( __FILE__ )).'/languages/');
     }
 
     /**
      * Initialize a singleton instance
-     * @return \BIFW_ProductBannerImage
+     * @return \Banner_Image_ProductBannerImage
      */
     public static function init() {
         static $instance = false;
@@ -66,11 +66,11 @@ final class BIFW_ProductBannerImage {
      * @return void
      */
     public function define_constants() {
-        define( 'BIFW_VERSION', self::version );
-        define( 'BIFW_FILE', __FILE__ );
-        define( 'BIFW_PATH', __DIR__ );
-        define( 'BIFW_URL', plugins_url( '', BIFW_FILE ) );
-        define( 'BIFW_ASSETS', BIFW_URL . '/assets' );
+        define( 'Banner_Image_VERSION', self::version );
+        define( 'Banner_Image_FILE', __FILE__ );
+        define( 'Banner_Image_PATH', __DIR__ );
+        define( 'Banner_Image_URL', plugins_url( '', Banner_Image_FILE ) );
+        define( 'Banner_Image_ASSETS', Banner_Image_URL . '/assets' );
     }
 
     /**
@@ -79,13 +79,13 @@ final class BIFW_ProductBannerImage {
      * @return void
      */
     public function activate() {
-        $installed = get_option( 'biw_installed' );
+        $installed = get_option( 'banner_image_installed' );
 
         if ( ! $installed ) {
-            update_option( 'biw_installed', time() );
+            update_option( 'banner_image_installed', time() );
         }
 
-        update_option( 'biw_version', BIFW_VERSION );
+        update_option( 'banner_image_version', Banner_Image_VERSION );
     }
 
     /**
@@ -95,9 +95,9 @@ final class BIFW_ProductBannerImage {
      */
     public function init_plugin() {
         if ( is_admin() ) {
-            new BIFW\Admin();
+            new Banner_Image\Admin();
         } else {
-            new BIFW\Frontend();
+            new Banner_Image\Frontend();
         }
     }
 
@@ -106,29 +106,29 @@ final class BIFW_ProductBannerImage {
      * @ Frontend
      */
     public function frontend_script(){
-        wp_enqueue_style( 'biw-front', BIFW_URL .'/assets/css/main.css', false, BIFW_VERSION );
+        wp_enqueue_style( 'biw-front', Banner_Image_URL .'/assets/css/main.css', false, Banner_Image_VERSION );
     }
 
     public function admin_script(){
         wp_enqueue_style( 'wp-color-picker' );
-        wp_enqueue_style( 'biw-admin', BIFW_URL .'/assets/css/admin.css', false, BIFW_VERSION );
+        wp_enqueue_style( 'biw-admin', Banner_Image_URL .'/assets/css/admin.css', false, Banner_Image_VERSION );
 
-        wp_enqueue_script( 'biw-scripts', BIFW_URL .'/assets/js/admin.js', array('jquery', 'wp-color-picker'), BIFW_VERSION, true );
+        wp_enqueue_script( 'biw-scripts', Banner_Image_URL .'/assets/js/admin.js', array('jquery', 'wp-color-picker'), Banner_Image_VERSION, true );
     }
 }
 
 /**
  * Initilizes the main plugin
  */
-function biw_product_banner_image() {
-    return BIFW_ProductBannerImage::init();
+function banner_image_get_product() {
+    return Banner_Image_ProductBannerImage::init();
 }
 
 // Kick-off the plugin
-biw_product_banner_image();
+banner_image_get_product();
 
-if (!function_exists('biw_function')) {
-    function biw_function() {
-        return new BIFW\Functions();
+if (!function_exists('banner_image_function')) {
+    function banner_image_function() {
+        return new Banner_Image\Functions();
     }
 }

@@ -7,8 +7,8 @@ $settings =  array(
         'id'        => 'enable_category_page_banner',
         'type'      => 'checkbox',
         'value'     => 'true',
-        'label'     => __('Enable Category Page Banner','biw'),
-        'desc'      => '<p>'.__('Enable Banner Image','biw').'</p>',
+        'label'     => __('Enable Category Page Banner','banner-image'),
+        'desc'      => '<p>'.__('Enable Banner Image','banner-image').'</p>',
     ),
 
     # Save Function
@@ -19,4 +19,4 @@ $settings =  array(
     ),
 );
 
-biw_function()->generator( $settings );
+banner_image_function()->generator( $settings );

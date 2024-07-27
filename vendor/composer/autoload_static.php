@@ -9,12 +9,12 @@ class ComposerStaticInit5750fad4c89343f70e90670029fdffe3
     public static $prefixLengthsPsr4 = array (
         'B' =>
         array (
-            'BIFW\\' => 4,
+            'Banner_Image\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'BIFW\\' =>
+        'Banner_Image\\' =>
         array (
             0 => __DIR__ . '/../..' . '/includes',
         ),

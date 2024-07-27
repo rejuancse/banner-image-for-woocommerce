@@ -1,6 +1,6 @@
 <?php
 
-namespace BIFW;
+namespace Banner_Image;
 
 /**
  * Frontend handler class

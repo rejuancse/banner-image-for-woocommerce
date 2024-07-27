@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'BIFW\\' => array($baseDir . '/includes'),
+    'Banner_Image\\' => array($baseDir . '/includes'),
 );

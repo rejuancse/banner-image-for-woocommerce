@@ -1,6 +1,6 @@
 <?php
 
-namespace BIFW\Frontend;
+namespace Banner_Image\Frontend;
 
 class Category_Page_Banner_image {
 
@@ -20,7 +20,7 @@ class Category_Page_Banner_image {
             $cat = $wp_query->get_queried_object();
             $category_banner_image = get_term_meta( $cat->term_id, 'category-image-id', true );
             $image_url = wp_get_attachment_url( $category_banner_image );
-            $term_meta = get_option("taxonomy_$cat->term_id"); ?>
+            $term_meta = get_option("banner_image_taxonomy_$cat->term_id"); ?>
 
             <?php if( isset( $enable_banner ) && 'true' == $enable_banner ) { ?>
                 <?php if ( is_array($term_meta) && isset($term_meta['category_banner_full_link']) && $term_meta['category_banner_full_link'] == 'yes' ) { ?>
@@ -95,7 +95,7 @@ class Category_Page_Banner_image {
         $button_button_margin = get_option( 'category_banner_button_margin', '0' );
 
         // Register and enqueue the stylesheet
-        wp_register_style('category-page-banner-image', BIFW_URL . '/assets/css/category-page-banner-image.css', false, BIFW_VERSION);
+        wp_register_style('category-page-banner-image', Banner_Image_URL . '/assets/css/category-page-banner-image.css', false, Banner_Image_VERSION);
         wp_enqueue_style('category-page-banner-image');
 
         // Construct the custom CSS string

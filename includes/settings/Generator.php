@@ -1,12 +1,12 @@
 <?php
-namespace BIFW\settings;
+namespace Banner_Image\settings;
 
 defined( 'ABSPATH' ) || exit;
 
 class Generator {
 
     // Settings Option Generator
-    public function generator( $arr ){
+    public function generator( $arr ) {
 
         $html = '';
         $html .= '<table class="form-table">';
@@ -32,7 +32,7 @@ class Generator {
                                 $html .= '<p class="form-field">';
                                 $html .= '<input type="hidden" class="product_banner_bg_image" name="'.$value["id"].'" value="'.$raw_id.'" placeholder="'.$value["label"].'"/>';
                                 $html .= '<span class="biw-image-container">'.$image_id.'</span>';
-                                $html .= '<button class="biw-image-upload-btn button">' . esc_html__("Add Image", "biw") . '</button>';
+                                $html .= '<button class="biw-image-upload-btn button">' . esc_html__("Add Image", "banner-image") . '</button>';
                                 $html .= '</p>';
 
                             $html .= '</td>';
