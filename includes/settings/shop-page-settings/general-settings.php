@@ -7,8 +7,8 @@ $settings =  array(
         'id'        => 'enable_shop_page_banner',
         'type'      => 'checkbox',
         'value'     => 'true',
-        'label'     => __('Enable Shop Page Banner','banner-image'),
-        'desc'      => '<p>'.__('Enable Banner Image','banner-image').'</p>',
+        'label'     => __('Enable Shop Page Banner', 'banner-image'),
+        'desc'      => __('Enable Banner Image', 'banner-image'),
     ),
 
     # Banner Image
@@ -25,7 +25,7 @@ $settings =  array(
         'label'     => __('Banner Sub Heading','banner-image'),
         'type'      => 'text',
         'value'     => '',
-        'desc'      => '<p>'.__('Write Shop Page Banner Sub Heading', 'banner-image').'</p>',
+        'desc'      => __('Write Shop Page Banner Sub Heading', 'banner-image'),
     ),
 
     # Shop Page Banner Title
@@ -34,7 +34,7 @@ $settings =  array(
         'label'     => __('Banner Title','banner-image'),
         'type'      => 'text',
         'value'     => '',
-        'desc'      => '<p>'.__('Write banner title', 'banner-image').'</p>',
+        'desc'      => __('Write banner title', 'banner-image'),
     ),
 
     # Shop Page Banner Short Description
@@ -43,7 +43,7 @@ $settings =  array(
         'label'     => __('Banner Short Description','banner-image'),
         'type'      => 'textarea',
         'value'     => '',
-        'desc'      => '<p>'.__('Write banner short description', 'banner-image').'</p>',
+        'desc'      => __('Write banner short description', 'banner-image'),
     ),
 
     # Shop page Banner Button Name
@@ -52,7 +52,7 @@ $settings =  array(
         'label'     => __('Banner Button Name','banner-image'),
         'type'      => 'text',
         'value'     => '',
-        'desc'      => '<p>'.__('Write banner button name', 'banner-image').'</p>',
+        'desc'      => __('Write banner button name', 'banner-image'),
     ),
 
     # Shop Page Banner Button URL
@@ -61,7 +61,7 @@ $settings =  array(
         'label'     => __('Banner Button URL','banner-image'),
         'type'      => 'text',
         'value'     => '',
-        'desc'      => '<p>'.__('Add button URL', 'banner-image').'</p>',
+        'desc'      => __('Add button URL', 'banner-image'),
     ),
 
     array(

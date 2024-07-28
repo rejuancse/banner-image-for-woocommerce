@@ -53,7 +53,7 @@ class Shop_Page_Banner_Image {
                             <?php } ?>
 
                             <?php if( !empty( $banner_short_text ) ) { ?>
-                                <p><?php echo esc_html($banner_short_text); ?></p>
+                                <p><?php echo wp_kses_post($banner_short_text); ?></p>
                             <?php } ?>
 
                             <?php if( !empty( $button_url ) && $enable_link_full_banner !== 'true') { ?>

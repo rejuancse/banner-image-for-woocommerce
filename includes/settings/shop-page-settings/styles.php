@@ -19,7 +19,7 @@ $arr =  array(
         'label'     => __('Banner height', 'banner-image'),
         'type'      => 'number',
         'value'     => '',
-        'desc'      => '<p>'.__('Write height. Ex. 300', 'banner-image').'</p>',
+        'desc'      => __('Write height. Ex. 300', 'banner-image'),
     ),
 
     #Sub Heading style Seperator
@@ -44,7 +44,7 @@ $arr =  array(
         'label'     => __('Banner subtitle Font Size','banner-image'),
         'type'      => 'number',
         'value'     => '',
-        'desc'      => '<p>'.__('Write subtitle font size. Ex. 44', 'banner-image').'</p>',
+        'desc'      => __('Write subtitle font size. Ex. 44', 'banner-image'),
     ),
 
     array(
@@ -66,7 +66,7 @@ $arr =  array(
         'label'     => __('Banner subtitle Line Height','banner-image'),
         'type'      => 'number',
         'value'     => '',
-        'desc'      => '<p>'.__('Write subtitle line height. Ex. 40', 'banner-image').'</p>',
+        'desc'      => __('Write subtitle line height. Ex. 40', 'banner-image'),
     ),
 
     #Style Seperator
@@ -91,7 +91,7 @@ $arr =  array(
         'label'     => __('Banner Title Font Size','banner-image'),
         'type'      => 'number',
         'value'     => '',
-        'desc'      => '<p>'.__('Write Title font size. Ex. 44', 'banner-image').'</p>',
+        'desc'      => __('Write Title font size. Ex. 44', 'banner-image'),
     ),
 
     array(
@@ -113,7 +113,7 @@ $arr =  array(
         'label'     => __('Banner Title Line Height','banner-image'),
         'type'      => 'number',
         'value'     => '',
-        'desc'      => '<p>'.__('Write Title line height. Ex. 40', 'banner-image').'</p>',
+        'desc'      => __('Write Title line height. Ex. 40', 'banner-image'),
     ),
 
     # Short description Style Seperator
@@ -138,7 +138,7 @@ $arr =  array(
         'label'     => __('Banner desc Font Size','banner-image'),
         'type'      => 'number',
         'value'     => '',
-        'desc'      => '<p>'.__('Write desc font size. Ex. 44', 'banner-image').'</p>',
+        'desc'      => __('Write desc font size. Ex. 44', 'banner-image'),
     ),
 
     array(
@@ -161,7 +161,7 @@ $arr =  array(
         'label'     => __('Banner desc Line Height','banner-image'),
         'type'      => 'number',
         'value'     => '',
-        'desc'      => '<p>'.__('Write desc line height. Ex. 40', 'banner-image').'</p>',
+        'desc'      => __('Write desc line height. Ex. 40', 'banner-image'),
     ),
 
     # Button Style Seperator
@@ -210,7 +210,7 @@ $arr =  array(
         'label'     => __('Banner button Font Size','banner-image'),
         'type'      => 'number',
         'value'     => '',
-        'desc'      => '<p>'.__('Write button font size. Ex. 44', 'banner-image').'</p>',
+        'desc'      => __('Write button font size. Ex. 44', 'banner-image'),
     ),
 
     array(
@@ -232,7 +232,7 @@ $arr =  array(
         'label'     => __('Banner button Line Height','banner-image'),
         'type'      => 'number',
         'value'     => '',
-        'desc'      => '<p>'.__('Write button line height. Ex. 40', 'banner-image').'</p>',
+        'desc'      => __('Write button line height. Ex. 40', 'banner-image'),
     ),
 
     array (
@@ -240,7 +240,7 @@ $arr =  array(
         'label'     => __('Banner Button Padding', 'banner-image'),
         'type'      => 'text',
         'value'     => '',
-        'desc'      => '<p>'.__('Add button Padding. Ex. 10px 20px 10px 20px', 'banner-image').'</p>',
+        'desc'      => __('Add button Padding. Ex. 10px 20px 10px 20px', 'banner-image'),
     ),
 
     array (
@@ -248,7 +248,7 @@ $arr =  array(
         'label'     => __('Banner Button Margin', 'banner-image'),
         'type'      => 'text',
         'value'     => '',
-        'desc'      => '<p>'.__('Add button margin. Ex. 10px 20px 10px 20px', 'banner-image').'</p>',
+        'desc'      => __('Add button margin. Ex. 10px 20px 10px 20px', 'banner-image'),
     ),
 
     # Save Function

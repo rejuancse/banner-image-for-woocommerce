@@ -5,7 +5,7 @@ Tags: Banner, Product Banner, Promotional Banner, Sales Banner
 Requires at least: 5.9
 Tested up to: 6.5
 Requires PHP: 7.2
-Stable tag:  1.0.2
+Stable tag:  1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,9 @@ A. Found a bug? Please let us know by posting on the support section of this plu
 
 
 == Changelog ==
+
+= 1.0.3 [28/07/2024] =
+* Variables and options must be escaped when echo'd issue fixed
 
 = 1.0.2 [28/07/2024] =
 * Internationalization: Text domain does not match plugin slug issue fixed

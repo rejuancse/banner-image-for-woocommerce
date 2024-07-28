@@ -7,8 +7,8 @@ $settings =  array(
         'id'        => 'enable_category_page_banner',
         'type'      => 'checkbox',
         'value'     => 'true',
-        'label'     => __('Enable Category Page Banner','banner-image'),
-        'desc'      => '<p>'.__('Enable Banner Image','banner-image').'</p>',
+        'label'     => __('Enable Category Page Banner', 'banner-image'),
+        'desc'      => __('Enable Banner Image', 'banner-image'),
     ),
 
     # Save Function

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Banner Image for WooCommerce
  * Description: Enhance your WooCommerce store with stunning product banner images. Showcase your products beautifully and boost sales effortlessly!
- * Version:           1.0.2
+ * Version:           1.0.3
  * Requires at least: 5.9
  * Requires PHP:      7.2
  * Author:            Rejuan Ahamed
@@ -25,7 +25,7 @@ final class Banner_Image_ProductBannerImage {
      *
      * @var string
      */
-    const version = '1.0.2';
+    const version = '1.0.3';
 
     /**
      * Class construcotr

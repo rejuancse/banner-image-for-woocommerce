@@ -22,11 +22,15 @@ class Category_Page_Banner_image {
             $image_url = wp_get_attachment_url( $category_banner_image );
             $term_meta = get_option("banner_image_taxonomy_$cat->term_id"); ?>
 
-            <?php if( isset( $enable_banner ) && 'true' == $enable_banner ) { ?>
-                <?php if ( is_array($term_meta) && isset($term_meta['category_banner_full_link']) && $term_meta['category_banner_full_link'] == 'yes' ) { ?>
-                    <a href="<?php echo esc_url($term_meta['category_banner_Button_url']); ?>" class="wpbi-full-banner-link">
+            <?php if( isset( $enable_banner ) && 'true' == $enable_banner ) {
+                if (isset($term_meta['category_banner_full_link']) && $term_meta['category_banner_full_link'] == 'yes' && !empty($term_meta['category_banner_button_url'])) {
+                    $url = isset($term_meta['category_banner_button_url']) ? $term_meta['category_banner_button_url'] : '';
+                    if (!is_string($url)) {
+                        $url = '';
+                    }
+                    ?>
+                    <a href="<?php echo esc_url($url); ?>" class="wpbi-full-banner-link">
                 <?php } ?>
-
 
                     <div class="product-category-page-banner-image" style="background-image: url(<?php echo !empty($image_url) ? esc_url( $image_url ) : ''; ?>); background-repeat: no-repeat; background-size: cover;">
                         <div class="banner-content">
@@ -50,7 +54,7 @@ class Category_Page_Banner_image {
                         </div>
                     </div>
 
-                <?php if( !empty( $term_meta['wp_banner_button_url'] ) && $term_meta['category_banner_full_link'] == 'yes') { ?>
+                <?php if ( is_array($term_meta) && !empty($term_meta['category_banner_button_url']) && $term_meta['category_banner_full_link'] == 'yes' ) { ?>
                     </a>
                 <?php } ?>
 
