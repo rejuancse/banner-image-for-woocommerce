@@ -1,11 +1,11 @@
 === Banner Image for WooCommerce ===
 
 Contributors: rejuancse
-Tags: banner, promotion, sales, store
+Tags: banner, promotion, sales, store, woocommerce
 Requires at least: 5.9
 Tested up to: 6.6.1
 Requires PHP: 7.2
-Stable tag:  1.0.4
+Stable tag:  1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,13 +35,11 @@ Banners offer an excellent opportunity to showcase products, promote sales and e
 * PHP version 5.6.0 or greater (PHP 7.2 or greater is recommended)
 * MySQL version 5.0 or greater (MySQL 5.6 or greater is recommended)
 
-
 = Automatic installation =
 
 The automatic installation is the easiest way to install any plugin in WordPress. You can perform an automatic installation of logging in to your WordPress dashboard, navigating to the “Plugins” menu and click on the "Add New" button.
 
 This will open up a page showing all the available plugins in WordPress. In the search field, type Product Banner Image. The search result will show you our Product Banner Image plugin, you can then see the detailed info by clicking on "More Details" and to install just click on the "Install Now" button.
-
 
 = Manual installation =
 
@@ -58,7 +56,6 @@ A. Sure, you can use your existing WordPress theme with Banner Image for WooComm
 = Q. Where can I report a bug? =
 A. Found a bug? Please let us know by posting on the support section of this plugin on WordPress plugin directory or directly on our support mail: rejuan.17bd@gmail.com
 
-
 == Screenshots ==
 1. screenshot-1.png
 2. screenshot-2.png
@@ -66,8 +63,10 @@ A. Found a bug? Please let us know by posting on the support section of this plu
 4. screenshot-4.png
 5. screenshot-5.png
 
-
 == Changelog ==
+
+= 1.0.5 [28/07/2024] =
+* Product Single page banner added
 
 = 1.0.4 [28/07/2024] =
 * Bug fixed
