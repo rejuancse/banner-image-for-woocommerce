@@ -23,8 +23,8 @@ class Category_Page_Banner_image {
             $term_meta = get_option("banner_image_taxonomy_$cat->term_id"); ?>
 
             <?php if( isset( $enable_banner ) && 'true' == $enable_banner ) {
-                if (isset($term_meta['category_banner_full_link']) && $term_meta['category_banner_full_link'] == 'yes' && !empty($term_meta['category_banner_button_url'])) {
-                    $url = isset($term_meta['category_banner_button_url']) ? $term_meta['category_banner_button_url'] : '';
+                if (isset($term_meta['category_banner_full_link']) && $term_meta['category_banner_full_link'] == 'yes' && !empty($term_meta['banner_image_category_button_url'])) {
+                    $url = isset($term_meta['banner_image_category_button_url']) ? $term_meta['banner_image_category_button_url'] : '';
                     if (!is_string($url)) {
                         $url = '';
                     }
@@ -43,18 +43,22 @@ class Category_Page_Banner_image {
                             <?php } ?>
 
                             <?php if( !empty( $term_meta['category_banner_short_desc'] ) ) { ?>
-                                <?php echo wp_kses_post(wp_unslash($term_meta['category_banner_short_desc'])); ?>
+                                <p><?php echo wp_kses_post(wp_unslash($term_meta['category_banner_short_desc'])); ?></p>
                             <?php } ?>
 
-                            <?php if( !empty( $term_meta['category_banner_Button_url'] ) && $term_meta['category_banner_full_link'] !== 'yes' ) { ?>
-                                <a href="<?php echo esc_url($term_meta['category_banner_Button_url']); ?>">
-                                    <?php echo esc_html($term_meta['category_banner_Button_Name']); ?>
+                            <?php
+                            if( !empty( $term_meta['banner_image_category_button_url'] ) &&
+                                $term_meta['category_banner_full_link'] !== 'yes' &&
+                                !empty($term_meta['banner_image_category_button']) ) {
+                            ?>
+                                <a href="<?php echo esc_url($term_meta['banner_image_category_button_url']); ?>">
+                                    <?php echo esc_html($term_meta['banner_image_category_button']); ?>
                                 </a>
                             <?php } ?>
                         </div>
                     </div>
 
-                <?php if ( is_array($term_meta) && !empty($term_meta['category_banner_button_url']) && $term_meta['category_banner_full_link'] == 'yes' ) { ?>
+                <?php if ( is_array($term_meta) && !empty($term_meta['banner_image_category_button_url']) && $term_meta['category_banner_full_link'] == 'yes' ) { ?>
                     </a>
                 <?php } ?>
 

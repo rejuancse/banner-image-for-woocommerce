@@ -1,13 +1,15 @@
 === Banner Image for WooCommerce ===
 
 Contributors: rejuancse
-Tags: Banner, Product Banner, Promotional Banner, Sales Banner
+Tags: banner, promotion, sales, store
 Requires at least: 5.9
-Tested up to: 6.5
+Tested up to: 6.6.1
 Requires PHP: 7.2
-Stable tag:  1.0.3
+Stable tag:  1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Enhance your WooCommerce store with stunning product banner images. Showcase your products beautifully and boost sales effortlessly!
 
 == Description ==
 The Banner Image for WooCommerce plugin helps admins create banners for their store's pages, including shop, category, single product, and individual product pages.
@@ -57,7 +59,18 @@ A. Sure, you can use your existing WordPress theme with Banner Image for WooComm
 A. Found a bug? Please let us know by posting on the support section of this plugin on WordPress plugin directory or directly on our support mail: rejuan.17bd@gmail.com
 
 
+== Screenshots ==
+1. screenshot-1.png
+2. screenshot-2.png
+3. screenshot-3.png
+4. screenshot-4.png
+5. screenshot-5.png
+
+
 == Changelog ==
+
+= 1.0.4 [28/07/2024] =
+* Bug fixed
 
 = 1.0.3 [28/07/2024] =
 * Variables and options must be escaped when echo'd issue fixed
