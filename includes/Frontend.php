@@ -13,5 +13,6 @@ class Frontend {
     function __construct() {
         new Frontend\Shop_Page_Banner_Image();
         new Frontend\Category_Page_Banner_image();
+        new Frontend\Product_Single_Page_Banner();
     }
 }

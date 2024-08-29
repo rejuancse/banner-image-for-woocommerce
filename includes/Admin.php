@@ -14,5 +14,6 @@ class Admin {
         new Admin\Initial_Setup();
         new Admin\Banner_Image_Menu();
         new Admin\Banner_Image_Category_Banner();
+        new Admin\Product_Banner_Single_Page();
     }
 }

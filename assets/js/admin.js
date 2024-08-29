@@ -75,4 +75,27 @@ jQuery(document).ready(function ($) {
             }
         }
     });
+
+    // Enable Color Picker
+    $('.pbw-wrap-color-field').wpColorPicker();
+    $('body').on('click', '.pbw-wrap-image-upload-btn',function(e) {
+        e.preventDefault();
+        var that = $(this);
+        var image = wp.media({
+            title: 'Upload Image',
+            multiple: false
+        }).open().on('select', function(e){
+            var uploaded_image = image.state().get('selection').first();
+            var uploaded_url = uploaded_image.toJSON().url;
+            uploaded_image = uploaded_image.toJSON().id;
+            $(that).parent().find( '.product_banner_bg_image' ).val( uploaded_image );
+            $(that).parent().find( '.pbw-wrap-image-container' ).html( '<img width="400" src="'+uploaded_url+'" ><span class="pbw-wrap-image-remove">X</span>' );
+        });
+    });
+
+    $('body').on('click','.pbw-wrap-image-remove',function(e) {
+        var that = $(this);
+        $(that).parent().parent().find( '.product_banner_bg_image' ).val( '' );
+        $(that).parent().parent().find( '.pbw-wrap-image-container' ).html( '' );
+    });
 });

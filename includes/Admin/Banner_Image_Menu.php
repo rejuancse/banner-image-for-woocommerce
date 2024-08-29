@@ -15,6 +15,7 @@ class Banner_Image_Menu {
             add_action( 'admin_menu', [ $this, 'biw_admin_menu' ] );
             add_action('admin_init', array($this, 'Save_Shop_Page_Settings' ));
             add_action('admin_init', array($this, 'Save_Category_Page_Banner' ));
+            add_action('admin_init', array($this, 'Save_Product_Single_Page_Banner' ));
         }
     }
 
@@ -39,6 +40,15 @@ class Banner_Image_Menu {
             'manage_options',                       // capability
             'biw-product-category',                // slug
             [ $this, 'biw_category_page_callback_func' ] // callback
+        );
+
+        add_submenu_page (
+            'biw-menu',                                 // parent slug
+            'Product Single Page Banner',               // page title
+            'Product Single Page Banner',               // menu title
+            'manage_options',                           // capability
+            'pbw-product-single-page',                  // slug
+            [ $this, 'pbw_single_page_callback_func' ]  // callback
         );
     }
 
@@ -79,5 +89,23 @@ class Banner_Image_Menu {
     public function Save_Category_Page_Banner() {
         $Category_Page_Settings = new Category_Page_Settings();
         $Category_Page_Settings->Category_Page_Banner_Save();
+    }
+
+    /**
+     * Render the plugin page -> Product Single Page
+     *
+     * @return void
+     */
+    public function pbw_single_page_callback_func() {
+        $Product_Single_Page_Settings = new Product_Single_Page_Settings();
+        $Product_Single_Page_Settings->Product_Single_Page_Banner();
+    }
+
+    /**
+     * Add Product Single Page settings action
+     */
+    public function Save_Product_Single_Page_Banner() {
+        $Product_Single_Page_Settings = new Product_Single_Page_Settings();
+        $Product_Single_Page_Settings->Product_Single_Page_Banner_Save();
     }
 }

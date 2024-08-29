@@ -39,3 +39,22 @@
 .form-table button.biw-image-upload-btn {
   display: block;
 }
+.banner_image_field_wrap .pbw-wrap-image-container {
+    display: block;
+    position: relative;
+    width: 450px;
+}
+.banner_image_field_wrap .pbw-wrap-image-container .pbw-wrap-image-remove {
+    position: absolute;
+    right: 5px;
+    background: #cf0000;
+    width: 30px;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    height: 30px;
+    border-radius: 4px;
+    padding-top: 2px;
+    top: 5px;
+    cursor: pointer;
+}
