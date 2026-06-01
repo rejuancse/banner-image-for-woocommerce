@@ -22,7 +22,7 @@ if ( ! class_exists( 'Product_Banner_Single_Page' ) ) {
 
         public function wp_banner_image_data_tab( $product_data_tabs ) {
             $product_data_tabs['product-banner-image'] = array(
-                'label'     => __( 'Product Banner Image', 'banner-image' ),
+                'label'     => __( 'Product Banner Image', 'banner-image-for-woocommerce' ),
                 'target'    => 'banner_image_options',
                 'class'     => array( 'show_if_simple' ),
             );
@@ -44,17 +44,17 @@ if ( ! class_exists( 'Product_Banner_Single_Page' ) ) {
                 // Enable Banner
                 array(
                     'id'            => 'enable_banner_image[]',
-                    'label'         => __('Enable Banner Image', 'banner-image'),
+                    'label'         => __('Enable Banner Image', 'banner-image-for-woocommerce'),
                     'desc_tip'      => 'true',
                     'type'          => 'checkbox',
-                    'placeholder'   => __('Enable Banner Image', 'banner-image'),
+                    'placeholder'   => __('Enable Banner Image', 'banner-image-for-woocommerce'),
                     'field_type'    => 'checkboxfield'
                 ),
 
                 // Banner Image
                 array(
                     'id'            => 'product_banner_bg_image[]',
-                    'label'         => __('Upload Banner Image', 'banner-image'),
+                    'label'         => __('Upload Banner Image', 'banner-image-for-woocommerce'),
                     'desc_tip'      => 'true',
                     'type'          => 'image',
                     'value'         => '',
@@ -64,10 +64,10 @@ if ( ! class_exists( 'Product_Banner_Single_Page' ) ) {
                 // Banner Sub Heading
                 array(
                     'id'            => 'product_banner_subtitle[]',
-                    'label'         => __('Banner Sub Heading', 'banner-image'),
+                    'label'         => __('Banner Sub Heading', 'banner-image-for-woocommerce'),
                     'desc_tip'      => 'true',
                     'type'          => 'text',
-                    'placeholder'   => __('Write Banner Sub Heading', 'banner-image'),
+                    'placeholder'   => __('Write Banner Sub Heading', 'banner-image-for-woocommerce'),
                     'value'         => '',
                     'field_type'    => 'textfield',
                 ),
@@ -75,10 +75,10 @@ if ( ! class_exists( 'Product_Banner_Single_Page' ) ) {
                 // Banner Title
                 array(
                     'id'            => 'product_banner_title[]',
-                    'label'         => __('Banner Title', 'banner-image'),
+                    'label'         => __('Banner Title', 'banner-image-for-woocommerce'),
                     'desc_tip'      => 'true',
                     'type'          => 'text',
-                    'placeholder'   => __('Write Banner Title', 'banner-image'),
+                    'placeholder'   => __('Write Banner Title', 'banner-image-for-woocommerce'),
                     'value'         => '',
                     'field_type'    => 'textfield',
                 ),
@@ -86,10 +86,10 @@ if ( ! class_exists( 'Product_Banner_Single_Page' ) ) {
                 // Short Description
                 array(
                     'id'            => 'product_banner_description[]',
-                    'label'         => __('Banner Short Description', 'banner-image'),
+                    'label'         => __('Banner Short Description', 'banner-image-for-woocommerce'),
                     'desc_tip'      => 'true',
                     'type'          => 'text',
-                    'placeholder'   => __('Write short description', 'banner-image'),
+                    'placeholder'   => __('Write short description', 'banner-image-for-woocommerce'),
                     'value'         => '',
                     'field_type'    => 'textareafield',
                 ),
@@ -97,10 +97,10 @@ if ( ! class_exists( 'Product_Banner_Single_Page' ) ) {
                 // Button Name
                 array(
                     'id'            => 'wp_banner_button_name[]',
-                    'label'         => __('Button Name', 'banner-image'),
+                    'label'         => __('Button Name', 'banner-image-for-woocommerce'),
                     'desc_tip'      => 'true',
                     'type'          => 'text',
-                    'placeholder'   => __('Write Banner button Name', 'banner-image'),
+                    'placeholder'   => __('Write Banner button Name', 'banner-image-for-woocommerce'),
                     'value'         => '',
                     'field_type'    => 'textfield',
                 ),
@@ -108,10 +108,10 @@ if ( ! class_exists( 'Product_Banner_Single_Page' ) ) {
                 // Banner URL
                 array(
                     'id'            => 'wp_banner_button_url[]',
-                    'label'         => __('Banner URL', 'banner-image'),
+                    'label'         => __('Banner URL', 'banner-image-for-woocommerce'),
                     'desc_tip'      => 'true',
                     'type'          => 'text',
-                    'placeholder'   => __('Add custom URL', 'banner-image'),
+                    'placeholder'   => __('Add custom URL', 'banner-image-for-woocommerce'),
                     'value'         => '',
                     'field_type'    => 'textfield',
                 ),
@@ -119,10 +119,10 @@ if ( ! class_exists( 'Product_Banner_Single_Page' ) ) {
                 // Enable Banner
                 array(
                     'id'            => 'enable_link_full_banner_image[]',
-                    'label'         => __('Enable Link full Banner', 'banner-image'),
+                    'label'         => __('Enable Link full Banner', 'banner-image-for-woocommerce'),
                     'desc_tip'      => 'true',
                     'type'          => 'checkbox',
-                    'placeholder'   => __('Enable Link full Banner', 'banner-image'),
+                    'placeholder'   => __('Enable Link full Banner', 'banner-image-for-woocommerce'),
                     'field_type'    => 'checkboxfield'
                 ),
             );
@@ -157,7 +157,7 @@ if ( ! class_exists( 'Product_Banner_Single_Page' ) ) {
                                 echo '<label for="product_banner_bg_image">' . esc_attr($value["label"]) . '</label>';
                                 echo '<input type="hidden" class="product_banner_bg_image" name="'.esc_attr($value['id']).'" value="" placeholder="'.esc_attr($value["label"]).'"/>';
                                 echo '<span class="pbw-wrap-image-container"></span>';
-                                echo '<button class="pbw-wrap-image-upload-btn button">'.__("Add Image", "banner-image").'</button>';
+                                echo '<button class="pbw-wrap-image-upload-btn button">'.esc_html__("Add Image", "banner-image-for-woocommerce").'</button>';
                                 echo '</p>';
                                 break;
 
@@ -201,15 +201,15 @@ if ( ! class_exists( 'Product_Banner_Single_Page' ) ) {
                                         $raw_id = $image_id;
                                         if( $image_id!=0 && $image_id!='' ){
                                             $image_id = wp_get_attachment_url( $image_id );
-                                            $image_id = '<img width="450" src="'.$image_id.'"><span class="pbw-wrap-image-remove">x</span>';
+                                            $image_id = '<img width="450" src="'.esc_url($image_id).'"><span class="pbw-wrap-image-remove">x</span>';
                                         }else{
                                             $image_id = '';
                                         }
                                         echo '<p class="form-field">';
-                                        echo '<label for="product_banner_bg_image">'.$value["label"].'</label>';
-                                        echo '<input type="hidden" class="product_banner_bg_image" name="'.$value["id"].'" value="'.$raw_id.'" placeholder="'.$value["label"].'"/>';
-                                        echo '<span class="pbw-wrap-image-container">'.$image_id.'</span>';
-                                        echo '<button class="pbw-wrap-image-upload-btn button">'.__("Add Image", "banner-image").'</button>';
+                                        echo '<label for="product_banner_bg_image">'.esc_html($value["label"]).'</label>';
+                                        echo '<input type="hidden" class="product_banner_bg_image" name="'.esc_attr($value["id"]).'" value="'.esc_attr($raw_id).'" placeholder="'.esc_attr($value["label"]).'"/>';
+                                        echo '<span class="pbw-wrap-image-container">'.wp_kses_post($image_id).'</span>';
+                                        echo '<button class="pbw-wrap-image-upload-btn button">'.esc_html__("Add Image", "banner-image-for-woocommerce").'</button>';
                                         echo '</p>';
                                         break;
 
@@ -234,25 +234,42 @@ if ( ! class_exists( 'Product_Banner_Single_Page' ) ) {
         * Update Post Meta for BannerImage Tab
         */
         function save_banner_info_action($post_id) {
-            $data             = array();
+            // Verify nonce for security
+            if ( ! isset( $_POST['woocommerce_meta_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['woocommerce_meta_nonce'] ) ), 'woocommerce_meta_data' ) ) {
+                return;
+            }
 
-            $enable_banner    = $_POST['enable_banner_image'];
-            $banner_subtitle  = $_POST['product_banner_subtitle'];
-            $banner_title     = $_POST['product_banner_title'];
-            $description      = $_POST['product_banner_description'];
-            $image_field      = $_POST['product_banner_bg_image'];
-            $button_name      = $_POST['wp_banner_button_name'];
-            $button_url       = $_POST['wp_banner_button_url'];
-            $enable_link_banner = $_POST['enable_link_full_banner_image'];
+            $data = array();
+
+            // Helper function to sanitize POST array data
+            $sanitize_post_array = function( $key, $sanitize_callback = 'sanitize_text_field', $default = array( '' ) ) {
+                if ( isset( $_POST[$key] ) ) {
+                    // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- wp_unslash is applied before array_map
+                    // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized via array_map below
+                    $post_data = wp_unslash( $_POST[$key] );
+                    return array_map( $sanitize_callback, $post_data );
+                }
+                return $default;
+            };
+
+            // Sanitize all POST data with appropriate functions
+            $enable_banner    = $sanitize_post_array( 'enable_banner_image', 'sanitize_text_field' );
+            $banner_subtitle  = $sanitize_post_array( 'product_banner_subtitle', 'sanitize_text_field' );
+            $banner_title     = $sanitize_post_array( 'product_banner_title', 'sanitize_text_field' );
+            $description      = $sanitize_post_array( 'product_banner_description', 'sanitize_textarea_field' );
+            $image_field      = $sanitize_post_array( 'product_banner_bg_image', 'absint', array( 0 ) );
+            $button_name      = $sanitize_post_array( 'wp_banner_button_name', 'sanitize_text_field' );
+            $button_url       = $sanitize_post_array( 'wp_banner_button_url', 'esc_url_raw' );
+            $enable_link_banner = $sanitize_post_array( 'enable_link_full_banner_image', 'sanitize_text_field' );
 
             $data[] = array (
-                'enable_banner_image'       => $enable_banner[0],
-                'product_banner_subtitle'   => $banner_subtitle[0],
-                'product_banner_title'      => $banner_title[0],
-                'product_banner_description' => $description[0],
-                'product_banner_bg_image'   => intval($image_field[0]),
-                'wp_banner_button_name'     => $button_name[0],
-                'wp_banner_button_url'      => $button_url[0],
+                'enable_banner_image'         => $enable_banner[0],
+                'product_banner_subtitle'     => $banner_subtitle[0],
+                'product_banner_title'        => $banner_title[0],
+                'product_banner_description'  => $description[0],
+                'product_banner_bg_image'     => $image_field[0],
+                'wp_banner_button_name'       => $button_name[0],
+                'wp_banner_button_url'        => $button_url[0],
                 'enable_link_full_banner_image' => $enable_link_banner[0],
             );
 

@@ -7,8 +7,8 @@ $settings =  array(
         'id'        => 'enable_category_page_banner',
         'type'      => 'checkbox',
         'value'     => 'true',
-        'label'     => __('Enable Category Page Banner', 'banner-image'),
-        'desc'      => __('Enable Banner Image', 'banner-image'),
+        'label'     => __('Enable Category Page Banner', 'banner-image-for-woocommerce'),
+        'desc'      => __('Enable Banner Image', 'banner-image-for-woocommerce'),
     ),
 
     # Save Function

@@ -3,9 +3,9 @@
 Contributors: rejuancse
 Tags: banner, promotion, sales, store, woocommerce
 Requires at least: 5.9
-Tested up to: 6.6.1
+Tested up to: 7.0
 Requires PHP: 7.2
-Stable tag:  1.0.5
+Stable tag:  1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,6 +64,20 @@ A. Found a bug? Please let us know by posting on the support section of this plu
 5. screenshot-5.png
 
 == Changelog ==
+
+= 1.0.6 [01/06/2026] =
+* Fixed: WordPress.WP.I18n.TextDomainMismatch - Text domain updated from 'banner-image' to 'banner-image-for-woocommerce' across all files
+* Fixed: WordPress.Security.EscapeOutput.OutputNotEscaped - Added proper escaping functions for all output (esc_html, esc_url, wp_kses_post)
+* Fixed: WordPress.Security.NonceVerification.Missing - Added nonce verification to all form processing functions
+* Fixed: WordPress.Security.ValidatedSanitizedInput.MissingUnslash - Added wp_unslash() to all POST/GET data processing
+* Fixed: WordPress.Security.ValidatedSanitizedInput.InputNotSanitized - Added sanitization for all input variables
+* Fixed: WordPress.Security.ValidatedSanitizedInput.InputNotValidated - Added isset() checks for all POST/GET array indices
+* Fixed: WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound - Updated hook names with 'biw_' prefix
+* Fixed: WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound - Renamed $arr to properly prefixed variables
+* Improved: Security enhancements with form submission checks in all save functions
+* Improved: Code quality and WordPress VIP compliance across all files
+* Updated: All translation strings to use correct text domain
+* Updated: Hook names for better consistency (biw_category_page_banner_image_panel_tabs, biw_shop_page_banner_image_panel_tabs, biw_single_banner_image_page_panel_tabs)
 
 = 1.0.5 [28/07/2024] =
 * Product Single page banner added

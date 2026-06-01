@@ -1,0 +1,632 @@
+# Copyright (C) 2026 Rejuan Ahamed
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Banner Image for WooCommerce 1.0.6\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/banner-image-for-woocommerce\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-06-01T09:57:15+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: banner-image-for-woocommerce\n"
+
+#. Plugin Name of the plugin
+#: banner-image-for-woocommerce.php
+msgid "Banner Image for WooCommerce"
+msgstr ""
+
+#. Description of the plugin
+#: banner-image-for-woocommerce.php
+msgid "Enhance your WooCommerce store with stunning product banner images. Showcase your products beautifully and boost sales effortlessly!"
+msgstr ""
+
+#. Author of the plugin
+#: banner-image-for-woocommerce.php
+msgid "Rejuan Ahamed"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:30
+#: includes/Admin/Banner_Image_Category_Banner.php:103
+msgid "Category Banner BG Image"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:35
+#: includes/Admin/Banner_Image_Category_Banner.php:110
+#: includes/Admin/Product_Banner_Single_Page.php:57
+#: includes/settings/shop-page-settings/general-settings.php:19
+msgid "Upload Banner Image"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:39
+#: includes/Admin/Banner_Image_Category_Banner.php:121
+#: includes/Admin/Product_Banner_Single_Page.php:160
+#: includes/Admin/Product_Banner_Single_Page.php:212
+#: includes/settings/Generator.php:39
+msgid "Add Image"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:40
+#: includes/Admin/Banner_Image_Category_Banner.php:122
+msgid "Remove Image"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:48
+#: includes/Admin/Banner_Image_Category_Banner.php:131
+msgid "Banner SubTitle"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:50
+#: includes/Admin/Banner_Image_Category_Banner.php:57
+#: includes/Admin/Banner_Image_Category_Banner.php:138
+#: includes/Admin/Banner_Image_Category_Banner.php:152
+#: includes/Admin/Product_Banner_Single_Page.php:81
+msgid "Write Banner Title"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:55
+#: includes/Admin/Banner_Image_Category_Banner.php:145
+#: includes/Admin/Product_Banner_Single_Page.php:78
+#: includes/settings/shop-page-settings/general-settings.php:34
+msgid "Banner Title"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:62
+#: includes/Admin/Product_Banner_Single_Page.php:89
+#: includes/settings/shop-page-settings/general-settings.php:43
+msgid "Banner Short Description"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:64
+msgid "Write Banner Short Description"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:68
+#: includes/Admin/Banner_Image_Category_Banner.php:173
+#: includes/settings/shop-page-settings/general-settings.php:52
+msgid "Banner Button Name"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:70
+msgid "Write Banner BTN Name"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:75
+#: includes/Admin/Banner_Image_Category_Banner.php:187
+#: includes/settings/shop-page-settings/general-settings.php:61
+msgid "Banner Button URL"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:77
+msgid "Write Banner BTN URL"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:82
+#: includes/Admin/Banner_Image_Category_Banner.php:201
+#: includes/Admin/Banner_Image_Category_Banner.php:208
+msgid "Enable Full Banner Link"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:84
+#: includes/Admin/Banner_Image_Category_Banner.php:206
+msgid "Disable"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:85
+#: includes/Admin/Banner_Image_Category_Banner.php:205
+msgid "Enable"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:159
+msgid "Banner Short Descriptions"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:166
+msgid "Write Banner Short Descriptions"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:180
+msgid "Write Banner Button Name"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Category_Banner.php:194
+msgid "Write Banner Button URL"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Menu.php:29
+#: includes/Admin/Product_Banner_Single_Page.php:25
+msgid "Product Banner Image"
+msgstr ""
+
+#: includes/Admin/Banner_Image_Menu.php:30
+msgid "Shop Page Banner Image"
+msgstr ""
+
+#: includes/Admin/Category_Page_Settings.php:9
+#: includes/Admin/Product_Single_Page_Settings.php:9
+#: includes/Admin/Shop_Page_Content.php:10
+msgid "Data have been Saved."
+msgstr ""
+
+#: includes/Admin/Category_Page_Settings.php:19
+#: includes/Admin/Shop_Page_Content.php:20
+msgid "General Settings"
+msgstr ""
+
+#: includes/Admin/Category_Page_Settings.php:23
+#: includes/Admin/Product_Single_Page_Settings.php:18
+#: includes/Admin/Shop_Page_Content.php:24
+msgid "Style"
+msgstr ""
+
+#: includes/Admin/Category_Page_Settings.php:42
+msgid "Category Page Banner Image Settings"
+msgstr ""
+
+#: includes/Admin/Initial_Setup.php:18
+msgid "WooCommerce"
+msgstr ""
+
+#: includes/Admin/Initial_Setup.php:27
+msgid "<strong>Product Banner Image for Woocommerce</strong> is an add-on of "
+msgstr ""
+
+#: includes/Admin/Product_Banner_Single_Page.php:47
+#: includes/Admin/Product_Banner_Single_Page.php:50
+#: includes/settings/category-page-settings/general-settings.php:11
+#: includes/settings/shop-page-settings/general-settings.php:11
+msgid "Enable Banner Image"
+msgstr ""
+
+#: includes/Admin/Product_Banner_Single_Page.php:67
+#: includes/settings/shop-page-settings/general-settings.php:25
+msgid "Banner Sub Heading"
+msgstr ""
+
+#: includes/Admin/Product_Banner_Single_Page.php:70
+msgid "Write Banner Sub Heading"
+msgstr ""
+
+#: includes/Admin/Product_Banner_Single_Page.php:92
+msgid "Write short description"
+msgstr ""
+
+#: includes/Admin/Product_Banner_Single_Page.php:100
+msgid "Button Name"
+msgstr ""
+
+#: includes/Admin/Product_Banner_Single_Page.php:103
+msgid "Write Banner button Name"
+msgstr ""
+
+#: includes/Admin/Product_Banner_Single_Page.php:111
+msgid "Banner URL"
+msgstr ""
+
+#: includes/Admin/Product_Banner_Single_Page.php:114
+msgid "Add custom URL"
+msgstr ""
+
+#: includes/Admin/Product_Banner_Single_Page.php:122
+#: includes/Admin/Product_Banner_Single_Page.php:125
+#: includes/settings/shop-page-settings/general-settings.php:71
+msgid "Enable Link full Banner"
+msgstr ""
+
+#: includes/Admin/Product_Single_Page_Settings.php:36
+msgid "Product Single Page Banner Style"
+msgstr ""
+
+#: includes/Admin/Shop_Page_Content.php:43
+msgid "Shop Page Banner Image Settings"
+msgstr ""
+
+#: includes/settings/category-page-settings/general-settings.php:10
+msgid "Enable Category Page Banner"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:9
+#: includes/settings/product-single-page-settings/styles.php:9
+#: includes/settings/shop-page-settings/styles.php:9
+msgid "Left Align"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:10
+#: includes/settings/product-single-page-settings/styles.php:10
+#: includes/settings/shop-page-settings/styles.php:10
+msgid "Right Align"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:11
+#: includes/settings/product-single-page-settings/styles.php:11
+#: includes/settings/shop-page-settings/styles.php:11
+msgid "Center Align"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:13
+#: includes/settings/product-single-page-settings/styles.php:13
+#: includes/settings/shop-page-settings/styles.php:13
+msgid "Banner Text Align"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:14
+#: includes/settings/product-single-page-settings/styles.php:14
+#: includes/settings/shop-page-settings/styles.php:14
+msgid "Default text align left."
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:19
+#: includes/settings/product-single-page-settings/styles.php:19
+#: includes/settings/shop-page-settings/styles.php:19
+msgid "Banner height"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:22
+#: includes/settings/product-single-page-settings/styles.php:22
+#: includes/settings/shop-page-settings/styles.php:22
+msgid "Write height. Ex. 300"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:28
+#: includes/settings/product-single-page-settings/styles.php:28
+#: includes/settings/shop-page-settings/styles.php:28
+msgid "Sub Title Style Settings"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:36
+#: includes/settings/product-single-page-settings/styles.php:36
+#: includes/settings/shop-page-settings/styles.php:36
+msgid "Banner subtitle Color"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:37
+#: includes/settings/category-page-settings/styles.php:84
+#: includes/settings/category-page-settings/styles.php:131
+#: includes/settings/category-page-settings/styles.php:187
+#: includes/settings/category-page-settings/styles.php:195
+#: includes/settings/product-single-page-settings/styles.php:37
+#: includes/settings/product-single-page-settings/styles.php:85
+#: includes/settings/product-single-page-settings/styles.php:132
+#: includes/settings/product-single-page-settings/styles.php:188
+#: includes/settings/product-single-page-settings/styles.php:196
+#: includes/settings/shop-page-settings/styles.php:37
+#: includes/settings/shop-page-settings/styles.php:84
+#: includes/settings/shop-page-settings/styles.php:131
+#: includes/settings/shop-page-settings/styles.php:187
+#: includes/settings/shop-page-settings/styles.php:195
+msgid "Select button background color."
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:44
+#: includes/settings/product-single-page-settings/styles.php:44
+#: includes/settings/shop-page-settings/styles.php:44
+msgid "Banner subtitle Font Size"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:47
+#: includes/settings/product-single-page-settings/styles.php:47
+#: includes/settings/shop-page-settings/styles.php:47
+msgid "Write subtitle font size. Ex. 44"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:54
+#: includes/settings/category-page-settings/styles.php:101
+#: includes/settings/category-page-settings/styles.php:149
+#: includes/settings/category-page-settings/styles.php:220
+#: includes/settings/product-single-page-settings/styles.php:55
+#: includes/settings/product-single-page-settings/styles.php:102
+#: includes/settings/product-single-page-settings/styles.php:150
+#: includes/settings/product-single-page-settings/styles.php:221
+#: includes/settings/shop-page-settings/styles.php:54
+#: includes/settings/shop-page-settings/styles.php:101
+#: includes/settings/shop-page-settings/styles.php:149
+#: includes/settings/shop-page-settings/styles.php:220
+msgid "400"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:55
+#: includes/settings/category-page-settings/styles.php:102
+#: includes/settings/category-page-settings/styles.php:150
+#: includes/settings/category-page-settings/styles.php:221
+#: includes/settings/product-single-page-settings/styles.php:56
+#: includes/settings/product-single-page-settings/styles.php:103
+#: includes/settings/product-single-page-settings/styles.php:151
+#: includes/settings/product-single-page-settings/styles.php:222
+#: includes/settings/shop-page-settings/styles.php:55
+#: includes/settings/shop-page-settings/styles.php:102
+#: includes/settings/shop-page-settings/styles.php:150
+#: includes/settings/shop-page-settings/styles.php:221
+msgid "500"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:56
+#: includes/settings/category-page-settings/styles.php:103
+#: includes/settings/category-page-settings/styles.php:151
+#: includes/settings/category-page-settings/styles.php:222
+#: includes/settings/product-single-page-settings/styles.php:57
+#: includes/settings/product-single-page-settings/styles.php:104
+#: includes/settings/product-single-page-settings/styles.php:152
+#: includes/settings/product-single-page-settings/styles.php:223
+#: includes/settings/shop-page-settings/styles.php:56
+#: includes/settings/shop-page-settings/styles.php:103
+#: includes/settings/shop-page-settings/styles.php:151
+#: includes/settings/shop-page-settings/styles.php:222
+msgid "600"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:57
+#: includes/settings/category-page-settings/styles.php:104
+#: includes/settings/category-page-settings/styles.php:152
+#: includes/settings/category-page-settings/styles.php:223
+#: includes/settings/product-single-page-settings/styles.php:58
+#: includes/settings/product-single-page-settings/styles.php:105
+#: includes/settings/product-single-page-settings/styles.php:153
+#: includes/settings/product-single-page-settings/styles.php:224
+#: includes/settings/shop-page-settings/styles.php:57
+#: includes/settings/shop-page-settings/styles.php:104
+#: includes/settings/shop-page-settings/styles.php:152
+#: includes/settings/shop-page-settings/styles.php:223
+msgid "700"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:58
+#: includes/settings/category-page-settings/styles.php:105
+#: includes/settings/category-page-settings/styles.php:153
+#: includes/settings/category-page-settings/styles.php:224
+#: includes/settings/product-single-page-settings/styles.php:59
+#: includes/settings/product-single-page-settings/styles.php:106
+#: includes/settings/product-single-page-settings/styles.php:154
+#: includes/settings/product-single-page-settings/styles.php:225
+#: includes/settings/shop-page-settings/styles.php:58
+#: includes/settings/shop-page-settings/styles.php:105
+#: includes/settings/shop-page-settings/styles.php:153
+#: includes/settings/shop-page-settings/styles.php:224
+msgid "800"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:59
+#: includes/settings/category-page-settings/styles.php:106
+#: includes/settings/category-page-settings/styles.php:154
+#: includes/settings/category-page-settings/styles.php:225
+#: includes/settings/product-single-page-settings/styles.php:60
+#: includes/settings/product-single-page-settings/styles.php:107
+#: includes/settings/product-single-page-settings/styles.php:155
+#: includes/settings/product-single-page-settings/styles.php:226
+#: includes/settings/shop-page-settings/styles.php:59
+#: includes/settings/shop-page-settings/styles.php:106
+#: includes/settings/shop-page-settings/styles.php:154
+#: includes/settings/shop-page-settings/styles.php:225
+msgid "900"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:61
+#: includes/settings/product-single-page-settings/styles.php:62
+#: includes/settings/shop-page-settings/styles.php:61
+msgid "Banner subtitle Font Weight"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:66
+#: includes/settings/product-single-page-settings/styles.php:67
+#: includes/settings/shop-page-settings/styles.php:66
+msgid "Banner subtitle Line Height"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:69
+#: includes/settings/product-single-page-settings/styles.php:70
+#: includes/settings/shop-page-settings/styles.php:69
+msgid "Write subtitle line height. Ex. 40"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:75
+#: includes/settings/product-single-page-settings/styles.php:76
+#: includes/settings/shop-page-settings/styles.php:75
+msgid "Title Style Settings"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:83
+#: includes/settings/product-single-page-settings/styles.php:84
+#: includes/settings/shop-page-settings/styles.php:83
+msgid "Banner Title Color"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:91
+#: includes/settings/product-single-page-settings/styles.php:92
+#: includes/settings/shop-page-settings/styles.php:91
+msgid "Banner Title Font Size"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:94
+#: includes/settings/product-single-page-settings/styles.php:95
+#: includes/settings/shop-page-settings/styles.php:94
+msgid "Write Title font size. Ex. 44"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:108
+#: includes/settings/product-single-page-settings/styles.php:109
+#: includes/settings/shop-page-settings/styles.php:108
+msgid "Banner Title Font Weight"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:113
+#: includes/settings/product-single-page-settings/styles.php:114
+#: includes/settings/shop-page-settings/styles.php:113
+msgid "Banner Title Line Height"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:116
+#: includes/settings/product-single-page-settings/styles.php:117
+#: includes/settings/shop-page-settings/styles.php:116
+msgid "Write Title line height. Ex. 40"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:122
+#: includes/settings/product-single-page-settings/styles.php:123
+#: includes/settings/shop-page-settings/styles.php:122
+msgid "Short Description Style Settings"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:130
+#: includes/settings/product-single-page-settings/styles.php:131
+#: includes/settings/shop-page-settings/styles.php:130
+msgid "Banner desc Color"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:138
+#: includes/settings/product-single-page-settings/styles.php:139
+#: includes/settings/shop-page-settings/styles.php:138
+msgid "Banner desc Font Size"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:141
+#: includes/settings/product-single-page-settings/styles.php:142
+#: includes/settings/shop-page-settings/styles.php:141
+msgid "Write desc font size. Ex. 44"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:148
+#: includes/settings/product-single-page-settings/styles.php:54
+#: includes/settings/product-single-page-settings/styles.php:149
+#: includes/settings/shop-page-settings/styles.php:148
+msgid "300"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:156
+#: includes/settings/product-single-page-settings/styles.php:157
+#: includes/settings/shop-page-settings/styles.php:156
+msgid "Banner desc Font Weight"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:161
+#: includes/settings/product-single-page-settings/styles.php:162
+#: includes/settings/shop-page-settings/styles.php:161
+msgid "Banner desc Line Height"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:164
+#: includes/settings/product-single-page-settings/styles.php:165
+#: includes/settings/shop-page-settings/styles.php:164
+msgid "Write desc line height. Ex. 40"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:170
+#: includes/settings/product-single-page-settings/styles.php:171
+#: includes/settings/shop-page-settings/styles.php:170
+msgid "Button Style Settings"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:178
+#: includes/settings/product-single-page-settings/styles.php:179
+#: includes/settings/shop-page-settings/styles.php:178
+msgid "Banner button text Color"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:179
+#: includes/settings/product-single-page-settings/styles.php:180
+#: includes/settings/shop-page-settings/styles.php:179
+msgid "Select button text color."
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:186
+#: includes/settings/product-single-page-settings/styles.php:187
+#: includes/settings/shop-page-settings/styles.php:186
+msgid "Button BG Color"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:194
+#: includes/settings/product-single-page-settings/styles.php:195
+#: includes/settings/shop-page-settings/styles.php:194
+msgid "Button text hover Color"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:202
+#: includes/settings/product-single-page-settings/styles.php:203
+#: includes/settings/shop-page-settings/styles.php:202
+msgid "Button BG Hover Color"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:203
+#: includes/settings/product-single-page-settings/styles.php:204
+#: includes/settings/shop-page-settings/styles.php:203
+msgid "Select button background hover color."
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:210
+#: includes/settings/product-single-page-settings/styles.php:211
+#: includes/settings/shop-page-settings/styles.php:210
+msgid "Banner button Font Size"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:213
+#: includes/settings/product-single-page-settings/styles.php:214
+#: includes/settings/shop-page-settings/styles.php:213
+msgid "Write button font size. Ex. 44"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:227
+#: includes/settings/product-single-page-settings/styles.php:228
+#: includes/settings/shop-page-settings/styles.php:227
+msgid "Banner button Font Weight"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:232
+#: includes/settings/product-single-page-settings/styles.php:233
+#: includes/settings/shop-page-settings/styles.php:232
+msgid "Banner button Line Height"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:235
+#: includes/settings/product-single-page-settings/styles.php:236
+#: includes/settings/shop-page-settings/styles.php:235
+msgid "Write button line height. Ex. 40"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:240
+#: includes/settings/product-single-page-settings/styles.php:241
+#: includes/settings/shop-page-settings/styles.php:240
+msgid "Banner Button Padding"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:243
+#: includes/settings/product-single-page-settings/styles.php:244
+#: includes/settings/shop-page-settings/styles.php:243
+msgid "Add button Padding. Ex. 10px 20px 10px 20px"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:248
+#: includes/settings/product-single-page-settings/styles.php:249
+#: includes/settings/shop-page-settings/styles.php:248
+msgid "Banner Button Margin"
+msgstr ""
+
+#: includes/settings/category-page-settings/styles.php:251
+#: includes/settings/product-single-page-settings/styles.php:252
+#: includes/settings/shop-page-settings/styles.php:251
+msgid "Add button margin. Ex. 10px 20px 10px 20px"
+msgstr ""
+
+#: includes/settings/shop-page-settings/general-settings.php:10
+msgid "Enable Shop Page Banner"
+msgstr ""
+
+#: includes/settings/shop-page-settings/general-settings.php:28
+msgid "Write Shop Page Banner Sub Heading"
+msgstr ""
+
+#: includes/settings/shop-page-settings/general-settings.php:37
+msgid "Write banner title"
+msgstr ""
+
+#: includes/settings/shop-page-settings/general-settings.php:46
+msgid "Write banner short description"
+msgstr ""
+
+#: includes/settings/shop-page-settings/general-settings.php:55
+msgid "Write banner button name"
+msgstr ""
+
+#: includes/settings/shop-page-settings/general-settings.php:64
+msgid "Add button URL"
+msgstr ""

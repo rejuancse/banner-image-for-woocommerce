@@ -6,16 +6,16 @@ class Product_Single_Page_Settings {
     public function Product_Single_Page_Banner() {
         if (banner_image_function()->post('wp_settings_page_nonce_field')) {
             echo '<div class="notice notice-success is-dismissible">';
-                echo '<p>' . esc_html__("Data have been Saved.", "banner-image") . '</p>';
+                echo '<p>' . esc_html__("Data have been Saved.", "banner-image-for-woocommerce") . '</p>';
             echo '</div>';
         }
 
         $style = Banner_Image_PATH . '/includes/settings/product-single-page-settings/styles.php';
 
-        $tabs = apply_filters('single_banner_image_page_panel_tabs',
+        $tabs = apply_filters('biw_single_banner_image_page_panel_tabs',
             array(
                 'banner_style' => array(
-                    'tab_name' => __( 'Style', 'banner-image' ),
+                    'tab_name' => __( 'Style', 'banner-image-for-woocommerce' ),
                     'load_form_file' => $style
                 )
             )
@@ -27,11 +27,13 @@ class Product_Single_Page_Settings {
 
         $current_page = 'banner_style';
 
+        // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- Data is used for comparison only, sanitized below
         if (!empty($_GET['tab'])) {
-            $current_page = sanitize_text_field($_GET['tab']);
+            // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- Sanitization handles the data
+            $current_page = sanitize_text_field(wp_unslash($_GET['tab']));
         }
 
-        echo '<h2 class="bannerimage-setting-title">' . esc_html__("Product Single Page Banner Style", "banner-image") . '</h2>';
+        echo '<h2 class="bannerimage-setting-title">' . esc_html__("Product Single Page Banner Style", "banner-image-for-woocommerce") . '</h2>';
         ?>
 
         <form id="promotionalbanner-form" role="form" method="post" action="">
@@ -52,95 +54,103 @@ class Product_Single_Page_Settings {
     }
 
     public function Product_Single_Page_Banner_Save() {
-        if (banner_image_function()->post('wp_settings_page_nonce_field') && wp_verify_nonce( sanitize_text_field(banner_image_function()->post('wp_settings_page_nonce_field')), 'wp_settings_page_action' ) ) {
-            $current_style_tab = sanitize_text_field(banner_image_function()->post('promotionalbanner_product_single_style_admin_tab'));
+        // Check if the form was submitted
+        if ( ! isset( $_POST['wp_admin_settings_submit_btn'] ) ) {
+            return;
+        }
 
-            /**
-             * Style Settings
-             */
-            if( ! empty( $current_style_tab ) ) {
+        // Verify nonce
+        if ( ! isset( $_POST['wp_settings_page_nonce_field'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['wp_settings_page_nonce_field'] ) ), 'wp_settings_page_action' ) ) {
+            return;
+        }
 
-                $product_single_page_banner_text_align = sanitize_text_field(banner_image_function()->post('product_single_page_banner_text_align'));
-                banner_image_function()->update_text('product_single_page_banner_text_align', $product_single_page_banner_text_align);
+        $current_style_tab = sanitize_text_field(banner_image_function()->post('promotionalbanner_product_single_style_admin_tab'));
 
-                $product_single_banner_image_height = sanitize_text_field(banner_image_function()->post('product_single_banner_image_height'));
-                banner_image_function()->update_text('product_single_banner_image_height', $product_single_banner_image_height);
+        /**
+         * Style Settings
+         */
+        if( ! empty( $current_style_tab ) ) {
 
-                /*
-                * Banner SubTitle Style
-                * */
-                $product_single_banner_subtitle_color = sanitize_text_field(banner_image_function()->post('product_single_banner_subtitle_color'));
-                banner_image_function()->update_text('product_single_banner_subtitle_color', $product_single_banner_subtitle_color);
+            $product_single_page_banner_text_align = sanitize_text_field(banner_image_function()->post('product_single_page_banner_text_align'));
+            banner_image_function()->update_text('product_single_page_banner_text_align', $product_single_page_banner_text_align);
 
-                $product_single_banner_subtitle_font_size = sanitize_text_field(banner_image_function()->post('product_single_banner_subtitle_font_size'));
-                banner_image_function()->update_text('product_single_banner_subtitle_font_size', $product_single_banner_subtitle_font_size);
+            $product_single_banner_image_height = sanitize_text_field(banner_image_function()->post('product_single_banner_image_height'));
+            banner_image_function()->update_text('product_single_banner_image_height', $product_single_banner_image_height);
 
-                $product_single_banner_subtitle_font_weight = sanitize_text_field(banner_image_function()->post('product_single_banner_subtitle_font_weight'));
-                banner_image_function()->update_text('product_single_banner_subtitle_font_weight', $product_single_banner_subtitle_font_weight);
+            /*
+            * Banner SubTitle Style
+            * */
+            $product_single_banner_subtitle_color = sanitize_text_field(banner_image_function()->post('product_single_banner_subtitle_color'));
+            banner_image_function()->update_text('product_single_banner_subtitle_color', $product_single_banner_subtitle_color);
 
-                $product_single_banner_subtitle_line_height = sanitize_text_field(banner_image_function()->post('product_single_banner_subtitle_line_height'));
-                banner_image_function()->update_text('product_single_banner_subtitle_line_height', $product_single_banner_subtitle_line_height);
+            $product_single_banner_subtitle_font_size = sanitize_text_field(banner_image_function()->post('product_single_banner_subtitle_font_size'));
+            banner_image_function()->update_text('product_single_banner_subtitle_font_size', $product_single_banner_subtitle_font_size);
 
-                /*
-                * Banner Title
-                * */
-                $product_single_banner_title_font_size = sanitize_text_field(banner_image_function()->post('product_single_banner_title_font_size'));
-                banner_image_function()->update_text('product_single_banner_title_font_size', $product_single_banner_title_font_size);
+            $product_single_banner_subtitle_font_weight = sanitize_text_field(banner_image_function()->post('product_single_banner_subtitle_font_weight'));
+            banner_image_function()->update_text('product_single_banner_subtitle_font_weight', $product_single_banner_subtitle_font_weight);
 
-                $product_single_banner_title_line_height = sanitize_text_field(banner_image_function()->post('product_single_banner_title_line_height'));
-                banner_image_function()->update_text('product_single_banner_title_line_height', $product_single_banner_title_line_height);
+            $product_single_banner_subtitle_line_height = sanitize_text_field(banner_image_function()->post('product_single_banner_subtitle_line_height'));
+            banner_image_function()->update_text('product_single_banner_subtitle_line_height', $product_single_banner_subtitle_line_height);
 
-                $title_font_weight = sanitize_text_field(banner_image_function()->post('product_single_banner_title_font_weight'));
-                banner_image_function()->update_text('product_single_banner_title_font_weight', $title_font_weight);
+            /*
+            * Banner Title
+            * */
+            $product_single_banner_title_font_size = sanitize_text_field(banner_image_function()->post('product_single_banner_title_font_size'));
+            banner_image_function()->update_text('product_single_banner_title_font_size', $product_single_banner_title_font_size);
 
-                $product_single_banner_title_color = sanitize_text_field(banner_image_function()->post('product_single_banner_title_color'));
-                banner_image_function()->update_text('product_single_banner_title_color', $product_single_banner_title_color);
+            $product_single_banner_title_line_height = sanitize_text_field(banner_image_function()->post('product_single_banner_title_line_height'));
+            banner_image_function()->update_text('product_single_banner_title_line_height', $product_single_banner_title_line_height);
 
-                /*
-                * Short Description Style
-                * */
-                $product_single_banner_desc_color = sanitize_text_field(banner_image_function()->post('product_single_banner_desc_color'));
-                banner_image_function()->update_text('product_single_banner_desc_color', $product_single_banner_desc_color);
+            $title_font_weight = sanitize_text_field(banner_image_function()->post('product_single_banner_title_font_weight'));
+            banner_image_function()->update_text('product_single_banner_title_font_weight', $title_font_weight);
 
-                $product_single_banner_desc_font_size = sanitize_text_field(banner_image_function()->post('product_single_banner_desc_font_size'));
-                banner_image_function()->update_text('product_single_banner_desc_font_size', $product_single_banner_desc_font_size);
+            $product_single_banner_title_color = sanitize_text_field(banner_image_function()->post('product_single_banner_title_color'));
+            banner_image_function()->update_text('product_single_banner_title_color', $product_single_banner_title_color);
 
-                $product_single_banner_desc_line_height = sanitize_text_field(banner_image_function()->post('product_single_banner_desc_line_height'));
-                banner_image_function()->update_text('product_single_banner_desc_line_height', $product_single_banner_desc_line_height);
+            /*
+            * Short Description Style
+            * */
+            $product_single_banner_desc_color = sanitize_text_field(banner_image_function()->post('product_single_banner_desc_color'));
+            banner_image_function()->update_text('product_single_banner_desc_color', $product_single_banner_desc_color);
 
-                $desc_font_weight = sanitize_text_field(banner_image_function()->post('product_single_banner_desc_font_weight'));
-                banner_image_function()->update_text('product_single_banner_desc_font_weight', $desc_font_weight);
+            $product_single_banner_desc_font_size = sanitize_text_field(banner_image_function()->post('product_single_banner_desc_font_size'));
+            banner_image_function()->update_text('product_single_banner_desc_font_size', $product_single_banner_desc_font_size);
 
-                /*
-                * Button Style
-                * */
-                $button_text_color = sanitize_text_field(banner_image_function()->post('product_single_page_banner_button_text_color'));
-                banner_image_function()->update_text('product_single_page_banner_button_text_color', $button_text_color);
+            $product_single_banner_desc_line_height = sanitize_text_field(banner_image_function()->post('product_single_banner_desc_line_height'));
+            banner_image_function()->update_text('product_single_banner_desc_line_height', $product_single_banner_desc_line_height);
 
-                $button_bg_color = sanitize_text_field(banner_image_function()->post('product_single_page_banner_button_bg_color'));
-                banner_image_function()->update_text('product_single_page_banner_button_bg_color', $button_bg_color);
+            $desc_font_weight = sanitize_text_field(banner_image_function()->post('product_single_banner_desc_font_weight'));
+            banner_image_function()->update_text('product_single_banner_desc_font_weight', $desc_font_weight);
 
-                $button_text_hover_color = sanitize_text_field(banner_image_function()->post('product_single_page_banner_button_text_hover_color'));
-                banner_image_function()->update_text('product_single_page_banner_button_text_hover_color', $button_text_hover_color);
+            /*
+            * Button Style
+            * */
+            $button_text_color = sanitize_text_field(banner_image_function()->post('product_single_page_banner_button_text_color'));
+            banner_image_function()->update_text('product_single_page_banner_button_text_color', $button_text_color);
 
-                $button_bg_hover_color = sanitize_text_field(banner_image_function()->post('product_single_page_banner_button_bg_hover_color'));
-                banner_image_function()->update_text('product_single_page_banner_button_bg_hover_color', $button_bg_hover_color);
+            $button_bg_color = sanitize_text_field(banner_image_function()->post('product_single_page_banner_button_bg_color'));
+            banner_image_function()->update_text('product_single_page_banner_button_bg_color', $button_bg_color);
 
-                $button_font_size = sanitize_text_field(banner_image_function()->post('product_single_banner_button_font_size'));
-                banner_image_function()->update_text('product_single_banner_button_font_size', $button_font_size);
+            $button_text_hover_color = sanitize_text_field(banner_image_function()->post('product_single_page_banner_button_text_hover_color'));
+            banner_image_function()->update_text('product_single_page_banner_button_text_hover_color', $button_text_hover_color);
 
-                $button_font_weight = sanitize_text_field(banner_image_function()->post('product_single_banner_button_font_weight'));
-                banner_image_function()->update_text('product_single_banner_button_font_weight', $button_font_weight);
+            $button_bg_hover_color = sanitize_text_field(banner_image_function()->post('product_single_page_banner_button_bg_hover_color'));
+            banner_image_function()->update_text('product_single_page_banner_button_bg_hover_color', $button_bg_hover_color);
 
-                $button_line_height = sanitize_text_field(banner_image_function()->post('product_single_banner_button_line_height'));
-                banner_image_function()->update_text('product_single_banner_button_line_height', $button_line_height);
+            $button_font_size = sanitize_text_field(banner_image_function()->post('product_single_banner_button_font_size'));
+            banner_image_function()->update_text('product_single_banner_button_font_size', $button_font_size);
 
-                $button_padding = sanitize_text_field(banner_image_function()->post('product_single_banner_button_padding'));
-                banner_image_function()->update_text('product_single_banner_button_padding', $button_padding);
+            $button_font_weight = sanitize_text_field(banner_image_function()->post('product_single_banner_button_font_weight'));
+            banner_image_function()->update_text('product_single_banner_button_font_weight', $button_font_weight);
 
-                $button_margin = sanitize_text_field(banner_image_function()->post('product_single_banner_button_margin'));
-                banner_image_function()->update_text('product_single_banner_button_margin', $button_margin);
-            }
+            $button_line_height = sanitize_text_field(banner_image_function()->post('product_single_banner_button_line_height'));
+            banner_image_function()->update_text('product_single_banner_button_line_height', $button_line_height);
+
+            $button_padding = sanitize_text_field(banner_image_function()->post('product_single_banner_button_padding'));
+            banner_image_function()->update_text('product_single_banner_button_padding', $button_padding);
+
+            $button_margin = sanitize_text_field(banner_image_function()->post('product_single_banner_button_margin'));
+            banner_image_function()->update_text('product_single_banner_button_margin', $button_margin);
         }
     }
 }

@@ -6,13 +6,13 @@ defined( 'ABSPATH' ) || exit;
 class Generator {
 
     // Settings Option Generator
-    public function generator( $arr ) {
+    public function generator( $biw_settings_array ) {
 
         $html = '';
         $html .= '<table class="form-table">';
         $html .= '<tbody>';
 
-        foreach ($arr as $value) {
+        foreach ($biw_settings_array as $value) {
             if(isset( $value['type'] )) {
                 switch ( $value['type'] ) {
                     case 'image':
@@ -36,7 +36,7 @@ class Generator {
                                 $html .= '<p class="form-field">';
                                 $html .= '<input type="hidden" class="product_banner_bg_image" name="' . esc_attr($value["id"]) . '" value="' . esc_attr($raw_id) . '" placeholder="' . esc_attr($value["label"]) . '"/>';
                                 $html .= '<span class="biw-image-container">' . $image_id . '</span>';
-                                $html .= '<button class="biw-image-upload-btn button">' . esc_html__("Add Image", "banner-image") . '</button>';
+                                $html .= '<button class="biw-image-upload-btn button">' . esc_html__("Add Image", "banner-image-for-woocommerce") . '</button>';
                                 $html .= '</p>';
 
                             $html .= '</td>';
@@ -207,6 +207,6 @@ class Generator {
         $html .= '</tbody>';
         $html .= '</table>';
 
-        echo $html;
+        echo wp_kses_post( $html );
     }
 }

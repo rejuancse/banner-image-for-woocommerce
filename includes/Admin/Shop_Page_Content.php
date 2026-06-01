@@ -7,21 +7,21 @@ class Shop_Page_Content {
     public function Shop_Page_Banner() {
         if (banner_image_function()->post('wp_settings_page_nonce_field')) {
             echo '<div class="notice notice-success is-dismissible">';
-                echo '<p>' . esc_html__("Data have been Saved.", "banner-image") . '</p>';
+                echo '<p>' . esc_html__("Data have been Saved.", "banner-image-for-woocommerce") . '</p>';
             echo '</div>';
         }
 
         $default_file = Banner_Image_PATH . '/includes/settings/shop-page-settings/general-settings.php';
         $style = Banner_Image_PATH . '/includes/settings/shop-page-settings/styles.php';
 
-        $tabs = apply_filters('bifw_bifw_shop_banner_image_page_panel_tabs',
+        $tabs = apply_filters('biw_shop_page_banner_image_panel_tabs',
             array(
                 'general_settings' => array(
-                    'tab_name' => __('General Settings', 'banner-image'),
+                    'tab_name' => __('General Settings', 'banner-image-for-woocommerce'),
                     'load_form_file' => $default_file
                 ),
                 'banner_style' => array(
-                    'tab_name' => __('Style', 'banner-image'),
+                    'tab_name' => __('Style', 'banner-image-for-woocommerce'),
                     'load_form_file' => $style
                 )
             )
@@ -34,11 +34,13 @@ class Shop_Page_Content {
 
         $current_page = 'general_settings';
 
+        // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- Data is used for comparison only, sanitized below
         if (!empty($_GET['tab'])) {
-            $current_page = sanitize_text_field($_GET['tab']);
+            // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- Sanitization handles the data
+            $current_page = sanitize_text_field(wp_unslash($_GET['tab']));
         }
 
-        echo '<h2 class="bannerimage-setting-title">' . esc_html__("Shop Page Banner Image Settings", "banner-image") . '</h2>';
+        echo '<h2 class="bannerimage-setting-title">' . esc_html__("Shop Page Banner Image Settings", "banner-image-for-woocommerce") . '</h2>';
         echo '<h2 class="nav-tab-wrapper">';
         foreach ($tabs as $tab => $name) {
             $class = ($tab == $current_page) ? ' nav-tab-active' : '';
@@ -64,133 +66,141 @@ class Shop_Page_Content {
     }
 
     public function Shop_Page_Banner_Save() {
-        if (banner_image_function()->post('wp_settings_page_nonce_field') && wp_verify_nonce( sanitize_text_field(banner_image_function()->post('wp_settings_page_nonce_field')), 'wp_settings_page_action' ) ) {
-            $current_tab = sanitize_text_field(banner_image_function()->post('biw_general_settings_admin_tab'));
-            $current_style_tab = sanitize_text_field(banner_image_function()->post('biw_shop_style_admin_tab'));
+        // Check if the form was submitted
+        if ( ! isset( $_POST['wp_admin_settings_submit_btn'] ) ) {
+            return;
+        }
 
-            /**
-             * General Settings
-             */
-            if( ! empty($current_tab) ){
-                # Enable Banner
-                $enable_shop_page_banner = sanitize_text_field(banner_image_function()->post('enable_shop_page_banner'));
-                banner_image_function()->update_checkbox( 'enable_shop_page_banner', $enable_shop_page_banner);
+        // Verify nonce
+        if ( ! isset( $_POST['wp_settings_page_nonce_field'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['wp_settings_page_nonce_field'] ) ), 'wp_settings_page_action' ) ) {
+            return;
+        }
 
-                # Image
-                $shop_page_banner_image = sanitize_text_field(banner_image_function()->post('shop_page_banner_image'));
-                banner_image_function()->update_checkbox( 'shop_page_banner_image', $shop_page_banner_image);
+        $current_tab = sanitize_text_field(banner_image_function()->post('biw_general_settings_admin_tab'));
+        $current_style_tab = sanitize_text_field(banner_image_function()->post('biw_shop_style_admin_tab'));
 
-                # Sub heading
-                $shop_page_banner_sub_heading = sanitize_text_field(banner_image_function()->post('shop_page_banner_sub_heading'));
-                banner_image_function()->update_text('shop_page_banner_sub_heading', $shop_page_banner_sub_heading);
+        /**
+         * General Settings
+         */
+        if( ! empty($current_tab) ){
+            # Enable Banner
+            $enable_shop_page_banner = sanitize_text_field(banner_image_function()->post('enable_shop_page_banner'));
+            banner_image_function()->update_checkbox( 'enable_shop_page_banner', $enable_shop_page_banner);
 
-                # Banner Title
-                $shop_page_banner_title = sanitize_text_field(banner_image_function()->post('shop_page_banner_title'));
-                banner_image_function()->update_text('shop_page_banner_title', $shop_page_banner_title);
+            # Image
+            $shop_page_banner_image = sanitize_text_field(banner_image_function()->post('shop_page_banner_image'));
+            banner_image_function()->update_checkbox( 'shop_page_banner_image', $shop_page_banner_image);
 
-                # Shop page banner Shop description
-                $shop_page_banner_short_desc = sanitize_text_field(banner_image_function()->post('shop_page_banner_short_desc'));
-                banner_image_function()->update_text('shop_page_banner_short_desc', $shop_page_banner_short_desc);
+            # Sub heading
+            $shop_page_banner_sub_heading = sanitize_text_field(banner_image_function()->post('shop_page_banner_sub_heading'));
+            banner_image_function()->update_text('shop_page_banner_sub_heading', $shop_page_banner_sub_heading);
 
-                # Button Name
-                $shop_page_banner_button_name = sanitize_text_field(banner_image_function()->post('shop_page_banner_button_name'));
-                banner_image_function()->update_text('shop_page_banner_button_name', $shop_page_banner_button_name);
+            # Banner Title
+            $shop_page_banner_title = sanitize_text_field(banner_image_function()->post('shop_page_banner_title'));
+            banner_image_function()->update_text('shop_page_banner_title', $shop_page_banner_title);
 
-                # Button URL
-                $shop_page_banner_button_url = sanitize_text_field(banner_image_function()->post('shop_page_banner_button_url'));
-                banner_image_function()->update_text('shop_page_banner_button_url', $shop_page_banner_button_url);
+            # Shop page banner Shop description
+            $shop_page_banner_short_desc = sanitize_text_field(banner_image_function()->post('shop_page_banner_short_desc'));
+            banner_image_function()->update_text('shop_page_banner_short_desc', $shop_page_banner_short_desc);
 
-                # Enable Link Full Banner
-                $enable_link_full_banner = sanitize_text_field(banner_image_function()->post('enable_link_full_banner'));
-                banner_image_function()->update_text('enable_link_full_banner', $enable_link_full_banner);
-            }
+            # Button Name
+            $shop_page_banner_button_name = sanitize_text_field(banner_image_function()->post('shop_page_banner_button_name'));
+            banner_image_function()->update_text('shop_page_banner_button_name', $shop_page_banner_button_name);
 
-            /**
-             * Style Settings
-             */
-            if( ! empty( $current_style_tab ) ) {
+            # Button URL
+            $shop_page_banner_button_url = sanitize_text_field(banner_image_function()->post('shop_page_banner_button_url'));
+            banner_image_function()->update_text('shop_page_banner_button_url', $shop_page_banner_button_url);
 
-                $shop_page_banner_text_align = sanitize_text_field(banner_image_function()->post('shop_page_banner_text_align'));
-                banner_image_function()->update_text('shop_page_banner_text_align', $shop_page_banner_text_align);
+            # Enable Link Full Banner
+            $enable_link_full_banner = sanitize_text_field(banner_image_function()->post('enable_link_full_banner'));
+            banner_image_function()->update_text('enable_link_full_banner', $enable_link_full_banner);
+        }
 
-                $shop_banner_image_height = sanitize_text_field(banner_image_function()->post('shop_banner_image_height'));
-                banner_image_function()->update_text('shop_banner_image_height', $shop_banner_image_height);
+        /**
+         * Style Settings
+         */
+        if( ! empty( $current_style_tab ) ) {
 
-                /*
-                * Banner SubTitle Style
-                * */
-                $shop_banner_subtitle_color = sanitize_text_field(banner_image_function()->post('shop_banner_subtitle_color'));
-                banner_image_function()->update_text('shop_banner_subtitle_color', $shop_banner_subtitle_color);
+            $shop_page_banner_text_align = sanitize_text_field(banner_image_function()->post('shop_page_banner_text_align'));
+            banner_image_function()->update_text('shop_page_banner_text_align', $shop_page_banner_text_align);
 
-                $shop_banner_subtitle_font_size = sanitize_text_field(banner_image_function()->post('shop_banner_subtitle_font_size'));
-                banner_image_function()->update_text('shop_banner_subtitle_font_size', $shop_banner_subtitle_font_size);
+            $shop_banner_image_height = sanitize_text_field(banner_image_function()->post('shop_banner_image_height'));
+            banner_image_function()->update_text('shop_banner_image_height', $shop_banner_image_height);
 
-                $shop_banner_subtitle_font_weight = sanitize_text_field(banner_image_function()->post('shop_banner_subtitle_font_weight'));
-                banner_image_function()->update_text('shop_banner_subtitle_font_weight', $shop_banner_subtitle_font_weight);
+            /*
+            * Banner SubTitle Style
+            * */
+            $shop_banner_subtitle_color = sanitize_text_field(banner_image_function()->post('shop_banner_subtitle_color'));
+            banner_image_function()->update_text('shop_banner_subtitle_color', $shop_banner_subtitle_color);
 
-                $shop_banner_subtitle_line_height = sanitize_text_field(banner_image_function()->post('shop_banner_subtitle_line_height'));
-                banner_image_function()->update_text('shop_banner_subtitle_line_height', $shop_banner_subtitle_line_height);
+            $shop_banner_subtitle_font_size = sanitize_text_field(banner_image_function()->post('shop_banner_subtitle_font_size'));
+            banner_image_function()->update_text('shop_banner_subtitle_font_size', $shop_banner_subtitle_font_size);
 
-                /*
-                * Banner Title
-                * */
-                $shop_banner_title_font_size = sanitize_text_field(banner_image_function()->post('shop_banner_title_font_size'));
-                banner_image_function()->update_text('shop_banner_title_font_size', $shop_banner_title_font_size);
+            $shop_banner_subtitle_font_weight = sanitize_text_field(banner_image_function()->post('shop_banner_subtitle_font_weight'));
+            banner_image_function()->update_text('shop_banner_subtitle_font_weight', $shop_banner_subtitle_font_weight);
 
-                $shop_banner_title_line_height = sanitize_text_field(banner_image_function()->post('shop_banner_title_line_height'));
-                banner_image_function()->update_text('shop_banner_title_line_height', $shop_banner_title_line_height);
+            $shop_banner_subtitle_line_height = sanitize_text_field(banner_image_function()->post('shop_banner_subtitle_line_height'));
+            banner_image_function()->update_text('shop_banner_subtitle_line_height', $shop_banner_subtitle_line_height);
 
-                $title_font_weight = sanitize_text_field(banner_image_function()->post('shop_banner_title_font_weight'));
-                banner_image_function()->update_text('shop_banner_title_font_weight', $title_font_weight);
+            /*
+            * Banner Title
+            * */
+            $shop_banner_title_font_size = sanitize_text_field(banner_image_function()->post('shop_banner_title_font_size'));
+            banner_image_function()->update_text('shop_banner_title_font_size', $shop_banner_title_font_size);
 
-                $shop_banner_title_color = sanitize_text_field(banner_image_function()->post('shop_banner_title_color'));
-                banner_image_function()->update_text('shop_banner_title_color', $shop_banner_title_color);
+            $shop_banner_title_line_height = sanitize_text_field(banner_image_function()->post('shop_banner_title_line_height'));
+            banner_image_function()->update_text('shop_banner_title_line_height', $shop_banner_title_line_height);
 
-                /*
-                * Short Description Style
-                * */
-                $shop_banner_desc_color = sanitize_text_field(banner_image_function()->post('shop_banner_desc_color'));
-                banner_image_function()->update_text('shop_banner_desc_color', $shop_banner_desc_color);
+            $title_font_weight = sanitize_text_field(banner_image_function()->post('shop_banner_title_font_weight'));
+            banner_image_function()->update_text('shop_banner_title_font_weight', $title_font_weight);
 
-                $shop_banner_desc_font_size = sanitize_text_field(banner_image_function()->post('shop_banner_desc_font_size'));
-                banner_image_function()->update_text('shop_banner_desc_font_size', $shop_banner_desc_font_size);
+            $shop_banner_title_color = sanitize_text_field(banner_image_function()->post('shop_banner_title_color'));
+            banner_image_function()->update_text('shop_banner_title_color', $shop_banner_title_color);
 
-                $shop_banner_desc_line_height = sanitize_text_field(banner_image_function()->post('shop_banner_desc_line_height'));
-                banner_image_function()->update_text('shop_banner_desc_line_height', $shop_banner_desc_line_height);
+            /*
+            * Short Description Style
+            * */
+            $shop_banner_desc_color = sanitize_text_field(banner_image_function()->post('shop_banner_desc_color'));
+            banner_image_function()->update_text('shop_banner_desc_color', $shop_banner_desc_color);
 
-                $desc_font_weight = sanitize_text_field(banner_image_function()->post('shop_banner_desc_font_weight'));
-                banner_image_function()->update_text('shop_banner_desc_font_weight', $desc_font_weight);
+            $shop_banner_desc_font_size = sanitize_text_field(banner_image_function()->post('shop_banner_desc_font_size'));
+            banner_image_function()->update_text('shop_banner_desc_font_size', $shop_banner_desc_font_size);
 
-                /*
-                * Button Style
-                * */
-                $button_text_color = sanitize_text_field(banner_image_function()->post('shop_page_banner_button_text_color'));
-                banner_image_function()->update_text('shop_page_banner_button_text_color', $button_text_color);
+            $shop_banner_desc_line_height = sanitize_text_field(banner_image_function()->post('shop_banner_desc_line_height'));
+            banner_image_function()->update_text('shop_banner_desc_line_height', $shop_banner_desc_line_height);
 
-                $button_bg_color = sanitize_text_field(banner_image_function()->post('shop_page_banner_button_bg_color'));
-                banner_image_function()->update_text('shop_page_banner_button_bg_color', $button_bg_color);
+            $desc_font_weight = sanitize_text_field(banner_image_function()->post('shop_banner_desc_font_weight'));
+            banner_image_function()->update_text('shop_banner_desc_font_weight', $desc_font_weight);
 
-                $button_text_hover_color = sanitize_text_field(banner_image_function()->post('shop_page_banner_button_text_hover_color'));
-                banner_image_function()->update_text('shop_page_banner_button_text_hover_color', $button_text_hover_color);
+            /*
+            * Button Style
+            * */
+            $button_text_color = sanitize_text_field(banner_image_function()->post('shop_page_banner_button_text_color'));
+            banner_image_function()->update_text('shop_page_banner_button_text_color', $button_text_color);
 
-                $button_bg_hover_color = sanitize_text_field(banner_image_function()->post('shop_page_banner_button_bg_hover_color'));
-                banner_image_function()->update_text('shop_page_banner_button_bg_hover_color', $button_bg_hover_color);
+            $button_bg_color = sanitize_text_field(banner_image_function()->post('shop_page_banner_button_bg_color'));
+            banner_image_function()->update_text('shop_page_banner_button_bg_color', $button_bg_color);
 
-                $button_font_size = sanitize_text_field(banner_image_function()->post('shop_banner_button_font_size'));
-                banner_image_function()->update_text('shop_banner_button_font_size', $button_font_size);
+            $button_text_hover_color = sanitize_text_field(banner_image_function()->post('shop_page_banner_button_text_hover_color'));
+            banner_image_function()->update_text('shop_page_banner_button_text_hover_color', $button_text_hover_color);
 
-                $button_font_weight = sanitize_text_field(banner_image_function()->post('shop_banner_button_font_weight'));
-                banner_image_function()->update_text('shop_banner_button_font_weight', $button_font_weight);
+            $button_bg_hover_color = sanitize_text_field(banner_image_function()->post('shop_page_banner_button_bg_hover_color'));
+            banner_image_function()->update_text('shop_page_banner_button_bg_hover_color', $button_bg_hover_color);
 
-                $button_line_height = sanitize_text_field(banner_image_function()->post('shop_banner_button_line_height'));
-                banner_image_function()->update_text('shop_banner_button_line_height', $button_line_height);
+            $button_font_size = sanitize_text_field(banner_image_function()->post('shop_banner_button_font_size'));
+            banner_image_function()->update_text('shop_banner_button_font_size', $button_font_size);
 
-                $button_padding = sanitize_text_field(banner_image_function()->post('shop_banner_button_padding'));
-                banner_image_function()->update_text('shop_banner_button_padding', $button_padding);
+            $button_font_weight = sanitize_text_field(banner_image_function()->post('shop_banner_button_font_weight'));
+            banner_image_function()->update_text('shop_banner_button_font_weight', $button_font_weight);
 
-                $button_margin = sanitize_text_field(banner_image_function()->post('shop_banner_button_margin'));
-                banner_image_function()->update_text('shop_banner_button_margin', $button_margin);
-            }
+            $button_line_height = sanitize_text_field(banner_image_function()->post('shop_banner_button_line_height'));
+            banner_image_function()->update_text('shop_banner_button_line_height', $button_line_height);
+
+            $button_padding = sanitize_text_field(banner_image_function()->post('shop_banner_button_padding'));
+            banner_image_function()->update_text('shop_banner_button_padding', $button_padding);
+
+            $button_margin = sanitize_text_field(banner_image_function()->post('shop_banner_button_margin'));
+            banner_image_function()->update_text('shop_banner_button_margin', $button_margin);
         }
     }
 }

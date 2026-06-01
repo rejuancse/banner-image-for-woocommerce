@@ -26,8 +26,8 @@ class Banner_Image_Menu {
      */
     public function biw_admin_menu() {
         add_menu_page(
-            __( 'Product Banner Image', 'banner-image' ),
-            __( 'Shop Page Banner Image', 'banner-image' ),
+            __( 'Product Banner Image', 'banner-image-for-woocommerce' ),
+            __( 'Shop Page Banner Image', 'banner-image-for-woocommerce' ),
             'manage_options', 'biw-menu',
             [ $this, 'biw_shop_page_callback_func' ],
             'dashicons-superhero',

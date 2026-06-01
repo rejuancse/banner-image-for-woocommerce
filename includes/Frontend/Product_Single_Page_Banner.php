@@ -25,7 +25,7 @@ class Product_Single_Page_Banner {
                                 <a href="<?php echo esc_url($value['wp_banner_button_url']); ?>" class="pbw-wrap-full-banner-link alignwide">
                             <?php } ?>
 
-                                <div class="product-single-page-banner-image alignwide" style="background-image: url(<?php echo !empty($value['product_banner_bg_image']) ? wp_get_attachment_url( $value["product_banner_bg_image"] ) : ''; ?>); background-repeat: no-repeat; background-size: cover;">
+                                <div class="product-single-page-banner-image alignwide" style="background-image: url(<?php echo !empty($value['product_banner_bg_image']) ? esc_url(wp_get_attachment_url($value["product_banner_bg_image"])) : ''; ?>); background-repeat: no-repeat; background-size: cover;">
                                     <div class="banner-content">
                                         <?php if( !empty( $value['product_banner_subtitle'] ) ) { ?>
                                             <span><?php echo esc_html($value['product_banner_subtitle']); ?></span>
@@ -36,12 +36,12 @@ class Product_Single_Page_Banner {
                                         <?php } ?>
 
                                         <?php if( !empty( $value['product_banner_description'] ) ) { ?>
-                                            <?php echo wpautop(wp_unslash($value['product_banner_description'])); ?>
+                                            <?php echo wp_kses_post(wpautop(wp_unslash($value['product_banner_description']))); ?>
                                         <?php } ?>
 
                                         <?php if( !empty( $value['wp_banner_button_name'] ) && $value['enable_link_full_banner_image'] !== 'yes' ) { ?>
                                             <a href="<?php echo esc_url($value['wp_banner_button_url']); ?>">
-                                                <?php echo $value['wp_banner_button_name']; ?>
+                                                <?php echo esc_html($value['wp_banner_button_name']); ?>
                                             </a>
                                         <?php } ?>
                                     </div>

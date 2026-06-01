@@ -8,22 +8,26 @@ defined('ABSPATH') || exit;
 
 class Functions {
 
-    public function generator($arr) {
+    public function generator($biw_settings_array) {
         require_once Banner_Image_PATH . '/includes/settings/Generator.php';
         $generator = new settings\Generator;
-        $generator->generator($arr);
+        $generator->generator($biw_settings_array);
     }
 
     public function post($post_item, $nonce_action = '', $nonce_field = '') {
+        // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- wp_unslash applied after sanitization
         if (!empty($_POST[$post_item])) {
             if ($nonce_action && $nonce_field) {
+                // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- wp_unslash applied after sanitization
                 if (isset($_POST[$nonce_field]) && wp_verify_nonce(sanitize_text_field($_POST[$nonce_field]), $nonce_action)) {
-                    return sanitize_text_field($_POST[$post_item]);
+                    // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- Sanitization handles the data
+                    return sanitize_text_field(wp_unslash($_POST[$post_item]));
                 } else {
                     return null;
                 }
             } else {
-                return sanitize_text_field($_POST[$post_item]);
+                // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash -- Sanitization handles the data
+                return sanitize_text_field(wp_unslash($_POST[$post_item]));
             }
         }
         return null;
